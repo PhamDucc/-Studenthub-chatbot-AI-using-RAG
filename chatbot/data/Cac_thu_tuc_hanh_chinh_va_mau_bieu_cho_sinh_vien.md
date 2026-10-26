@@ -1,3 +1,9 @@
+---
+doc_id: thu-tuc-hanh-chinh
+title: "Hướng dẫn thủ tục hành chính và mẫu biểu sinh viên - UET"
+category: thu-tuc
+---
+
 # HƯỚNG DẪN THỦ TỤC HÀNH CHÍNH VÀ MẪU BIỂU SINH VIÊN - TRƯỜNG ĐẠI HỌC CÔNG NGHỆ (UET)
 
 - **Cổng dịch vụ trực tuyến (Student Hub):** https://studenthub.uet.edu.vn/

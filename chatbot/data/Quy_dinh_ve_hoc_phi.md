@@ -1,3 +1,9 @@
+---
+doc_id: quy-dinh-hoc-phi
+title: "Hướng dẫn nộp học phí và chế độ chính sách - UET"
+category: hoc-phi
+---
+
 # HƯỚNG DẪN NỘP HỌC PHÍ VÀ CHẾ ĐỘ CHÍNH SÁCH - TRƯỜNG ĐẠI HỌC CÔNG NGHỆ (UET)
 
 ---

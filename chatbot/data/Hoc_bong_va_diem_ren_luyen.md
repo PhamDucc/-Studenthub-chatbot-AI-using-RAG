@@ -1,3 +1,11 @@
+---
+doc_id: hoc-bong-ren-luyen
+title: "Quy định xét cấp học bổng và đánh giá điểm rèn luyện - UET"
+category: hoc-bong-ren-luyen
+document_number: "1931/QĐ-ĐHCN"   # theo đầu Phần I (học bổng KKHT)
+issued_date: 2026-08-07
+---
+
 # QUY ĐỊNH XÉT CẤP HỌC BỔNG VÀ ĐÁNH GIÁ ĐIỂM RÈN LUYỆN - TRƯỜNG ĐẠI HỌC CÔNG NGHỆ (UET)
 
 ---

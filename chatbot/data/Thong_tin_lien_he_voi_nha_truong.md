@@ -1,3 +1,9 @@
+---
+doc_id: thong-tin-lien-he
+title: "Thông tin liên hệ và các kênh hỗ trợ sinh viên - UET"
+category: lien-he
+---
+
 # THÔNG TIN LIÊN HỆ VÀ CÁC KÊNH HỖ TRỢ SINH VIÊN - TRƯỜNG ĐẠI HỌC CÔNG NGHỆ (UET)
 
 Tài liệu này cung cấp thông tin liên hệ chính thức của các phòng ban chức năng và các cổng dịch vụ trực tuyến nhằm hỗ trợ sinh viên giải quyết các thủ tục hành chính, đào tạo, học phí, học bổng và rèn luyện.

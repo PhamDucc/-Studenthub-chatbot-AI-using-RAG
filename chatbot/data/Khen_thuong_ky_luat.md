@@ -1,3 +1,11 @@
+---
+doc_id: khen-thuong-ky-luat
+title: "Quy định khen thưởng và khung xử lý kỷ luật sinh viên"
+category: khen-thuong-ky-luat
+document_number: "32/QĐ-ĐHQGHN"
+issued_date: 2017-01-05
+---
+
 # QUY ĐỊNH KHEN THƯỞNG VÀ KHUNG XỬ LÝ KỶ LUẬT SINH VIÊN
 
 *(Ban hành kèm theo Quyết định số 32/QĐ-ĐHQGHN ngày 05 tháng 01 năm 2017 của Giám đốc Đại học Quốc gia Hà Nội)*

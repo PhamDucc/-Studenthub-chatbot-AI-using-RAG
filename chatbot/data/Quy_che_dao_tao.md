@@ -1,3 +1,12 @@
+---
+doc_id: quy-che-dao-tao
+title: "Quy chế đào tạo đại học tại Đại học Quốc gia Hà Nội"
+category: dao-tao
+document_number: "3626/QĐ-ĐHQGHN"
+issued_date: 2022-10-21
+applies_to: "Các khóa tuyển sinh từ năm 2022 trở đi (theo Điều 51)"
+---
+
 # QUY CHẾ ĐÀO TẠO ĐẠI HỌC TẠI ĐẠI HỌC QUỐC GIA HÀ NỘI
 *(Ban hành kèm theo Quyết định số 3626/QĐ-ĐHQGHN ngày 21 tháng 10 năm 2022 của Giám đốc Đại học Quốc gia Hà Nội)*
 
