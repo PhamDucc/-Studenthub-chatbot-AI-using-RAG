@@ -4,3 +4,9 @@ web/node_modules/
 web/.next/ 
 *.local 
 .env* 
+
+.venv/
+__pycache__/
+chatbot/qdrant_data/
+chatbot/chroma_db/
+chatbot/chunks.jsonl
