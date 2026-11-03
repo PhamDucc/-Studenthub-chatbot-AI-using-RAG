@@ -1,7 +1,9 @@
 import logging
 import os
+import sqlite3
 import threading
 from contextlib import asynccontextmanager
+from datetime import datetime
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
@@ -17,14 +19,69 @@ from ingest import BASE, COLLECTION, EMBED_MODEL, QDRANT_DIR
 load_dotenv(BASE / ".env")
 logger = logging.getLogger(__name__)
 
+# Đường dẫn file SQLite lưu lịch sử chat
+DB_PATH = BASE / "chat_history.db"
+
 FALLBACK_MESSAGE = (
     "Mình chưa tìm thấy đủ thông tin trong tài liệu UET để trả lời "
     "câu hỏi này. Bạn có thể yêu cầu nhân viên tư vấn hỗ trợ."
 )
 
+
+def init_db():
+    """Tự động khởi tạo bảng chat_history nếu chưa tồn tại"""
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+        CREATE TABLE IF NOT EXISTS chat_history (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            question TEXT NOT NULL,
+            response TEXT NOT NULL,
+            sources TEXT,
+            needs_human INTEGER DEFAULT 0,
+            created_at TEXT NOT NULL
+        )
+    """
+    )
+    conn.commit()
+    conn.close()
+
+
+def save_chat_to_db(
+    question: str, response: str, sources: list, needs_human: bool
+):
+    """Ghi nhận lượt hội thoại vào CSDL SQLite"""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        sources_str = ", ".join(sources) if sources else ""
+        created_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        cursor.execute(
+            """
+            INSERT INTO chat_history (question, response, sources, needs_human, created_at)
+            VALUES (?, ?, ?, ?, ?)
+            """,
+            (
+                question,
+                response,
+                sources_str,
+                1 if needs_human else 0,
+                created_at,
+            ),
+        )
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        logger.error(f"Lỗi khi lưu lịch sử chat vào SQLite: {e}")
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     from sentence_transformers import SentenceTransformer
+
+    # Khởi tạo CSDL SQLite lưu lịch sử hội thoại
+    init_db()
 
     if not QDRANT_DIR.is_dir():
         raise RuntimeError(
@@ -85,6 +142,7 @@ async def lifespan(app: FastAPI):
         if gemini_client is not None:
             gemini_client.close()
 
+
 app = FastAPI(
     title="UET Student Hub Chatbot API",
     lifespan=lifespan,
@@ -100,6 +158,7 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
+
 
 class ChatMessage(BaseModel):
     role: str
@@ -118,6 +177,7 @@ class ChatMessage(BaseModel):
             and isinstance(part.get("text"), str)
         ).strip()
 
+
 class ChatRequest(BaseModel):
     prompt: str | None = Field(default=None, max_length=12000)
     messages: list[ChatMessage] = Field(default_factory=list)
@@ -133,9 +193,11 @@ class ChatRequest(BaseModel):
 
         return ""
 
+
 class GeneratedAnswer(BaseModel):
     answer: str
     supported: bool
+
 
 def build_context(points):
     contexts = []
@@ -170,8 +232,12 @@ def build_context(points):
 
     return "\n\n".join(contexts), sources
 
-def request_human(reason: str):
-    # Đây là tín hiệu cho frontend, chưa kết nối nhân viên thật.
+
+def request_human(reason: str, question: str = ""):
+    # Lưu vào DB nếu có thông tin câu hỏi
+    if question:
+        save_chat_to_db(question, FALLBACK_MESSAGE, [], True)
+
     return {
         "response": FALLBACK_MESSAGE,
         "sources": [],
@@ -179,9 +245,9 @@ def request_human(reason: str):
         "handoff_reason": reason,
     }
 
+
 @app.post("/api/chat")
 def chat_endpoint(request: ChatRequest):
-    # Hàm sync được FastAPI chạy trong threadpool.
     question = request.get_question()
 
     if not question or len(question) > 12000:
@@ -192,7 +258,6 @@ def chat_endpoint(request: ChatRequest):
 
     try:
         with app.state.retrieval_lock:
-            # Giống ingest.py: BGE-M3 và normalize_embeddings=True.
             query_vector = app.state.embedder.encode(
                 [question],
                 normalize_embeddings=True,
@@ -212,34 +277,32 @@ def chat_endpoint(request: ChatRequest):
         context_text, sources = build_context(search_result.points)
 
         if not context_text:
-            return request_human("no_relevant_documents")
+            return request_human("no_relevant_documents", question)
 
-        # XỬ LÝ LỊCH SỬ HỘI THOẠI
+        # --- XỬ LÝ LỊCH SỬ HỘI THOẠI (5 LƯỢT CHAT GẦN NHẤT) ---
         gemini_contents = []
-        
-        # Tách danh sách tin nhắn hiện tại
+
         history_msgs = request.messages
-        # Nếu tin nhắn cuối cùng chính là câu hỏi hiện tại, loại bỏ nó để tránh lặp
         if not request.prompt and history_msgs and history_msgs[-1].role == "user":
             history_msgs = history_msgs[:-1]
-            
-        # Lấy tối đa 10 tin nhắn gần nhất (5 lượt hội thoại)
+
         recent_history = history_msgs[-10:]
-        
+
         for msg in recent_history:
             text = msg.get_text()
             if not text:
                 continue
-            # Chuyển đổi chuẩn role của Next.js sang Gemini
             role = "model" if msg.role == "assistant" else "user"
             gemini_contents.append({"role": role, "parts": [{"text": text}]})
-            
-        # Nạp câu hỏi cuối cùng kèm tài liệu RAG vào bộ nhớ
+
         final_prompt = (
             f"TÀI LIỆU THAM KHẢO:\n{context_text}\n\n"
             f"CÂU HỎI SINH VIÊN:\n{question}"
         )
-        gemini_contents.append({"role": "user", "parts": [{"text": final_prompt}]})
+        gemini_contents.append(
+            {"role": "user", "parts": [{"text": final_prompt}]}
+        )
+        # ----------------------------------------------------
 
         result = app.state.gemini.models.generate_content(
             model=app.state.model_name,
@@ -266,10 +329,15 @@ def chat_endpoint(request: ChatRequest):
         answer = GeneratedAnswer.model_validate_json(result.text or "{}")
 
         if not answer.supported or not answer.answer.strip():
-            return request_human("insufficient_evidence")
+            return request_human("insufficient_evidence", question)
+
+        resp_text = answer.answer.strip()
+
+        # Lưu cuộc trò chuyện thành công vào CSDL SQLite
+        save_chat_to_db(question, resp_text, sources, False)
 
         return {
-            "response": answer.answer.strip(),
+            "response": resp_text,
             "sources": sources,
             "needs_human": False,
             "handoff_reason": None,
@@ -281,6 +349,31 @@ def chat_endpoint(request: ChatRequest):
             status_code=503,
             detail="Dịch vụ AI tạm thời không khả dụng. Vui lòng thử lại sau.",
         ) from None
+
+
+@app.get("/api/history")
+def get_chat_history(limit: int = 50):
+    """Endpoint hỗ trợ xem danh sách lịch sử chat đã lưu trong CSDL"""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            SELECT id, question, response, sources, needs_human, created_at 
+            FROM chat_history 
+            ORDER BY id DESC 
+            LIMIT ?
+            """,
+            (limit,),
+        )
+        rows = cursor.fetchall()
+        conn.close()
+
+        return [dict(row) for row in rows]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.get("/")
 def root():
