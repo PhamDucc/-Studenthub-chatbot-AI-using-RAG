@@ -14,7 +14,6 @@ from qdrant_client import QdrantClient
 # Dùng chung cấu hình với ingest.py, không thay đổi ingestion.
 from ingest import BASE, COLLECTION, EMBED_MODEL, QDRANT_DIR
 
-
 load_dotenv(BASE / ".env")
 logger = logging.getLogger(__name__)
 
@@ -22,7 +21,6 @@ FALLBACK_MESSAGE = (
     "Mình chưa tìm thấy đủ thông tin trong tài liệu UET để trả lời "
     "câu hỏi này. Bạn có thể yêu cầu nhân viên tư vấn hỗ trợ."
 )
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -87,7 +85,6 @@ async def lifespan(app: FastAPI):
         if gemini_client is not None:
             gemini_client.close()
 
-
 app = FastAPI(
     title="UET Student Hub Chatbot API",
     lifespan=lifespan,
@@ -103,7 +100,6 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
-
 
 class ChatMessage(BaseModel):
     role: str
@@ -122,7 +118,6 @@ class ChatMessage(BaseModel):
             and isinstance(part.get("text"), str)
         ).strip()
 
-
 class ChatRequest(BaseModel):
     prompt: str | None = Field(default=None, max_length=12000)
     messages: list[ChatMessage] = Field(default_factory=list)
@@ -138,11 +133,9 @@ class ChatRequest(BaseModel):
 
         return ""
 
-
 class GeneratedAnswer(BaseModel):
     answer: str
     supported: bool
-
 
 def build_context(points):
     contexts = []
@@ -177,7 +170,6 @@ def build_context(points):
 
     return "\n\n".join(contexts), sources
 
-
 def request_human(reason: str):
     # Đây là tín hiệu cho frontend, chưa kết nối nhân viên thật.
     return {
@@ -186,7 +178,6 @@ def request_human(reason: str):
         "needs_human": True,
         "handoff_reason": reason,
     }
-
 
 @app.post("/api/chat")
 def chat_endpoint(request: ChatRequest):
@@ -223,12 +214,36 @@ def chat_endpoint(request: ChatRequest):
         if not context_text:
             return request_human("no_relevant_documents")
 
+        # XỬ LÝ LỊCH SỬ HỘI THOẠI
+        gemini_contents = []
+        
+        # Tách danh sách tin nhắn hiện tại
+        history_msgs = request.messages
+        # Nếu tin nhắn cuối cùng chính là câu hỏi hiện tại, loại bỏ nó để tránh lặp
+        if not request.prompt and history_msgs and history_msgs[-1].role == "user":
+            history_msgs = history_msgs[:-1]
+            
+        # Lấy tối đa 10 tin nhắn gần nhất (5 lượt hội thoại)
+        recent_history = history_msgs[-10:]
+        
+        for msg in recent_history:
+            text = msg.get_text()
+            if not text:
+                continue
+            # Chuyển đổi chuẩn role của Next.js sang Gemini
+            role = "model" if msg.role == "assistant" else "user"
+            gemini_contents.append({"role": role, "parts": [{"text": text}]})
+            
+        # Nạp câu hỏi cuối cùng kèm tài liệu RAG vào bộ nhớ
+        final_prompt = (
+            f"TÀI LIỆU THAM KHẢO:\n{context_text}\n\n"
+            f"CÂU HỎI SINH VIÊN:\n{question}"
+        )
+        gemini_contents.append({"role": "user", "parts": [{"text": final_prompt}]})
+
         result = app.state.gemini.models.generate_content(
             model=app.state.model_name,
-            contents=(
-                f"TÀI LIỆU THAM KHẢO:\n{context_text}\n\n"
-                f"CÂU HỎI SINH VIÊN:\n{question}"
-            ),
+            contents=gemini_contents,
             config=types.GenerateContentConfig(
                 system_instruction=(
                     "Bạn là trợ lý hỗ trợ sinh viên UET. "
@@ -266,7 +281,6 @@ def chat_endpoint(request: ChatRequest):
             status_code=503,
             detail="Dịch vụ AI tạm thời không khả dụng. Vui lòng thử lại sau.",
         ) from None
-
 
 @app.get("/")
 def root():
