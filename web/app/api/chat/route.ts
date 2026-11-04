@@ -1,29 +1,123 @@
 import {
-  streamText,
-  convertToModelMessages,
+  createUIMessageStream,
   createUIMessageStreamResponse,
-  toUIMessageStream,
-  type UIMessage,
 } from 'ai'
 
-export const maxDuration = 30
+export const maxDuration = 180
 
 export async function POST(req: Request) {
-  const { messages }: { messages: UIMessage[] } = await req.json()
+  let body: { messages?: unknown }
 
-  const result = streamText({
-    model: 'google/gemini-1.5-flash',
-    system: `Bạn là "UET AI Assistant", trợ lý ảo của Trường Đại học Công nghệ - ĐHQGHN (UET), hỗ trợ sinh viên về quy chế đào tạo, học phí và thủ tục hành chính.
+  try {
+    body = await req.json()
 
-Quy tắc:
-- Trả lời bằng ngôn ngữ người dùng sử dụng (mặc định tiếng Việt), ngắn gọn, thân thiện, rõ ràng.
-- Hỗ trợ giải đáp thắc mắc về học vụ, lịch trình đào tạo, thủ tục sinh viên theo thông tin của trường.
-- Nếu gặp câu hỏi về trường hợp cá biệt hoặc thông tin cần tra cứu hồ sơ chính xác, khuyên sinh viên liên hệ trực tiếp Phòng Đào tạo (P.213-G2) hoặc Phòng Công tác Sinh viên (P.107-G2). Không tự bịa số liệu.
-- Định dạng câu trả lời bằng văn bản ngắn gọn, dùng gạch đầu dòng "- " khi liệt kê.`,
-    messages: await convertToModelMessages(messages),
-  })
+    if (
+      !body ||
+      !Array.isArray(body.messages) ||
+      body.messages.length === 0
+    ) {
+      return Response.json(
+        { error: 'Thiếu lịch sử hoặc câu hỏi.' },
+        { status: 400 },
+      )
+    }
+  } catch {
+    return Response.json(
+      { error: 'JSON không hợp lệ.' },
+      { status: 400 },
+    )
+  }
 
-  return createUIMessageStreamResponse({
-    stream: toUIMessageStream({ stream: result.stream }),
-  })
+  try {
+    const baseUrl =
+      process.env.CHATBOT_API_URL || 'http://127.0.0.1:8000'
+
+    const upstream = await fetch(
+      `${baseUrl.replace(/\/$/, '')}/api/chat`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+
+        // Python nhận lịch sử và lấy tối đa 5 lượt trước.
+        body: JSON.stringify({
+          messages: body.messages,
+        }),
+
+        signal: AbortSignal.timeout(170_000),
+        cache: 'no-store',
+      },
+    )
+
+    if (!upstream.ok) {
+      console.error(
+        'FastAPI /api/chat status:',
+        upstream.status,
+      )
+
+      return Response.json(
+        { error: 'Không xử lý được câu hỏi. Vui lòng thử lại.' },
+        { status: upstream.status },
+      )
+    }
+
+    const data = await upstream.json()
+
+    if (
+      typeof data.response !== 'string' ||
+      !Array.isArray(data.sources)
+    ) {
+      throw new Error('Phản hồi FastAPI không hợp lệ')
+    }
+
+    const sources = data.sources.filter(
+      (source: unknown): source is string =>
+        typeof source === 'string',
+    )
+
+    const text =
+      data.response +
+      (sources.length
+        ? `\n\nNguồn: ${sources.join(', ')}`
+        : '')
+
+    // Chuyển JSON của FastAPI sang định dạng useChat() cần.
+    const stream = createUIMessageStream({
+      execute: ({ writer }) => {
+        writer.write({
+          type: 'text-start',
+          id: 'answer',
+        })
+
+        writer.write({
+          type: 'text-delta',
+          id: 'answer',
+          delta: text,
+        })
+
+        writer.write({
+          type: 'text-end',
+          id: 'answer',
+        })
+
+        writer.write({
+          type: 'data-handoff',
+          data: {
+            needs_human: data.needs_human === true,
+            reason: data.handoff_reason ?? null,
+          },
+        })
+      },
+    })
+
+    return createUIMessageStreamResponse({ stream })
+  } catch {
+    return Response.json(
+      {
+        error: 'Không kết nối được backend hoặc hết thời gian chờ.',
+      },
+      { status: 503 },
+    )
+  }
 }

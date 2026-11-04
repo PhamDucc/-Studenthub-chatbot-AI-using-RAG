@@ -59,6 +59,7 @@ issued_date: 2026-08-07
 ## PHẦN III: QUY CHẾ ĐÁNH GIÁ ĐIỂM RÈN LUYỆN (ĐRL)
 
 ### 1. Nguyên tắc và Cách tính điểm
+- **Đánh giá điểm rèn luyện** Sinh viên tự đánh giá điểm rèn luyện, vào mục đánh giá điểm rèn luyện trên web studenthub.
 - **Thang điểm chuẩn:** Thang điểm 100 (tổng hợp từ 5 nội dung đánh giá theo khung quy định của ĐHQGHN).
 - **Điểm cơ sở:** Mặc định **70 điểm** dành cho sinh viên chấp hành tốt, không vi phạm quy chế, sau đó tiến hành cộng hoặc trừ điểm theo minh chứng hoạt động thực tế.
 - **Quy tắc làm tròn:** Điểm rèn luyện **không tính điểm lẻ** (làm tròn thành số nguyên).

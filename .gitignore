@@ -10,3 +10,6 @@ __pycache__/
 chatbot/qdrant_data/
 chatbot/chroma_db/
 chatbot/chunks.jsonl
+chatbot/chat_history.db
+chatbot/chat_history.db-*
+chatbot/chat_history.db.*

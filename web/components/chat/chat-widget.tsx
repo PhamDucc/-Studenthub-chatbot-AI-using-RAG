@@ -200,7 +200,7 @@ function AssistantBubble({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-end gap-2">
       <BotAvatar />
-      <p className="max-w-[80%] whitespace-pre-wrap rounded-2xl rounded-bl-sm border bg-card px-3.5 py-2.5 text-sm leading-relaxed text-card-foreground">
+      <p className="min-w-0 max-w-[80%] whitespace-pre-wrap [overflow-wrap:anywhere] rounded-2xl rounded-bl-sm border bg-card px-3.5 py-2.5 text-sm leading-relaxed text-card-foreground">
         {children}
       </p>
     </div>
