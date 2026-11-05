@@ -1,9 +1,12 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { useChat } from '@ai-sdk/react'
 import { Bot, Database, Minus, RotateCcw, SendHorizontal, Sparkles, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+
+type ChatSource = { number: number; title: string; heading: string; source: string }
+type ChatMessage = { id: string; role: 'user' | 'assistant'; text: string; sources?: ChatSource[] }
+type ChatResponse = { answer?: string; sources?: ChatSource[]; error?: string; warning?: string }
 
 const suggestions = [
   'Học phí CLC bao nhiêu một tín chỉ?',
@@ -15,24 +18,64 @@ const suggestions = [
 export function ChatWidget() {
   const [open, setOpen] = useState(false)
   const [input, setInput] = useState('')
-  const { messages, sendMessage, status, setMessages, error } = useChat()
+  const [messages, setMessages] = useState<ChatMessage[]>([])
+  const [isBusy, setIsBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
-  const isBusy = status === 'submitted' || status === 'streaming'
+  const requestRef = useRef<AbortController | null>(null)
 
-  const lastMessage = messages[messages.length - 1]
-  const showTyping =
-    status === 'submitted' ||
-    (status === 'streaming' && lastMessage?.role === 'assistant' && !lastMessage.parts.some((p) => p.type === 'text' && p.text))
+  const showTyping = isBusy
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
   }, [messages, showTyping])
 
-  function submit(text: string) {
+  useEffect(() => () => requestRef.current?.abort(), [])
+
+  async function submit(text: string) {
     const value = text.trim()
     if (!value || isBusy) return
-    sendMessage({ text: value })
+    const controller = new AbortController()
+    requestRef.current = controller
+    setMessages((current) => [...current, { id: crypto.randomUUID(), role: 'user', text: value }])
     setInput('')
+    setError(null)
+    setIsBusy(true)
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          question: value,
+          history: messages.slice(-6).map((message) => ({
+            role: message.role,
+            content: message.text.slice(0, 1000),
+          })),
+        }),
+        signal: controller.signal,
+      })
+      const result: ChatResponse = await response.json()
+      if (!response.ok || !result.answer) throw new Error(result.error || 'Không nhận được câu trả lời.')
+      setMessages((current) => [...current, {
+        id: crypto.randomUUID(), role: 'assistant', text: result.answer!, sources: result.sources ?? [],
+      }])
+      if (result.warning) setError('Gemini không khả dụng; đang hiển thị đoạn trích từ tài liệu.')
+    } catch (cause) {
+      if (!controller.signal.aborted) setError(cause instanceof Error ? cause.message : 'Không kết nối được tới trợ lý.')
+    } finally {
+      if (requestRef.current === controller) {
+        requestRef.current = null
+        setIsBusy(false)
+      }
+    }
+  }
+
+  function resetChat() {
+    requestRef.current?.abort()
+    requestRef.current = null
+    setMessages([])
+    setError(null)
+    setIsBusy(false)
   }
 
   return (
@@ -59,7 +102,7 @@ export function ChatWidget() {
           {messages.length > 0 && (
             <button
               type="button"
-              onClick={() => setMessages([])}
+              onClick={resetChat}
               className="rounded-md p-1.5 text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground"
             >
               <RotateCcw className="size-4" aria-hidden="true" />
@@ -98,18 +141,16 @@ export function ChatWidget() {
           )}
 
           {messages.map((message) => {
-            const text = message.parts.map((p) => (p.type === 'text' ? p.text : '')).join('')
             if (message.role === 'user') {
               return (
                 <div key={message.id} className="flex justify-end">
                   <p className="max-w-[80%] whitespace-pre-wrap rounded-2xl rounded-br-sm bg-primary px-3.5 py-2.5 text-sm text-primary-foreground">
-                    {text}
+                    {message.text}
                   </p>
                 </div>
               )
             }
-            if (!text) return null
-            return <AssistantBubble key={message.id}>{text}</AssistantBubble>
+            return <AssistantBubble key={message.id} sources={message.sources}>{message.text}</AssistantBubble>
           })}
 
           {showTyping && (
@@ -126,7 +167,7 @@ export function ChatWidget() {
 
           {error && (
             <p className="rounded-lg border border-destructive/30 bg-destructive/5 px-3 py-2 text-xs text-destructive">
-              Đã xảy ra lỗi khi kết nối tới trợ lý. Vui lòng thử lại.
+              {error}
             </p>
           )}
         </div>
@@ -167,7 +208,7 @@ export function ChatWidget() {
             </button>
           </div>
           <p className="mt-2 text-center text-[11px] text-muted-foreground">
-            Câu trả lời được truy xuất từ quy chế & thông báo chính thức của UET.
+            Câu trả lời tham khảo từ tài liệu trong bộ dữ liệu demo.
           </p>
         </form>
       </section>
@@ -196,13 +237,23 @@ function BotAvatar() {
   )
 }
 
-function AssistantBubble({ children }: { children: React.ReactNode }) {
+function AssistantBubble({ children, sources }: { children: React.ReactNode; sources?: ChatSource[] }) {
   return (
     <div className="flex items-end gap-2">
       <BotAvatar />
-      <p className="min-w-0 max-w-[80%] whitespace-pre-wrap [overflow-wrap:anywhere] rounded-2xl rounded-bl-sm border bg-card px-3.5 py-2.5 text-sm leading-relaxed text-card-foreground">
-        {children}
-      </p>
+      <div className="max-w-[85%] rounded-2xl rounded-bl-sm border bg-card px-3.5 py-2.5 text-sm leading-relaxed text-card-foreground">
+        <p className="whitespace-pre-wrap">{children}</p>
+        {sources && sources.length > 0 && (
+          <div className="mt-3 border-t pt-2 text-xs text-muted-foreground">
+            <p className="font-semibold">Nguồn tra cứu</p>
+            {sources.map((source) => (
+              <p key={`${source.number}-${source.source}`} className="mt-1">
+                [{source.number}] {source.source} · {source.heading}
+              </p>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
