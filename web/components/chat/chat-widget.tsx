@@ -1,10 +1,18 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { Bot, Database, Minus, RotateCcw, SendHorizontal, Sparkles, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-type ChatSource = { number: number; title: string; heading: string; source: string }
+type ChatSource = {
+  number: number
+  title: string
+  heading: string
+  source: string
+  score?: number
+  excerpt?: string
+}
 type ChatMessage = { id: string; role: 'user' | 'assistant'; text: string; sources?: ChatSource[] }
 type ChatResponse = { answer?: string; sources?: ChatSource[]; error?: string; warning?: string }
 
@@ -16,6 +24,7 @@ const suggestions = [
 ]
 
 export function ChatWidget() {
+  const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const [input, setInput] = useState('')
   const [messages, setMessages] = useState<ChatMessage[]>([])
@@ -77,6 +86,8 @@ export function ChatWidget() {
     setError(null)
     setIsBusy(false)
   }
+
+  if (pathname === '/tro-ly-ai') return null
 
   return (
     <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">

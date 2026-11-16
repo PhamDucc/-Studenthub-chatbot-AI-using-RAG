@@ -6,6 +6,7 @@ import {
   ClipboardCheck,
   LayoutDashboard,
   UserRound,
+  Sparkles,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -23,4 +24,5 @@ export const navItems: NavItem[] = [
   { href: '/tai-chinh', label: 'Tài chính sinh viên', icon: WalletCards },
   { href: '/ren-luyen', label: 'Đánh giá rèn luyện', icon: ClipboardCheck },
   { href: '/faq', label: 'Câu hỏi thường gặp', icon: HelpCircle },
+  { href: '/tro-ly-ai', label: 'Trợ lý UET AI', icon: Sparkles },
 ]

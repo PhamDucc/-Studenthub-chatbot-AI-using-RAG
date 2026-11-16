@@ -1,29 +1,38 @@
-import {
-  streamText,
-  convertToModelMessages,
-  createUIMessageStreamResponse,
-  toUIMessageStream,
-  type UIMessage,
-} from 'ai'
+import { backendUrl, parseChatRequest } from '@/lib/chat-request'
 
-export const maxDuration = 30
+export const maxDuration = 35
 
-export async function POST(req: Request) {
-  const { messages }: { messages: UIMessage[] } = await req.json()
+export async function POST(request: Request) {
+  const parsed = await parseChatRequest(request)
+  if ('error' in parsed) return parsed.error
 
-  const result = streamText({
-    model: 'google/gemini-1.5-flash',
-    system: `Bạn là "UET AI Assistant", trợ lý ảo của Trường Đại học Công nghệ - ĐHQGHN (UET), hỗ trợ sinh viên về quy chế đào tạo, học phí và thủ tục hành chính.
-
-Quy tắc:
-- Trả lời bằng ngôn ngữ người dùng sử dụng (mặc định tiếng Việt), ngắn gọn, thân thiện, rõ ràng.
-- Hỗ trợ giải đáp thắc mắc về học vụ, lịch trình đào tạo, thủ tục sinh viên theo thông tin của trường.
-- Nếu gặp câu hỏi về trường hợp cá biệt hoặc thông tin cần tra cứu hồ sơ chính xác, khuyên sinh viên liên hệ trực tiếp Phòng Đào tạo (P.213-G2) hoặc Phòng Công tác Sinh viên (P.107-G2). Không tự bịa số liệu.
-- Định dạng câu trả lời bằng văn bản ngắn gọn, dùng gạch đầu dòng "- " khi liệt kê.`,
-    messages: await convertToModelMessages(messages),
-  })
-
-  return createUIMessageStreamResponse({
-    stream: toUIMessageStream({ stream: result.stream }),
-  })
+  try {
+    const upstream = await fetch(`${backendUrl()}/chat`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Forwarded-For': request.headers.get('x-forwarded-for') ?? '127.0.0.1',
+      },
+      body: JSON.stringify(parsed.body),
+      cache: 'no-store',
+      signal: AbortSignal.timeout(30_000),
+    })
+    const data: unknown = await upstream.json()
+    if (typeof data !== 'object' || data === null) {
+      throw new Error('Phản hồi backend không hợp lệ.')
+    }
+    if (!upstream.ok) {
+      const message = 'error' in data && typeof data.error === 'string'
+        ? data.error
+        : 'Backend không xử lý được câu hỏi.'
+      return Response.json({ error: message }, { status: upstream.status })
+    }
+    return Response.json(data, { headers: { 'Cache-Control': 'no-store' } })
+  } catch (error) {
+    console.error('RAG backend unavailable:', error)
+    return Response.json(
+      { error: 'Không kết nối được dịch vụ tra cứu. Hãy kiểm tra Python backend.' },
+      { status: 503 },
+    )
+  }
 }
