@@ -1,0 +1,292 @@
+[
+ {
+  "id": "PP-01",
+  "question": "Em làm mất thẻ sinh viên rồi, giờ làm sao để có thẻ mới?",
+  "sources": [
+   "Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md"
+  ],
+  "anchors": [
+   "cấp lại thẻ sinh viên"
+  ]
+ },
+ {
+  "id": "PP-02",
+  "question": "Muốn ở ký túc xá Mỹ Đình thì phải nộp giấy tờ gì ạ?",
+  "sources": [
+   "Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md"
+  ],
+  "anchors": [
+   "Ký túc xá"
+  ]
+ },
+ {
+  "id": "PP-03",
+  "question": "Gia đình em vay tiền ngân hàng chính sách cho em đi học, cần giấy xác nhận gì từ trường?",
+  "sources": [
+   "Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md"
+  ],
+  "anchors": [
+   "vay vốn"
+  ]
+ },
+ {
+  "id": "PP-04",
+  "question": "Em đang ốm nặng muốn tạm dừng việc học một kỳ thì làm thế nào?",
+  "sources": [
+   "Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md"
+  ],
+  "anchors": [
+   "nghỉ học có thời hạn"
+  ]
+ },
+ {
+  "id": "PP-05",
+  "question": "Trường có cho đăng ký vé xe buýt giá ưu đãi không?",
+  "sources": [
+   "Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md"
+  ],
+  "anchors": [
+   "xe buýt"
+  ]
+ },
+ {
+  "id": "PP-06",
+  "question": "Em đã có chứng chỉ IELTS thì có phải học tiếng Anh trên lớp nữa không?",
+  "sources": [
+   "Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+   "Quy_che_dao_tao.md"
+  ],
+  "anchors": [
+   "miễn học và công nhận điểm tiếng Anh"
+  ]
+ },
+ {
+  "id": "PP-07",
+  "question": "Mình xin chuyển sang học một ngành khác trong trường được không, điều kiện ra sao?",
+  "sources": [
+   "Quy_che_dao_tao.md"
+  ],
+  "anchors": [
+   "Điều 28"
+  ]
+ },
+ {
+  "id": "PP-08",
+  "question": "Học bao nhiêu tín chỉ và đạt những gì thì mới được ra trường?",
+  "sources": [
+   "Quy_che_dao_tao.md"
+  ],
+  "anchors": [
+   "Điều 46"
+  ]
+ },
+ {
+  "id": "PP-09",
+  "question": "Điểm trung bình bao nhiêu thì được xếp loại học lực xuất sắc?",
+  "sources": [
+   "Quy_che_dao_tao.md"
+  ],
+  "anchors": [
+   "Điều 45"
+  ]
+ },
+ {
+  "id": "PP-10",
+  "question": "Làm nghiên cứu khoa học có được cộng điểm vào kết quả học tập không?",
+  "sources": [
+   "Quy_che_dao_tao.md"
+  ],
+  "anchors": [
+   "Điều 32"
+  ]
+ },
+ {
+  "id": "PP-11",
+  "question": "Thi trượt môn thì có được thi lại không, điểm F xử lý thế nào?",
+  "sources": [
+   "Quy_che_dao_tao.md"
+  ],
+  "anchors": [
+   "KIỂM TRA, THI"
+  ]
+ },
+ {
+  "id": "PP-12",
+  "question": "Em muốn bỏ bớt một môn đã đăng ký thì phải làm trước ngày nào?",
+  "sources": [
+   "Quy_che_dao_tao.md",
+   "Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md"
+  ],
+  "anchors": [
+   "Điều 23",
+   "Điều chỉnh môn học"
+  ]
+ },
+ {
+  "id": "PP-13",
+  "question": "Bị bắt quả tang quay cóp trong phòng thi thì chịu hình phạt gì?",
+  "sources": [
+   "Khen_thuong_ky_luat.md",
+   "Quy_che_dao_tao.md"
+  ],
+  "anchors": [
+   "PHẦN III"
+  ]
+ },
+ {
+  "id": "PP-14",
+  "question": "Sinh viên được khen thưởng khi nào, có tiền thưởng không?",
+  "sources": [
+   "Khen_thuong_ky_luat.md"
+  ],
+  "anchors": [
+   "Khen thưởng cá nhân"
+  ]
+ },
+ {
+  "id": "PP-15",
+  "question": "Bị kỷ luật rồi thì sau bao lâu hồ sơ được sạch lại?",
+  "sources": [
+   "Khen_thuong_ky_luat.md"
+  ],
+  "anchors": [
+   "Chấm dứt hiệu lực"
+  ]
+ },
+ {
+  "id": "PP-16",
+  "question": "Em là con thương binh thì có được giảm tiền học không?",
+  "sources": [
+   "Quy_dinh_ve_hoc_phi.md"
+  ],
+  "anchors": [
+   "miễn 100%",
+   "giảm 70%",
+   "giảm 50%"
+  ]
+ },
+ {
+  "id": "PP-17",
+  "question": "Chuyển khoản học phí xong mà chưa thấy cập nhật thì sao?",
+  "sources": [
+   "Quy_dinh_ve_hoc_phi.md"
+  ],
+  "anchors": [
+   "Các lưu ý quan trọng"
+  ]
+ },
+ {
+  "id": "PP-18",
+  "question": "Học lại một môn thì đóng tiền như thế nào so với học lần đầu?",
+  "sources": [
+   "Quy_dinh_ve_hoc_phi.md"
+  ],
+  "anchors": [
+   "Học phí học lại"
+  ]
+ },
+ {
+  "id": "PP-19",
+  "question": "Hộ nghèo có được hỗ trợ tiền sinh hoạt không?",
+  "sources": [
+   "Quy_dinh_ve_hoc_phi.md"
+  ],
+  "anchors": [
+   "HỖ TRỢ CHI PHÍ",
+   "Hỗ trợ chi phí học tập",
+   "TRỢ CẤP XÃ HỘI",
+   "Trợ cấp xã hội",
+   "miễn 100%",
+   "giảm 70%",
+   "giảm 50%"
+  ]
+ },
+ {
+  "id": "PP-20",
+  "question": "Có công ty nào tài trợ học bổng cho sinh viên không?",
+  "sources": [
+   "Hoc_bong_va_diem_ren_luyen.md"
+  ],
+  "anchors": [
+   "NGOÀI NGÂN SÁCH"
+  ]
+ },
+ {
+  "id": "PP-21",
+  "question": "Tham gia hoạt động tình nguyện thì được cộng bao nhiêu điểm rèn luyện?",
+  "sources": [
+   "Hoc_bong_va_diem_ren_luyen.md"
+  ],
+  "unanswerable": true
+ },
+ {
+  "id": "PP-22",
+  "question": "Bị kỷ luật thì điểm rèn luyện tối đa chỉ được loại nào?",
+  "sources": [
+   "Hoc_bong_va_diem_ren_luyen.md"
+  ],
+  "anchors": [
+   "Giới hạn phân loại ĐRL"
+  ]
+ },
+ {
+  "id": "PP-23",
+  "question": "Muốn gặp thầy cô phòng đào tạo thì gọi số nào, email gì?",
+  "sources": [
+   "Thong_tin_lien_he_voi_nha_truong.md"
+  ],
+  "anchors": [
+   "Phòng Đào tạo"
+  ]
+ },
+ {
+  "id": "PP-24",
+  "question": "Quên mật khẩu cổng thông tin sinh viên thì liên hệ ai?",
+  "sources": [
+   "Thong_tin_lien_he_voi_nha_truong.md"
+  ],
+  "unanswerable": true
+ },
+ {
+  "id": "OT-01",
+  "question": "Thủ đô của nước Pháp là gì?",
+  "sources": [],
+  "unanswerable": true,
+  "offtopic": true
+ },
+ {
+  "id": "OT-02",
+  "question": "Cách nấu phở bò ngon tại nhà?",
+  "sources": [],
+  "unanswerable": true,
+  "offtopic": true
+ },
+ {
+  "id": "OT-03",
+  "question": "Giá bitcoin hôm nay bao nhiêu?",
+  "sources": [],
+  "unanswerable": true,
+  "offtopic": true
+ },
+ {
+  "id": "OT-04",
+  "question": "Viết giúp mình bài thơ về mùa thu",
+  "sources": [],
+  "unanswerable": true,
+  "offtopic": true
+ },
+ {
+  "id": "OT-05",
+  "question": "Đội tuyển Việt Nam đá trận tối nay mấy giờ?",
+  "sources": [],
+  "unanswerable": true,
+  "offtopic": true
+ },
+ {
+  "id": "OT-06",
+  "question": "Hướng dẫn cài đặt Python trên Windows",
+  "sources": [],
+  "unanswerable": true,
+  "offtopic": true
+ }
+]

@@ -1,0 +1,10 @@
+[
+ {"id": "FU-01", "history": "Hạn nộp đơn xin hoãn thi là bao lâu?", "question": "Còn đơn phúc khảo thì sao?", "sources": ["Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md"], "anchors": ["Phúc khảo"]},
+ {"id": "FU-02", "history": "Thủ tục xin cấp bảng điểm gồm những gì?", "question": "Thế giấy xác nhận sinh viên thì sao?", "sources": ["Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md"], "anchors": ["Giấy xác nhận là sinh viên"]},
+ {"id": "FU-03", "history": "Điều kiện nhận học bổng khuyến khích học tập là gì?", "question": "Vậy còn học bổng do doanh nghiệp tài trợ?", "sources": ["Hoc_bong_va_diem_ren_luyen.md"], "anchors": ["NGOÀI NGÂN SÁCH"]},
+ {"id": "FU-04", "history": "Học phí học lần đầu tính thế nào?", "question": "Còn học lại thì sao?", "sources": ["Quy_dinh_ve_hoc_phi.md"], "anchors": ["Học phí học lại"]},
+ {"id": "FU-05", "history": "Khiển trách bao lâu thì được xóa kỷ luật?", "question": "Còn các hình thức kỷ luật khác gồm những gì?", "sources": ["Khen_thuong_ky_luat.md"], "anchors": ["Bốn mức độ"]},
+ {"id": "FU-06", "history": "Muốn ở ký túc xá cần hồ sơ gì?", "question": "Còn xin vé xe buýt thì sao?", "sources": ["Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md"], "anchors": ["xe buýt"]},
+ {"id": "FU-07", "history": "Số điện thoại phòng Công tác sinh viên là gì?", "question": "Phòng đào tạo thì sao?", "sources": ["Thong_tin_lien_he_voi_nha_truong.md"], "anchors": ["Phòng Đào tạo"]},
+ {"id": "FU-08", "history": "Quy trình nộp học phí qua StudentHub gồm mấy bước?", "question": "Ở đó một ngày tạo mã QR tối đa mấy lần?", "sources": ["Quy_dinh_ve_hoc_phi.md"], "anchors": ["Các lưu ý quan trọng"]}
+]

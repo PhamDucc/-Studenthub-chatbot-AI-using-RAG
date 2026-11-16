@@ -93,11 +93,17 @@ export GEMINI_MODEL="gemini-2.5-flash"
 python3 -m backend
 ```
 
+Backend tự đọc `backend/.env` nếu có. Biến môi trường đã export trong shell luôn
+được ưu tiên hơn giá trị trong file.
+
 The frontend can also point to another backend address:
 
 ```bash
 export PYTHON_API_URL="http://127.0.0.1:8000"
 ```
+
+Có thể tinh chỉnh retrieval bằng `RAG_TOP_K` (1–12, mặc định 6) và
+`RAG_MIN_SCORE` (mặc định 1.5).
 
 ## 7. Common troubleshooting
 
