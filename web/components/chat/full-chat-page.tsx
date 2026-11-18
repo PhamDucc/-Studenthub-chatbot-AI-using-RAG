@@ -138,7 +138,7 @@ type Conversation = {
 type StreamEvent =
   | { type: 'sources'; sources: ChatSource[] }
   | { type: 'delta'; text: string }
-  | { type: 'replace'; text: string }
+  | { type: 'replace'; text: string; presentation_only?: boolean }
   | { type: 'tool'; name: string; label: string }
   | { type: 'action'; action: ServiceAction }
   | {
@@ -411,8 +411,12 @@ export function FullChatPage() {
         } else if (event.type === 'replace') {
           ensureMessage({})
           text = event.text
-          steps = []
-          patch({ text, steps: [], action: undefined })
+          if (event.presentation_only) {
+            patch({ text })
+          } else {
+            steps = []
+            patch({ text, steps: [], action: undefined })
+          }
         } else if (event.type === 'tool') {
           ensureMessage({})
           steps = [...steps, event.label]

@@ -7,6 +7,7 @@ from ..models import ConversationTurn
 from .intent import classify, language_only_request
 from .lang import conversation_language, requested_language, resolve_language
 from .retrieval import normalize
+from .program_aliases import expand_program_names
 
 
 _REPEAT_WORDS = set((
@@ -46,8 +47,8 @@ def _substantive_question(question: str) -> str:
     # Preserve the actual question after an inline language instruction.
     parts = re.split(r"[:：]", question, maxsplit=1)
     if len(parts) == 2 and parts[1].strip() and language_only_request(parts[0]):
-        return parts[1].strip()
-    return question
+        return expand_program_names(parts[1].strip())
+    return expand_program_names(question)
 
 
 def _question_history(history: list[ConversationTurn]) -> list[ConversationTurn]:
@@ -105,4 +106,27 @@ def resolve_question(question: str, history: list[ConversationTurn],
                      if language == "vi" else
                      "Sure, I'll reply in English. What would you like to ask?")
         return ResolvedQuestion(question, meaningful, language, preference, reply)
-    return ResolvedQuestion(_substantive_question(question), meaningful, language, preference)
+    question = _substantive_question(question)
+    if not has_attachment:
+        from .evidence import named_programs
+        normalized = normalize(question)
+        credits = re.search(r'\b(\d+)\s*(?:tin(?:\s+chi)?|tc)\b', normalized)
+        graduation = re.search(r'ra truong|tot nghiep|con.*(?:bao nhieu|may).*(?:tin|tc)', normalized)
+        known_major = named_programs(question) or any(named_programs(turn.content)
+                                                     for turn in meaningful if turn.role == 'user')
+        if credits and graduation and not known_major:
+            reply = (f'Bạn học ngành, chương trình và khóa nào? Mình cần đối chiếu tổng tín chỉ '
+                     f'của đúng chương trình với {credits[1]} tín chỉ bạn đã học.' if language == 'vi' else
+                     f'Which degree program and cohort are you in? I need its credit requirement '
+                     f'to compare with the {credits[1]} credits you completed.')
+            return ResolvedQuestion(question, meaningful, language, preference, reply)
+        if not meaningful and re.search(r'\b(mon|hoc phan) (do|nay)\b', normalized):
+            reply = ('Bạn cho mình tên hoặc mã môn học và ngành/chương trình đang học nhé.'
+                     if language == 'vi' else 'Please share the course name or code and your degree program.')
+            return ResolvedQuestion(question, meaningful, language, preference, reply)
+        if re.fullmatch(r'(?:cho (?:em|minh|toi) hoi )?hoc bong(?: voi| a| nhe| nha| voi a| voi ah)*[.!?]*', normalized.strip()):
+            reply = ('Bạn muốn hỏi học bổng khuyến khích học tập hay học bổng tài trợ? '
+                     'Bạn cần biết điều kiện, mức học bổng hay cách nộp hồ sơ?' if language == 'vi' else
+                     'Are you asking about academic merit or sponsored scholarships, and eligibility, amounts, or applications?')
+            return ResolvedQuestion(question, meaningful, language, preference, reply)
+    return ResolvedQuestion(question, meaningful, language, preference)

@@ -10,7 +10,7 @@ from .answer_checks import completeness_issues
 from .intent import Intent, classify, needs_student_tools
 from .lang import detect
 from .rewrite import needs_rewrite, rewrite_query
-from .gemini import FollowUpFilter, api_error, build_prompt, generate_answer, request_budget, stream_turn, valid_citations
+from .gemini import FollowUpFilter, api_error, build_prompt, generate_answer, plain_math_notation, request_budget, require_tool_call, stream_turn, valid_citations
 from ..config import MAX_TOOL_ROUNDS, CHAT_TIMEOUT_SECONDS
 from ..models import ChatResult, ConversationTurn, Hit
 from .retrieval import best_sentence, extract_answer, search
@@ -249,16 +249,17 @@ def _run_model(question: str, history: list[ConversationTurn], intent: Intent,
             splitter, calls, raw_parts = FollowUpFilter(), [], []
             # The last round has no tools, which forces a final text answer.
             declared = tools.declarations() if allow_tools and round_number < MAX_TOOL_ROUNDS else None
-            for kind, value in stream_turn(contents, api_key, declared):
-                if kind == "text":
-                    text = splitter.feed(value)
-                    if text:
-                        started, answer = True, answer + text
-                        yield {"type": "delta", "text": text}
-                elif kind == "call":
-                    calls.append(value)
-                else:
-                    raw_parts = value
+            with require_tool_call(bool(declared) and round_number == 0):
+                for kind, value in stream_turn(contents, api_key, declared):
+                    if kind == "text":
+                        text = splitter.feed(value)
+                        if text:
+                            started, answer = True, answer + text
+                            yield {"type": "delta", "text": text}
+                    elif kind == "call":
+                        calls.append(value)
+                    else:
+                        raw_parts = value
             leftover, follow_ups = splitter.finish()
             if leftover:
                 started, answer = True, answer + leftover
@@ -309,6 +310,10 @@ def _run_model(question: str, history: list[ConversationTurn], intent: Intent,
                 started, answer = True, answer + leftover
                 yield {'type': 'delta', 'text': leftover}
             answer = answer.strip()
+        formatted = plain_math_notation(answer)
+        if formatted != answer:
+            answer = formatted
+            yield {'type': 'replace', 'text': answer, 'presentation_only': True}
         cited = _cited(answer, len(hits))
         if not used and not attachment and completeness_issues(question, hits, answer):
             raise Ungrounded

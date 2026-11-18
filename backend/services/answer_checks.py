@@ -34,9 +34,57 @@ def _course_rows(hits: list[Hit]):
                     yield hit.passage.source, code, block, role
 
 
+def _conduct_minimums(hits: list[Hit]) -> dict[str, int]:
+    minimums = {}
+    for hit in hits:
+        if hit.passage.source != 'Hoc_bong_va_diem_ren_luyen.md':
+            continue
+        for line in hit.passage.text.splitlines():
+            cells = [cell.strip() for cell in line.strip().strip('|').split('|')]
+            if len(cells) >= 3:
+                cell = _plain(cells[2])  # Conduct column, not the GPA column.
+            elif len(cells) == 2 and _plain(cells[0]) in ('xuat sac', 'tot', 'kha'):
+                cell = _plain(' '.join(cells))
+            else:
+                continue
+            match = re.search(r'\b(xuat sac|tot|kha)\b[^0-9]*(\d{2,})', cell)
+            if match:
+                minimums[match[1]] = int(match[2])
+    return minimums
+
+
 def completeness_issues(question: str, hits: list[Hit], answer: str) -> list[str]:
     q, draft = _plain(question), _plain(answer)
     issues = []
+    if re.search(r'\bdrl\b|ren luyen', q):
+        minimums = _conduct_minimums(hits)
+        raw = normalize(answer).replace('*', '')
+        for match in re.finditer(r'\bloai (xuat sac|tot|kha)(?: tro len)?\s*\([^)]{0,15}?(?:≥|>=|\\geq?)\s*(\d+)', raw):
+            line_start = raw.rfind('\n', 0, match.start()) + 1
+            roles = list(re.finditer(r'\b(?:gpa|drl|diem ren luyen|ren luyen)\b', raw[line_start:match.start()]))
+            if roles and roles[-1].group() == 'gpa':
+                continue
+            if not roles and match[1] != 'tot':
+                continue  # Khá/Xuất sắc alone may label GPA rather than conduct.
+            if match[1] in minimums and int(match[2]) != minimums[match[1]]:
+                issues.append(f'Ngưỡng điểm rèn luyện loại {match[1]} trong bảng nguồn là {minimums[match[1]]}, '
+                              f'khác ngưỡng {match[2]} đang ghi. Phân biệt ngưỡng phân loại ĐRL với '
+                              'điều kiện tối thiểu xét học bổng; ghi đúng cả hai nếu nhắc đến.')
+                break
+        for match in re.finditer(r'\b(?:drl|diem ren luyen)\b[^\d\n]{0,30}(\d{1,3})(?!\d)'
+                                 r'(?P<between>[^\n]{0,80}?)\bloai (xuat sac|tot|kha)\b(?! tro len)', raw):
+            if re.search(r'hoc bong|gpa', match['between']):
+                continue  # A scholarship level is not a conduct classification.
+            score = int(match[1])
+            eligible = [(label, minimum) for label, minimum in minimums.items() if minimum <= score <= 100]
+            if eligible:
+                expected, minimum = max(eligible, key=lambda item: item[1])
+                claimed = match[3]
+                if claimed != expected:
+                    issues.append(f'Theo bảng ĐRL trong nguồn, {score} điểm xếp loại {expected} (từ {minimum}), '
+                                  f'không phải loại {claimed}. Tách xếp loại ĐRL thực tế khỏi '
+                                  'mức tối thiểu để được xét học bổng và mức học bổng sau khi lấy yếu tố thấp hơn.')
+                    break
     curricula = [hit for hit in hits if hit.passage.source.startswith('CTDT_')]
     context = _plain('\n'.join(hit.passage.text for hit in curricula))
     course_blocks: dict[str, set[str]] = {}
@@ -104,6 +152,14 @@ def completeness_issues(question: str, hits: list[Hit], answer: str) -> list[str
         issues.append('Chú giải sai phép tổng: Σ/∑ là ký hiệu lấy tổng, n mới là số học phần. '
                       'Giữ trung bình có trọng số và phân biệt phạm vi GPA/CPA theo Điều 42.')
     source_text = _plain('\n'.join(hit.passage.text for hit in hits))
+    if ('hoc bong' in draft and 'thoi gian dao tao chuan' in source_text
+            and re.search(r'thoi gian dao tao.{0,100}(?:chua|can xac nhan)', draft)):
+        closing = re.search(r'(?:ket luan|tom lai)(.*)$', draft)
+        if (closing and re.search(r'ban (?:da )?du dieu kien', closing[1])
+                and not re.search(r'\bneu\b|voi dieu kien|can xac nhan|chua the|co dieu kien', closing[1])):
+            issues.append('Phần kết luận phải giữ điều kiện còn thiếu đã nêu trong thân bài. '
+                          'Chỉ xác nhận đạt các ngưỡng đã có dữ kiện; cần xác nhận thời gian đào tạo chuẩn '
+                          'và chờ xét chỉ tiêu, không kết luận đủ mọi điều kiện khi còn thiếu dữ liệu.')
     if ('24 tin chi' in draft and 'mot hoac hai trong ba dieu kien' in source_text
             and not re.search(r'don vi|thu truong|tuy theo', draft)):
         issues.append('Ngưỡng F quá 24 tín chỉ là một tiêu chí cảnh báo do đơn vị lựa chọn áp dụng. '
@@ -112,7 +168,7 @@ def completeness_issues(question: str, hits: list[Hit], answer: str) -> list[str
     coverage_context = (any(hit.passage.source == 'Pham_vi_du_lieu_can_doi_chieu.md' for hit in hits)
                         or 'danh ba khong chi dinh' in source_text)
     if ('ren luyen' in q and 'khong tu gan' in source_text
-            and re.search(r'nha truong khong tu gan', draft)):
+            and re.search(r'nha truong khong (?:tu gan|(?:quy dinh|an dinh|ban hanh|co)\b.{0,70}(?:diem|muc|co dinh))', draft)):
         issues.append('Hướng dẫn không tự gán điểm là giới hạn của câu trả lời khi thiếu bảng tiêu chí, '
                       'không phải quy định nhà trường không ấn định điểm cho từng hoạt động. '
                       'Nêu khung và ví dụ có nguồn, giữ phần mức điểm chi tiết cần bảng tiêu chí của đơn vị.')
@@ -142,7 +198,9 @@ def completeness_issues(question: str, hits: list[Hit], answer: str) -> list[str
         issues.append('Chỉ xác nhận giới hạn bằng chứng trong kho tài liệu/nguồn đã kiểm tra. '
                       'Sửa khẳng định “chưa có văn bản/quy định” thành “trong các tài liệu đã kiểm tra chưa tìm thấy…”. '
                       'Việc chưa tìm được không chứng minh nhà trường không có quy định.')
-    if (re.search(r'tro lai|tiep tuc', q) and re.search(r'bao luu|nghi hoc', q)
+    return_to_study = (re.search(r'tro lai|tiep tuc', q) and re.search(r'bao luu|nghi hoc', q)
+                       or re.search(r'(?:tro lai|quay lai|tiep tuc) (?:viec )?hoc', draft))
+    if (return_to_study
             and '2 tuan truoc khi het thoi han' in source_text
             and 'it nhat 05 ngay lam viec' in source_text
             and re.search(r'(?:0?5|nam) ngay lam viec', draft)
@@ -153,8 +211,9 @@ def completeness_issues(question: str, hits: list[Hit], answer: str) -> list[str
     if (any(hit.passage.source == 'Dang_ky_khoa_luan_CNTT_2026.md' for hit in hits)
             and re.search(r'(trung binh chung cac hoc phan|trung binh chung tich luy|cpa) tbc|'
                           r'tbc (la|tuong duong) (diem )?(trung binh chung cac hoc phan|trung binh chung tich luy|cpa)', draft)):
-        issues.append('Thông báo đăng ký khóa luận chỉ ghi TBC và TCTL. Giữ nhãn TBC như trong thông báo; '
-                      'không tự định nghĩa TBC là CPA/GPA tích lũy hoặc điểm trung bình chung các học phần. '
+        issues.append('Bỏ phần diễn giải tên của TBC trong bản nháp. Dùng nguyên hai nhãn cột '
+                      '“TBC tối thiểu” và “TCTL tối thiểu” như bảng thông báo. '
+                      'Dẫn vào bảng bằng câu “Các ngưỡng được ghi trong thông báo theo từng khóa:”. '
                       'Giữ ngưỡng theo từng khóa và phạm vi đợt, tiên quyết CS3138 cùng phần cần hỏi thêm.')
     if ('hoc bong' in q and 'thi lai' in q and 'lan thu nhat' in source_text
             and ('thi lai' not in draft or not re.search(r'khong.{0,100}(thay|dung diem|lay diem)', draft))):
@@ -168,8 +227,9 @@ def completeness_issues(question: str, hits: list[Hit], answer: str) -> list[str
                       'Nêu điều kiện tiên quyết đã biết và Điều 21.7; tách khỏi ngưỡng điểm/tín chỉ riêng theo khóa/đợt còn thiếu.')
     credit_limit = any('Điều 21.' in hit.passage.heading for hit in hits)
     duration_question = re.search(r'\bmay ky\b|\bso (?:hoc )?ky (?:it nhat|toi thieu)\b|'
-                                 r'\b(?:it nhat|toi thieu) (?:bao nhieu |may )?(?:hoc )?ky\b', q)
-    if credit_limit and 'tin chi' in q and duration_question:
+                                 r'\b(?:it nhat|toi thieu) (?:bao nhieu |may )?(?:hoc )?ky\b|'
+                                 r'\b\d+ (?:hoc )?ky\b.{0,45}(?:ra truong|tot nghiep)', q)
+    if credit_limit and duration_question and ('tin chi' in q or curricula):
         exclusions = ('giao duc the chat', 'giao duc quoc phong', 'ky nang bo tro', 'cai thien', 'tu chon tu do')
         raw = normalize(answer).replace('*', '')
         total_division = re.search(r'\b\d{2,}(?:[,.]\d+)?\s*(?:tin chi\s*)?/\s*\d+', raw)

@@ -76,7 +76,7 @@ def _program_view(source: str, question: str, lines: list[str]) -> Hit:
         core_end = min(core_end, plan)
 
     overview = bool(re.search(r'\b(muc tieu|chuan dau ra|ky nang|ngoai ngu|vi tri|cong viec|dam nhan|viec lam|nghe nghiep|nghe gi|lam nghe|ra truong|career|outcome)\b', query))
-    courses = bool(re.search(r'hoc phan|mon|chuyen nganh|chuyen sau|dinh huong|co so nganh|cot loi|tu chon|do an|khoa luan|studio|thuc tap|so sanh|khac|trung', query))
+    courses = bool(re.search(r'hoc phan|mon|chuyen nganh|chuyen sau|dinh huong|co so nganh|cot loi|tu chon|bat buoc|do an|khoa luan|studio|thuc tap|so sanh|khac|trung|\b(?:co day|day ve|co hoc|hoc ve|teach|teaches|cover)\b', query))
     schedule = bool(re.search(r'lo trinh|hoc ky|nam nhat|phan bo|studio|do an|thuc hanh|thuc tap', query))
     selected: set[int] = set()
     # Always keep totals, standard duration and exclusion notes, even if the
@@ -126,19 +126,26 @@ def _policy_sources(question: str) -> dict[str, list[str]]:
         add('Quy_che_dao_tao.md', 'Điều 41.', 'Điều 43.')
     if re.search(r'diem trung binh|gpa|cpa', q):
         add('Quy_che_dao_tao.md', 'Điều 42.', 'Điều 43.')
+        if re.search(r'dang ky|ky toi|hoc ky toi|\btin\b|\btc\b|tin chi', q):
+            add('Quy_che_dao_tao.md', 'Điều 21.', 'Điều 23.', 'Điều 44.')
         if re.search(r'xep loai|hoc luc|xuat sac', q):
             add('Quy_che_dao_tao.md', 'Điều 45.')
     if re.search(r'canh bao|hoc vu|diem f|tach mon|hoc lai|thi lai', q):
         add('Quy_che_dao_tao.md', 'Điều 21.', 'Điều 42.', 'Điều 44.')
+    if re.search(r'hoc cai thien|cai thien diem', q):
+        add('Quy_che_dao_tao.md', 'Điều 21.', 'Điều 42.')
+        if 'hoc phi' in q:
+            add('Quy_dinh_ve_hoc_phi.md', '2. Học phí học lại')
     if re.search(r'chuan dau ra', q) and re.search(r'ngoai ngu|tin hoc', q):
         add('Quy_che_dao_tao.md', 'Điều 13.', 'Điều 46.')
-    if 'tot nghiep' in q and re.search(r'dieu kien|cong nhan|ky luat', q):
+    if re.search(r'tot nghiep|ra truong', q) and re.search(r'dieu kien|cong nhan|ky luat|chac chan|duoc|bao nhieu|\bcon\b', q):
         add('Quy_che_dao_tao.md', 'Điều 46.')
         add('Khen_thuong_ky_luat.md', 'PHẦN II')
     if _transfer_request(question):
         add('Quy_che_dao_tao.md', 'Điều 27.', 'Điều 28.', 'Điều 42.')
-    if ('tin chi' in q and 'hoc bong' not in q
-            and re.search(r'dang ky|toi da|toi thieu|it nhat may ky', q)):
+    if ('hoc bong' not in q and
+            ((re.search(r'\b(tin chi|tin|tc)\b', q) and re.search(r'dang ky|toi da|toi thieu|it nhat may ky|ky toi', q))
+             or ('dang ky' in q and re.search(r'moi ky|hoc ky|het muc|toi da', q)))):
         add('Quy_che_dao_tao.md', 'Điều 21.')
     if re.search(r'nghi hoc|bao luu|tam dung (viec )?hoc', q):
         add('Quy_che_dao_tao.md', 'Điều 36.', 'Điều 17.')
@@ -147,7 +154,7 @@ def _policy_sources(question: str) -> dict[str, list[str]]:
         add('Quy_che_dao_tao.md', 'Điều 23.')
     if 'ky luat' in q and re.search(r'sau bao lau|xoa|cham dut|ho so', q):
         add('Khen_thuong_ky_luat.md', '2. Chấm dứt hiệu lực')
-    if 'hoc bong' in q and re.search(r'hoc lai|thi lai|cai thien|tin chi', q):
+    if 'hoc bong' in q and re.search(r'hoc lai|thi lai|cai thien|tin chi|\bgpa\b|\bcpa\b|\bdrl\b', q):
         add('Hoc_bong_va_diem_ren_luyen.md', 'PHẦN I')
     if re.search(r'nghien cuu khoa hoc|olympic', q):
         add('Quy_che_dao_tao.md', 'Điều 32.', 'Điều 27.')
@@ -226,7 +233,9 @@ def complete_evidence(question: str, ranked: list[Hit], passages: list[Passage],
     query = _plain(question)
     # Preserve the specialised prerequisite path, and don't turn admission or
     # non-existent-program questions into invented curriculum answers.
-    if re.search(r'tien quyet|prerequisite|diem chuan|tuyen sinh|xet tuyen|y da khoa', query):
+    if 'y da khoa' in query:
+        return []
+    if re.search(r'tien quyet|prerequisite|diem chuan|tuyen sinh|xet tuyen', query):
         return ranked[:limit]
     docs = _texts(data_signature())
     sources = named_programs(question)

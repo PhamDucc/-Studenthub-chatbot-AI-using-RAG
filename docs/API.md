@@ -129,6 +129,10 @@ Same request body as `POST /chat`. Responds with `text/event-stream`; each frame
 - `done`: `mode`, `warning`, `follow_ups[]` (suggested next questions), optional `error`
 - `error`: `error` message or `{ code, message, retry_after? }` for a failed connection/stream
 
+An optional `presentation_only: true` on `replace` means the answer was reformatted
+(for example, simple math notation rendered as Unicode). Preserve tool steps and
+pending action cards for this event; ordinary replacements clear them.
+
 If Gemini fails, `done.mode` is `unavailable` and `done.error` contains
 `{ code, message, retry_after }`. Codes are `timeout`, `rate_limit`, `unavailable`,
 `auth`, or `model`; `retry_after` is seconds or `null`. Failed generation is not

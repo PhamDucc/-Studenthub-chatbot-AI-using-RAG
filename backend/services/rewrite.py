@@ -17,17 +17,29 @@ from .lang import detect
 _REFERENCE = re.compile(r"\b(the|con|vay|do|nay|ay|no|kia|tren|nua|them|tiep|ngoai ra|truong hop do|cai do|nhu vay)\b")
 
 
+def context_detail(question: str) -> bool:
+    text = normalize(question)
+    if re.match(r'^(a khoan|khoan|minh nham|toi nham|nham|sua lai|thuc ra|neu|gia su|if)\b', text):
+        return True
+    question_words = re.search(r'bao nhieu|may tin|may ky|the nao|la gi|duoc khong|khong\?|chua\?|\?', text)
+    return not question_words and bool(re.search(r'\b(?:gpa|cpa|drl|qh\d{4}|hoc xong|he chuan)\b|'
+                                                r'^(?:minh|toi|em|t|to) hoc\b', text))
+
+
 def needs_rewrite(question: str, history: list[ConversationTurn]) -> bool:
     if not history or not any(turn.role == "user" for turn in history):
         return False
     reference = (re.search(r'\b(it|that|this|those|them|there|then)\b', normalize(question))
                  if detect(question) == 'en' else _REFERENCE.search(normalize(question)))
-    return len(tokens(question)) < 5 or bool(reference)
+    return len(tokens(question)) < 5 or bool(reference) or context_detail(question)
 
 
 def concatenated(question: str, history: list[ConversationTurn]) -> str:
     """Prepend the previous user question. Only sensible for very short questions: on a full question the
     extra words dilute retrieval (hit@1 0.75 -> 0.38 on the follow-up eval)."""
+    if context_detail(question):
+        recent = [turn.content for turn in history if turn.role == 'user'][-3:]
+        return ' '.join([*recent, question])
     if len(tokens(question)) >= 5:
         return question
     previous = next((turn.content for turn in reversed(history) if turn.role == "user"), None)

@@ -178,6 +178,8 @@ def _prefer_prerequisites(ranked: list[Hit], preferred: list[Passage], header: s
 
 def search(question: str, limit: int = TOP_K) -> list[Hit]:
     """Hybrid search: BM25 fused with dense embeddings (RRF); BM25 alone when dense is unavailable."""
+    from .program_aliases import expand_program_names
+    question = expand_program_names(question)
     passages, counts, df, avg_length = _index(data_signature())
     from .evidence import complete_evidence
     lexical = _bm25(question, passages, counts, df, avg_length)

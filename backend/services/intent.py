@@ -72,14 +72,14 @@ def language_only_request(question: str) -> bool:
 _INJECTION = re.compile(
     r"ignore (all |any |the )?(previous|prior|above)|disregard (the |all )?(previous|above|instructions)|"
     r"system prompt|developer message|reveal (your|the) (prompt|instructions)|jailbreak|\bdan mode\b|"
-    r"bo qua (tat ca |moi )?(cac )?(huong dan|chi dan|quy tac|luat)|quen (het )?(cac )?(huong dan|quy tac)|"
+    r"bo qua (tat ca |moi |het )?(cac )?(huong dan|chi dan|quy tac|quy dinh|luat)|quen (het )?(cac )?(huong dan|quy tac)|"
     r"(tiet lo|in ra|cho (toi|minh) xem|hien thi) (system )?prompt|(huong dan|chi dan) (he thong|ban dau) cua ban|"
     r"(gia vo|dong vai|ban bay gio la|you are now|pretend (to be|you are)) "
 )
 
 _PERSONAL = re.compile(
     r"\b(lich hoc|thoi khoa bieu|tkb|hoc gi|hoc mon gi|con no|dang no|no hoc phi|da dong|han (nop|dong)|"
-    r"gpa (cua )?(minh|em|toi)|diem (cua )?(minh|em|toi)|don (tu )?(cua )?(minh|em|toi)|trang thai don|don (da|dang) nop|"
+    r"gpa (cua )?(minh|em|toi)|(?:drl|diem ren luyen) (cua )?(minh|em|toi)|diem (cua )?(minh|em|toi)|don (tu )?(cua )?(minh|em|toi)|trang thai don|don (da|dang) nop|"
     r"tin chi (cua )?(minh|em|toi)|minh (da )?(hoc|dat|tich luy)|ho so cua (minh|em|toi))\b"
 )
 _REGULATION = re.compile(
@@ -102,6 +102,18 @@ _TOOL_REQUEST = re.compile(
 def needs_student_tools(question: str, history: list[ConversationTurn]) -> bool:
     """Keep private data tools for personal/mixed questions, not generic policies."""
     text = normalize(question)
+    # Supplied values and degree declarations are the scenario to answer, not
+    # permission to replace them with the portal's unrelated demo profile.
+    from .evidence import named_programs
+    from .program_aliases import expand_program_names
+    supplied = bool(re.search(r'\b\d+\s*(?:tin(?:\s+chi)?|tc)\b|\b(?:gpa|cpa|drl|diem ren luyen)\b.{0,25}\d', text)
+                    or (named_programs(expand_program_names(question)) and re.search(r'\bhoc\b|\bnganh\b', text)))
+    explicit_lookup = re.search(r'\b(?:kiem tra|tra cuu|xem|cho xem)\b.{0,60}\b(?:ho so|he thong|diem|cong no|lich hoc)\b|'
+                                r'\b(?:xin|nop|soan|request)\b.{0,35}\b(?:bang diem|giay xac nhan|transcript|don)\b|'
+                                r'\blich hoc|\bthoi khoa bieu|\btrang thai don|\bno hoc phi', text)
+    gpa_projection = re.search(r'nang gpa|len gpa|muc tieu.*gpa|gpa.*muc tieu|target.*gpa|gpa.*target', text)
+    if supplied and not explicit_lookup and not gpa_projection:
+        return False
     # Generic policy questions must not become personal-tool-only requests just
     # because they mention debt, discipline or another student-domain term.
     personal_subject = re.search(r'\b(minh|toi|em|tao|my|i)\b|\bcua t\b', text)
