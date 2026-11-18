@@ -673,6 +673,8 @@ Kết quả học tập của sinh viên được đánh giá sau mỗi học k�
    - $n_i$: Là số tín chỉ của học phần thứ $i$
    - $n$: Là tổng số học phần trong học kỳ hoặc tổng số học phần tính từ đầu khóa học tới thời điểm xem xét hoặc tổng số học phần đã tích lũy.
 
+   **Diễn giải ký hiệu:** Σ (hoặc ∑) là phép lấy tổng, không phải số học phần. n là số học phần trong phạm vi tính; n_i là tín chỉ từng học phần. Công thức có thể viết bằng lời: tổng (điểm hệ 4 × tín chỉ) chia tổng tín chỉ. Phạm vi GPA học kỳ gồm học phần đạt và không đạt; CPA chỉ gồm học phần đã đạt theo Điều 42.
+
 - Kết quả đánh giá học phần giáo dục quốc phòng - an ninh, giáo dục thể chất không tính vào điểm trung bình chung học kỳ, điểm trung bình chung các học phần và điểm trung bình chung tích lũy.
 - Điểm trung bình chung học kỳ được dùng để xét cảnh báo học vụ, buộc thôi học, nghỉ học tạm thời, xếp loại học lực, học bổng, khen thưởng sau mỗi học kỳ.
 - Điểm trung bình chung các học phần được dùng để đăng ký học cùng lúc chương trình đào tạo thứ hai, chuyển đổi sinh viên giữa các chương trình đào tạo.

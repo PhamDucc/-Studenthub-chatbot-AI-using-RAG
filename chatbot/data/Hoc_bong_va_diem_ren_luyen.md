@@ -33,6 +33,8 @@ issued_date: 2026-08-07
 - Điểm trung bình chung học kỳ để xét học bổng được tính từ **điểm thi/kiểm tra hết môn lần thứ nhất** trong học kỳ của các học phần nằm trong khung CTĐT tính đến thời điểm xét (bao gồm cả các học phần học lại, học cải thiện, học tự chọn tự do).
 - Các học phần học trong kỳ hè được tính điểm vào học kỳ 2 của năm học tương ứng để xét học bổng.
 
+**Diễn giải học lại và thi lại:** Học lại/học cải thiện là đăng ký học lại học phần trong kỳ và vẫn được tính theo nguyên tắc trên. Thi lại để nâng kết quả lần thi đầu trong cùng kỳ không làm điểm thi lại thay thế điểm thi/kiểm tra hết môn lần thứ nhất dùng xét học bổng. Không kết luận chỉ cần có điểm thi lại tốt hơn là đạt học bổng; vẫn phải đáp ứng điều kiện học tập, rèn luyện, tín chỉ, kỷ luật và thời gian đào tạo.
+
 ### 3. Điều kiện về số tín chỉ và Trình tự xét cấp
 - **Điều kiện tín chỉ:** Tại học kỳ xét học bổng, sinh viên phải hoàn thành **ít nhất 15 tín chỉ**.
 - **Xét học bổng kỳ cuối:** Riêng học kỳ cuối cùng của khóa học, căn cứ vào kết quả xét tốt nghiệp theo đúng quy chế đào tạo và điểm rèn luyện toàn khóa (sử dụng **điểm trung bình chung tích lũy toàn khóa - CPA** thay cho kết quả học kỳ đó). Trường hợp đặc biệt do Hiệu trưởng xem xét quyết định.
@@ -86,3 +88,15 @@ issued_date: 2026-08-07
 - **Sinh viên học cùng lúc 2 chương trình đào tạo (Song bằng):** Đánh giá ĐRL tại đơn vị quản lý chương trình 1 (có lấy ý kiến tham khảo từ đơn vị quản lý chương trình 2).
 - **Sinh viên chậm tiến độ / tốt nghiệp muộn:** Vẫn tiếp tục được đánh giá ĐRL trong thời gian học trả nợ môn hoặc hoàn thiện học phần điều kiện.
 - **Sinh viên khuyết tật, hoàn cảnh đặc biệt:** Có chính sách cộng điểm khuyến khích và ưu tiên ghi nhận sự nỗ lực vượt khó trong quá trình học tập, rèn luyện.
+
+### 5. Bổ sung quy trình đánh giá, khiếu nại và xử lý Yếu/Kém
+
+Nguồn: [QĐ 32/QĐ-ĐHQGHN, 05/01/2017, Điều 23–28](https://uet.vnu.edu.vn/quy-che-cong-tac-sinh-vien-cua-dai-hoc-quoc-gia-ha-noi-theo-quyet-dinh-32qd-dhqghn/) ([bản lưu UET](https://uet-test.uet.edu.vn/quy-che-cong-tac-sinh-vien-cua-dai-hoc-quoc-gia-ha-noi-theo-quyet-dinh-32qd-dhqghn/)).
+
+- Quy trình: tự đánh giá → họp lớp xét minh chứng, quá nửa đồng ý → Hội đồng khoa → Hội đồng trường → thủ trưởng công nhận. Kết quả phải công khai ít nhất 20 ngày trước quyết định chính thức.
+- Khiếu nại lên thủ trưởng đơn vị; giải quyết theo pháp luật về khiếu nại. Điều 28 không đặt thời hạn xử lý riêng cố định.
+- Yếu/Kém hai học kỳ liên tiếp: tạm ngừng học ít nhất một học kỳ kế tiếp; tái diễn hai kỳ liên tiếp lần thứ hai: buộc thôi học (Điều 27.5).
+
+### 6. Bổ sung hoạt động và khung điểm đánh giá
+
+Theo Điều 23–24 của nguồn trên: học tập/NCKH 0–20; chấp hành nội quy 0–25; chính trị, văn hóa, thể thao, tình nguyện 0–20; công dân/cộng đồng 0–25; công tác lớp, đoàn thể 0–10. Tiêu chí và điểm chi tiết do đơn vị ban hành theo minh chứng; không tự gán mức cộng/trừ cho từng hoạt động.

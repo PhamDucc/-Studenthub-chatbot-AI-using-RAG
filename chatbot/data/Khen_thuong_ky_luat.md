@@ -48,7 +48,8 @@ Việc khen thưởng toàn diện, định kỳ đối với cá nhân sinh vi�
 3. **Đình chỉ học tập có thời hạn:** Áp dụng khi sinh viên đang trong thời gian bị cảnh cáo mà vẫn tiếp tục vi phạm kỷ luật; vi phạm nghiêm trọng các hành vi sinh viên không được làm; hoặc bị phạt tù nhưng cho hưởng án treo. Thời hạn đình chỉ gồm: đình chỉ 01 học kỳ, đình chỉ 01 năm học hoặc theo thời gian án treo.
 4. **Buộc thôi học:** Áp dụng đối với sinh viên đang bị đình chỉ học tập mà vẫn tái phạm; hoặc vi phạm lần đầu nhưng tính chất và mức độ đặc biệt nghiêm trọng, gây ảnh hưởng xấu tới Nhà trường và xã hội; vi phạm pháp luật bị phạt tù giam.
 
-*Quy định lưu hồ sơ:* Hình thức kỷ luật từ mức **Cảnh cáo trở lên** phải được ghi lưu vào hồ sơ quản lý sinh viên và gửi thông báo về cho gia đình, địa phương nơi cư trú. Sinh viên đang trong thời gian thi hành quyết định kỷ luật sẽ bị **dừng xét tốt nghiệp**.
+* **Lưu hồ sơ và thông báo:** Hình thức kỷ luật từ mức **Cảnh cáo trở lên** phải được ghi lưu vào hồ sơ quản lý sinh viên và gửi thông báo về cho gia đình, địa phương nơi cư trú.
+* **Dừng xét tốt nghiệp:** Áp dụng với sinh viên đang trong thời gian thi hành quyết định kỷ luật. Phạm vi này không giới hạn ở mức Cảnh cáo; không gắn điều kiện “từ Cảnh cáo trở lên” của việc lưu hồ sơ vào quy định dừng xét tốt nghiệp.
 
 ### 2. Chấm dứt hiệu lực kỷ luật (Xóa án kỷ luật)
 * **Kỷ luật Khiển trách:** Sau **03 tháng** kể từ ngày ban hành quyết định, nếu sinh viên không tái phạm và không có vi phạm mới đến mức phải xử lý thì đương nhiên được chấm dứt hiệu lực kỷ luật và khôi phục các quyền lợi.

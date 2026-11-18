@@ -241,6 +241,8 @@ Nguon: https://uet.vnu.edu.vn/chuong-trinh-dao-tao-ky-thuat-hang-khong-vu-tru-ng
 
 *– Các học phần thuộc “Nhóm học phần bắt buộc của ĐHQGHN” và học phần Kỹ năng bổ trợ thực hiện theo đề cương chung của Đại học Quốc gia Hà Nội ban hành.*
 
+**Ghi chú biên tập đối chiếu số tín chỉ:** Bảng tóm tắt và dòng tổng khung chương trình ghi **150 tín chỉ**. Tuy nhiên, khối III ghi 3 tín chỉ Kỹ năng bổ trợ trong khi dòng III.1 và chú thích lại xác định đây là học phần điều kiện không tính tín chỉ tích lũy. Cách trình bày nguồn chưa thống nhất; cần phân biệt tổng bảng với số tín chỉ tích lũy được công nhận. Không khẳng định tổng 150 đã loại trừ 3 tín chỉ đó, và không tự chốt tổng mới 147 khi chưa có xác nhận chương trình/khóa. Đây là chú thích kiểm tra dữ liệu, không phải sửa quy định gốc.
+
 *– Khối lượng học tập của chương trình đào tạo, của mỗi thành phần hoặc của mỗi học phần trong chương trình đào tạo được xác định bằng số tín chỉ:*
 
 *+ Một tín chỉ được tính tương đương 50 giờ học tập định mức của người học, bao gồm cả thời gian dự giờ giảng, giờ học có hướng dẫn, tự học, nghiên cứu, trải nghiệm và dự kiểm tra, đánh giá.*

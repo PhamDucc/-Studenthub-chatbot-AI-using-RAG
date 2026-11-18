@@ -6,6 +6,18 @@ category: hoc-phi
 
 # HƯỚNG DẪN NỘP HỌC PHÍ VÀ CHẾ ĐỘ CHÍNH SÁCH - TRƯỜNG ĐẠI HỌC CÔNG NGHỆ (UET)
 
+## Bổ sung học phí công bố trong thông tin tuyển sinh năm 2026
+
+Nguồn: [Thông tin tuyển sinh đại học UET năm 2026, mục 10.2, trang 10–11](https://tuyensinh.uet.vnu.edu.vn/wp-content/images/Thong-tin-tuyen-sinh-DHCQ-nam-2026-cap-nhat.pdf). Đối chiếu bảng gốc ngày 17/11/2026.
+
+| Ngành/chương trình | Học phí công bố cho năm học 2026–2027 |
+| :--- | :--- |
+| Khoa học dữ liệu, chương trình Khoa học và Kỹ thuật dữ liệu (CN20) | 38.000.000 đồng/năm |
+| Trí tuệ nhân tạo; Thiết kế công nghiệp và đồ họa; Công nghệ vật liệu và Vi điện tử; Công nghệ kỹ thuật sinh học | 38.000.000 đồng/năm |
+| Công nghệ thông tin; Khoa học máy tính; Hệ thống thông tin; Kỹ thuật máy tính; Kỹ thuật Robot và các ngành còn lại trong bảng 10.2 | 44.000.000 đồng/năm |
+
+Trong bảng này, Khoa học dữ liệu thấp hơn nhóm 44 triệu là 6 triệu đồng/năm; không thể kết luận mọi ngành đào tạo chuẩn thu cùng mức. Đây là mức công bố của thông tin tuyển sinh 2026 cho năm học 2026–2027, không phải đơn giá tín chỉ hoặc số tiền học kỳ của mọi khóa. Với sinh viên khóa khác, học lại/cải thiện hoặc một học kỳ cụ thể, phải đối chiếu thông báo thu tương ứng; không tự suy ra khoản phải nộp từ bảng tuyển sinh.
+
 ---
 
 ## I. CÔNG THỨC TÍNH SỐ TIỀN HỌC PHÍ CẦN NỘP

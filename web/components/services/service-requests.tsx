@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { CheckCircle2, Paperclip, Send } from 'lucide-react'
 import { requestHistory, requestTypes, student, type ServiceRequest } from '@/lib/data'
 import { Card } from '@/components/portal/page-header'
@@ -22,6 +22,19 @@ export function ServiceRequests() {
   const [submitted, setSubmitted] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const selected = requestTypes.find((t) => t.value === type)!
+
+  // Requests filed through the AI assistant live in the backend; show them here too.
+  useEffect(() => {
+    fetch('/api/requests')
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data: { requests?: Array<{ id: string; type: string; submitted_at: string; status: ServiceRequest['status']; copies: number }> } | null) => {
+        if (!data?.requests) return
+        setHistory(data.requests.map((item) => ({
+          id: item.id, type: item.type, submittedAt: item.submitted_at, status: item.status, copies: item.copies,
+        })))
+      })
+      .catch(() => undefined)
+  }, [])
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()

@@ -2,6 +2,7 @@ node_modules/
 web/node_modules/ 
 .next/ 
 web/.next/ 
+*.tsbuildinfo
 *.local 
 .env* 
 
@@ -13,3 +14,8 @@ chatbot/chunks.jsonl
 chatbot/chat_history.db
 chatbot/chat_history.db-*
 chatbot/chat_history.db.*
+backend/feedback.db*
+backend/requests.db*
+backend/embeddings_cache.json
+backend/chatlog.db*
+backend/tickets.db*

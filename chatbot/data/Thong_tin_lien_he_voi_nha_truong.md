@@ -38,6 +38,7 @@ Tài liệu này cung cấp thông tin liên hệ chính thức của các phòn
   * Phụ trách tổ chức kỳ thi, giải quyết đơn xin hoãn thi, trùng ca thi và tiếp nhận đơn xin xem lại bài thi (phúc khảo).
   * Xét điều kiện làm khóa luận/đồ án tốt nghiệp và xét công nhận tốt nghiệp cử nhân, kỹ sư.
 * **Số điện thoại liên hệ (Đào tạo đại học):** `024 3202 6858`
+* **Email Phòng Đào tạo:** `daotao_dhcn@vnu.edu.vn`. Nguồn UET: [Thông báo VNU-TEST ngày 26/02/2024](https://uet.vnu.edu.vn/ky-thi-xet-chuan-dau-ra-ngoai-ngu-vnu-test-danh-cho-sinh-vien/) công bố cùng số điện thoại trên. Đối chiếu nguồn ngày 17/11/2026.
 * **Địa chỉ làm việc:** Phòng 213, Nhà G2, 144 Xuân Thủy, Cầu Giấy, Hà Nội (hoặc bộ phận tiếp nhận tại Nhà E3 / Phòng 107-G2 theo phân công từng đợt).
 * **Website chính thức:** https://uet.vnu.edu.vn/phong-dao-tao/
 
@@ -68,3 +69,22 @@ Tài liệu này cung cấp thông tin liên hệ chính thức của các phòn
 | **Xin hoãn thi có lý do chính đáng** | Phòng Đào tạo / CTSV | StudentHub (đính kèm minh chứng bệnh án/viện phí) |
 | **Đóng học phí muộn, thắc mắc công nợ** | Phòng CTSV & KHTC | Nộp đơn tại **P.210-G2** hoặc email: `hangtt@vnu.edu.vn` |
 | **Làm lại thẻ sinh viên tích hợp ngân hàng** | Phòng CTSV | Khai trên StudentHub $\rightarrow$ nhận tờ khai tại **P.107-G2** $\rightarrow$ nộp tại BIDV 106 Hoàng Quốc Việt |
+
+---
+
+## 5. Phòng Kế hoạch – Tài chính: liên hệ trực tiếp và biên lai
+
+Nguồn: [Danh bạ Phòng Kế hoạch Tài chính trên website UET](https://uet.vnu.edu.vn/phong-ke-hoach-tai-chinh/), đối chiếu ngày 17/11/2026.
+
+- Văn phòng theo danh bạ: **Phòng 103 – Nhà G2**, 144 Xuân Thủy, Hà Nội.
+- Điện thoại: **024 3754 7063**, **024 3754 9401**.
+- Email cán bộ được danh bạ công bố: **hattt@vnu.edu.vn** (kế toán viên Trần Thị Thu Hà). Đây là email cán bộ thuộc phòng; danh bạ không chỉ định một hộp thư chuyên cấp biên lai/hóa đơn.
+- Với thắc mắc học phí, chứng từ/biên lai, có thể gọi phòng để được chuyển đúng người phụ trách. Kênh phối hợp CTSV về nộp muộn/công nợ **P.210-G2, hangtt@vnu.edu.vn** khác với văn phòng trực tiếp KHTC; không đổi tên kênh phối hợp thành địa chỉ KHTC.
+
+## 6. Giờ tiếp nhận bộ phận một cửa và cơ sở liên hệ
+
+Nguồn đối chiếu: [thủ tục hành chính UET](https://uet.vnu.edu.vn/mot-van-ban-mau-bieu/) và [liên hệ trên Sổ tay sinh viên](https://handbook.uet.vnu.edu.vn/lien-he), ngày 17/11/2026.
+
+- Trang thủ tục công bố lịch nhận một số giấy tờ tại **P.107-G2**: bảng điểm/giấy tốt nghiệp tạm thời sau **15:00 thứ Tư và thứ Sáu**. Đây là lịch trả các kết quả đó, chưa phải khung giờ tiếp nhận mọi thủ tục trong tuần.
+- Các nguồn đã kiểm tra chưa công bố một khung giờ tiếp nhận trực tiếp chung có thể áp dụng chắc chắn cho mọi cơ sở. Cần hỏi đúng cơ sở và thủ tục; không tự đặt giờ sáng/chiều.
+- Trang liên hệ Sổ tay hiện ghi CTSV tại **Nhà UET2, khu đô thị ĐHQGHN tại Hòa Lạc, xã Hòa Lạc, Hà Nội**, điện thoại **024 3754 8864**, **098 9256 664**, email **ctsv_dhcn@vnu.edu.vn**. Có thể dùng các kênh này để xác nhận giờ tiếp và địa điểm trước khi đến; không suy ra mọi bộ phận G2 đã chuyển khỏi Cầu Giấy.
