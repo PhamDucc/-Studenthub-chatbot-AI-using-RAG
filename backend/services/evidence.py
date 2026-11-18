@@ -122,6 +122,37 @@ def _policy_sources(question: str) -> dict[str, list[str]]:
     def add(source: str, *headings: str):
         rules.setdefault(source, []).extend(headings)
 
+    # Reserve the dated official clarifications before older generic excerpts.
+    supplements = []
+    if re.search(r'canh bao|hoc vu', q):
+        supplements.append('1. Cảnh báo')
+    if re.search(r'chuan dau ra', q) and re.search(r'tin hoc|ngoai ngu', q):
+        supplements.append('2. Chuẩn đầu ra')
+    if re.search(r'bao luu|nghi hoc|tro lai hoc|tiep tuc hoc', q):
+        supplements.extend(('3. Bảo lưu', '6. Xin trở lại'))
+    if re.search(r'hoan.*(?:hoc phi|phi)|rut hoc phan', q):
+        supplements.append('4. Hoàn học phí')
+    if re.search(r'(?:cap lai|lam lai|mat)\b.{0,30}\bthe\b', q):
+        supplements.append('5. Phí cấp lại')
+    if re.search(r'mot cua|gio tiep|khung gio', q):
+        supplements.append('7. Giờ tiếp nhận')
+    if re.search(r'\bf\b|tach mon|rot mon', q) and re.search(r'bang diem|xoa|hoc lai', q):
+        supplements.append('8. Học lại')
+    if 'CTDT_MMT&TTDL.md' in named_programs(question) and re.search(r'ly thuyet|thuc hanh|phan bo', q):
+        supplements.append('9. Mạng máy tính')
+    programs = named_programs(question)
+    if any(name in programs for name in ('CTDT_Co_ky_thuat.md', 'CTDT_Ky_thuat_hang_khong_vu_tru.md')):
+        if re.search(r'tin chi|\btc\b|\btin\b|tich luy|tong|bo tro', q):
+            supplements.append('10. Tổng 150')
+        if 'CTDT_Ky_thuat_hang_khong_vu_tru.md' in programs and 'thuc tap' in q:
+            supplements.append('11. Thực tập ngành')
+    if 'CTDT_Tri_tue_nhan_tao.md' in programs and re.search(r'\bky\b|tich cuc|som|thoi gian|bao lau', q):
+        supplements.append('12. Trí tuệ nhân tạo')
+    if 'CTDT_An_toan_thong_tin.md' in programs and 'khoa luan' in q:
+        supplements.append('13. Điều kiện khóa luận')
+    if supplements:
+        add('Bo_sung_hoc_vu_va_thu_tuc_2026.md', *supplements)
+
     if re.search(r'quy doi|diem chu|he 10|he 4|thang diem 4', q):
         add('Quy_che_dao_tao.md', 'Điều 41.', 'Điều 43.')
     if re.search(r'diem trung binh|gpa|cpa', q):

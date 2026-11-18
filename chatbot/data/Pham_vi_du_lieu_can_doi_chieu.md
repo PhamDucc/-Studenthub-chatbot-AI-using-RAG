@@ -11,7 +11,7 @@ verified_date: 2026-11-17
 
 ## Cảnh báo học vụ: liên tiếp và tổng cộng
 
-Điều 44 của Quy chế 3626/QĐ-ĐHQGHN trong kho quy định không quá hai lần liên tiếp, còn giới hạn số lần do thủ trưởng đơn vị quy định. Chưa xác minh được ngưỡng tổng cộng áp dụng cho mọi khóa UET. Không đổi “hai lần liên tiếp” thành “hai lần trong toàn khóa” hoặc tự đặt mốc ba/bốn lần tổng cộng. Cần hỏi Phòng Đào tạo/cố vấn học tập kèm khóa học, các kỳ đã bị cảnh báo và quyết định xử lý.
+Điều 44 của Quy chế 3626/QĐ-ĐHQGHN và [thông báo riêng UET 17/02/2023](https://uet.edu.vn/quy-dinh-tieu-chi-xet-canh-bao-ket-qua-hoc-tap/) quy định không quá hai lần liên tiếp. UET chọn tiêu chí CPA (điểm a) cho cảnh báo từ HKII 2022–2023, GPA và tín chỉ F (điểm b/c) cho nhắc nhở. Thông báo không ấn định một mốc tổng cộng khác; không đổi “hai lần liên tiếp” thành “hai lần trong toàn khóa” hoặc tự đặt mốc ba/bốn lần tổng cộng. Muốn xét cá nhân cần khóa, chuỗi học kỳ và quyết định xử lý; không coi rải rác được phép vô hạn.
 
 ## Tin học và chuẩn đầu ra
 
@@ -27,7 +27,7 @@ verified_date: 2026-11-17
 
 ## Phí cấp lại thẻ sinh viên
 
-[Trang thủ tục UET](https://uet.vnu.edu.vn/mot-van-ban-mau-bieu/) nêu quy trình StudentHub → P.107-G2 → BIDV 106 Hoàng Quốc Việt nhưng không nêu mức phí cấp lại. Chưa xác minh được biểu phí áp đúng loại thẻ liên kết và thời điểm. Không suy ra miễn phí, không lấy giá của trường khác hoặc một loại thẻ ngân hàng khác. Hỏi CTSV hoặc BIDV khi nộp tờ khai để xác nhận phí hiện hành.
+[Trang thủ tục UET](https://uet.vnu.edu.vn/mot-van-ban-mau-bieu/) nêu quy trình StudentHub → P.107-G2 → BIDV 106 Hoàng Quốc Việt. Đối chiếu 18/11/2026 với [biểu phí BIDV áp dụng 21/05/2025, trang 6–7](https://bidv.com.vn/wps/wcm/connect/df6c711a-a771-459e-8c84-6be5c40b27a5/BIEU%2BPHI%2BDICH%2BVU%2BTHE.%2B2025.pdf?CVID=pqvreIg&MOD=AJPERES): phát hành lại thẻ ghi nợ nội địa vật lý cho khách hàng thông thường **50.000 đồng, chưa bao gồm VAT**. **30.000 đồng là phí thường niên** thẻ liên kết sinh viên. Chưa xác minh ưu đãi riêng UET–BIDV hoặc phí riêng của trường; không gán mức chung thành tổng tiền bắt buộc của mọi sinh viên. Hỏi BIDV để xác nhận đúng loại thẻ, thuế và miễn/giảm khi nộp.
 
 ## Giờ một cửa
 

@@ -152,6 +152,19 @@ def completeness_issues(question: str, hits: list[Hit], answer: str) -> list[str
         issues.append('Chú giải sai phép tổng: Σ/∑ là ký hiệu lấy tổng, n mới là số học phần. '
                       'Giữ trung bình có trọng số và phân biệt phạm vi GPA/CPA theo Điều 42.')
     source_text = _plain('\n'.join(hit.passage.text for hit in hits))
+    if (re.search(r'(?:cap lai|lam lai|mat)\b.{0,30}\bthe\b', q)
+            and 'phat hanh lai the vat ly 50 000' in source_text):
+        raw = normalize(answer).replace('*', '')
+        for line in re.split(r'[\n;!?]', raw):
+            if (re.search(r'30[., ]?000', line) and re.search(r'cap lai|lam lai|phat hanh lai', line)
+                    and not re.search(r'thuong nien|khong phai|khong dung', line)):
+                issues.append('30.000 đồng là phí thường niên, không phải phí phát hành lại. '
+                              'Biểu phí chung BIDV từ 21/05/2025 ghi 50.000 đồng cho thẻ ghi nợ nội địa '
+                              'vật lý khách hàng thông thường, chưa VAT; phải giữ phạm vi và ưu đãi cần xác nhận.')
+                break
+        if re.search(r'50[., ]?000', raw) and ('vat' not in raw or not re.search(r'xac nhan|uu dai|mien.giam|neu dung|neu ap dung', raw)):
+            issues.append('Khi nêu 50.000 đồng, phải ghi đây là biểu phí BIDV chung chưa VAT và '
+                          'cần xác nhận đúng sản phẩm/ưu đãi riêng; không coi là tổng tiền bắt buộc mọi sinh viên.')
     if ('hoc bong' in draft and 'thoi gian dao tao chuan' in source_text
             and re.search(r'thoi gian dao tao.{0,100}(?:chua|can xac nhan)', draft)):
         closing = re.search(r'(?:ket luan|tom lai)(.*)$', draft)
@@ -160,6 +173,21 @@ def completeness_issues(question: str, hits: list[Hit], answer: str) -> list[str
             issues.append('Phần kết luận phải giữ điều kiện còn thiếu đã nêu trong thân bài. '
                           'Chỉ xác nhận đạt các ngưỡng đã có dữ kiện; cần xác nhận thời gian đào tạo chuẩn '
                           'và chờ xét chỉ tiêu, không kết luận đủ mọi điều kiện khi còn thiếu dữ liệu.')
+        for sentence in re.split(r'(?<=[.!?])\s+|\n', answer):
+            claim = _plain(sentence)
+            if (re.search(r'\bban (?:van |da )?du dieu kien\b', claim)
+                    and not re.search(r'\bneu\b|voi dieu kien|can xac nhan|cac nguong|diem so|rieng ve', claim)):
+                issues.append('Không khẳng định đủ điều kiện ở câu mở đầu rồi mới nêu điều kiện chưa biết ở dưới. '
+                              'Nêu đạt các ngưỡng điểm/tín chỉ đã cung cấp và còn cần xác nhận thời gian đào tạo chuẩn, '
+                              'kể cả khi kết luận cuối đã có điều kiện.')
+                break
+    if ('mien' in q and 'hoc phi' in q and 'ho ngheo' in q
+            and re.search(r'neu.{0,80}khong thuoc.{0,40}(?:nhom doi tuong nay|nhom nay|dan toc thieu so)'
+                          r'.{0,120}khong.{0,60}mien', draft)
+            and not re.search(r'dien khac|doi tuong khac|cac nhom khac', draft)):
+        issues.append('Hộ nghèo riêng lẻ chưa đủ, nhưng dân tộc thiểu số nghèo/cận nghèo chỉ là một diện miễn học phí. '
+                      'Không kết luận ai ngoài nhóm đó đều không được miễn; nguồn còn các diện chính sách khác. '
+                      'Hỏi diện chính sách và minh chứng phù hợp trước khi kết luận cá nhân.')
     if ('24 tin chi' in draft and 'mot hoac hai trong ba dieu kien' in source_text
             and not re.search(r'don vi|thu truong|tuy theo', draft)):
         issues.append('Ngưỡng F quá 24 tín chỉ là một tiêu chí cảnh báo do đơn vị lựa chọn áp dụng. '
@@ -208,6 +236,12 @@ def completeness_issues(question: str, hits: list[Hit], answer: str) -> list[str
         issues.append('Nguồn có hai mốc xin trở lại học: Điều 36 ghi chậm nhất 2 tuần trước khi hết hạn; '
                       'trang thủ tục ghi ít nhất 05 ngày làm việc. Nêu cả hai cùng nguồn và cần đơn vị xác nhận, '
                       'không chỉ đưa mốc muộn hơn làm hạn chắc chắn. Hướng dẫn chủ động nộp sớm.')
+    if (return_to_study and '2 tuan truoc khi het thoi han' in source_text
+            and re.search(r'(?:nen|chu dong|khuyen nghi).{0,60}(?:0?2|hai) tuan', draft)
+            and not re.search(r'(?:quy che|dieu 36).{0,150}(?:0?2|hai) tuan|cham nhat (?:0?2|hai) tuan', draft)):
+        issues.append('Mốc 2 tuần là yêu cầu của Điều 36 Quy chế, không chỉ là lời khuyên để xử lý kịp. '
+                      'Gắn rõ mốc 2 tuần với Quy chế và mốc 05 ngày làm việc với trang thủ tục; '
+                      'khuyên nộp trước cả hai, không tự tuyên bố mốc nào đã bị hủy.')
     if (any(hit.passage.source == 'Dang_ky_khoa_luan_CNTT_2026.md' for hit in hits)
             and re.search(r'(trung binh chung cac hoc phan|trung binh chung tich luy|cpa) tbc|'
                           r'tbc (la|tuong duong) (diem )?(trung binh chung cac hoc phan|trung binh chung tich luy|cpa)', draft)):
@@ -225,7 +259,30 @@ def completeness_issues(question: str, hits: list[Hit], answer: str) -> list[str
             and 'CS3138' not in answer and 'thuc hanh nghien cuu' not in draft):
         issues.append('Dòng khóa luận trong CTĐT có tiên quyết UET.CS3138 (Thực hành nghiên cứu). '
                       'Nêu điều kiện tiên quyết đã biết và Điều 21.7; tách khỏi ngưỡng điểm/tín chỉ riêng theo khóa/đợt còn thiếu.')
+    if (re.search(r'thu truong don vi dao tao\s*\(\s*khoa', normalize(answer))
+            and any(hit.passage.source == 'Quy_che_dao_tao.md' for hit in hits)):
+        issues.append('Giữ đúng thuật ngữ thủ trưởng đơn vị đào tạo trong Quy chế; không tự chú giải '
+                      'đó là Khoa CNTT thuộc UET. Khoa là đầu mối nhận hướng dẫn/thông báo theo ngành, '
+                      'không được tự đồng nhất với cấp đơn vị đào tạo trong điều khoản.')
     credit_limit = any('Điều 21.' in hit.passage.heading for hit in hits)
+    if credit_limit:
+        for sentence in re.split(r'(?<=[.!?])\s+|\n', answer):
+            claim = _plain(sentence)
+            if (re.search(r'\b\d{2,}(?:[,.]\d+)?\s*(?:tin chi\s*)?/\s*\d+', normalize(sentence))
+                    and not re.search(r'khong (?:duoc |nen )?(?:lay|chia)|tranh (?:lay|chia)', claim)):
+                issues.append('Không tính khối lượng trung bình hợp lệ hay trần đăng ký bằng cách chia thẳng '
+                              'tổng tín chỉ CTĐT cho số kỳ, kể cả khi gọi là trần lý thuyết rồi thêm lưu ý. '
+                              'Bỏ các kết quả số từ phép chia đó; chỉ nêu công thức 3/2 khối lượng trung bình '
+                              'hợp lệ và phần dữ liệu kế hoạch còn thiếu sau các loại trừ Điều 21.')
+                break
+            if (re.search(r'ngoai nguong|ngoai.{0,25}quy dinh|vuot.{0,25}(?:toi da|tran)', claim)
+                    and re.search(r'dong y|phe duyet|chap thuan', claim)
+                    and re.search(r'thu truong|hieu truong', claim)
+                    and not re.search(r'it hon|duoi.{0,15}toi thieu|khong (?:co|cho phep|duoc)', claim)):
+                issues.append('Điều 21 chỉ cho thủ trưởng đồng ý đăng ký ít hơn mức tối thiểu. '
+                              'Không mở rộng thành quyền cho phép đăng ký ngoài mọi ngưỡng hoặc vượt trần tối đa. '
+                              'Giữ công thức trần và ngoại lệ học kỳ cuối đúng nguồn.')
+                break
     duration_question = re.search(r'\bmay ky\b|\bso (?:hoc )?ky (?:it nhat|toi thieu)\b|'
                                  r'\b(?:it nhat|toi thieu) (?:bao nhieu |may )?(?:hoc )?ky\b|'
                                  r'\b\d+ (?:hoc )?ky\b.{0,45}(?:ra truong|tot nghiep)', q)

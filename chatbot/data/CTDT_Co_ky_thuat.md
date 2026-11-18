@@ -316,6 +316,8 @@ Nguon: https://uet.edu.vn/50102-2/
 
 *– Các học phần thuộc “Nhóm học phần bắt buộc của ĐHQGHN” và học phần Kỹ năng bổ trợ thực hiện theo đề cương chung của Đại học Quốc gia Hà Nội ban hành.*
 
+**Đối chiếu tổng tín chỉ ngày 18/11/2026:** [Bảng gốc công bố 15/09/2025](https://uet.edu.vn/50102-2/) ghi **150 = 56 + 78 + 3 bổ trợ tự chọn + 13 thực tập/tốt nghiệp**. Mục bổ trợ tự chọn III.2 tính trong tổng; học phần điều kiện Kỹ năng bổ trợ không tính tích lũy. Không trừ thêm 3 để ra 147; đây là hai thành phần khác nhau.
+
 *– Khối lượng học tập của chương trình đào tạo, của mỗi thành phần hoặc của mỗi học phần trong chương trình đào tạo được xác định bằng số tín chỉ:*
 
 *+ Một tín chỉ được tính tương đương 50 giờ học tập định mức của người học, bao gồm cả thời gian dự giờ giảng, giờ học có hướng dẫn, tự học, nghiên cứu, trải nghiệm và dự kiểm tra, đánh giá.*

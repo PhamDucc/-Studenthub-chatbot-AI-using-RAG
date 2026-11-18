@@ -19,7 +19,8 @@ _REFERENCE = re.compile(r"\b(the|con|vay|do|nay|ay|no|kia|tren|nua|them|tiep|ngo
 
 def context_detail(question: str) -> bool:
     text = normalize(question)
-    if re.match(r'^(a khoan|khoan|minh nham|toi nham|nham|sua lai|thuc ra|neu|gia su|if)\b', text):
+    if (re.match(r'^(a khoan|khoan|dinh chinh|sua lai|thuc ra|neu|gia su|if)\b', text)
+            or re.match(r'^(?:(?:minh|toi|em|to|tao|t)\s+)?(?:(?:viet|ghi|noi|go|nhap)\s+)?(?:nham|sai)\b', text)):
         return True
     question_words = re.search(r'bao nhieu|may tin|may ky|the nao|la gi|duoc khong|khong\?|chua\?|\?', text)
     return not question_words and bool(re.search(r'\b(?:gpa|cpa|drl|qh\d{4}|hoc xong|he chuan)\b|'

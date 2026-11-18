@@ -241,7 +241,7 @@ Nguon: https://uet.vnu.edu.vn/chuong-trinh-dao-tao-ky-thuat-hang-khong-vu-tru-ng
 
 *– Các học phần thuộc “Nhóm học phần bắt buộc của ĐHQGHN” và học phần Kỹ năng bổ trợ thực hiện theo đề cương chung của Đại học Quốc gia Hà Nội ban hành.*
 
-**Ghi chú biên tập đối chiếu số tín chỉ:** Bảng tóm tắt và dòng tổng khung chương trình ghi **150 tín chỉ**. Tuy nhiên, khối III ghi 3 tín chỉ Kỹ năng bổ trợ trong khi dòng III.1 và chú thích lại xác định đây là học phần điều kiện không tính tín chỉ tích lũy. Cách trình bày nguồn chưa thống nhất; cần phân biệt tổng bảng với số tín chỉ tích lũy được công nhận. Không khẳng định tổng 150 đã loại trừ 3 tín chỉ đó, và không tự chốt tổng mới 147 khi chưa có xác nhận chương trình/khóa. Đây là chú thích kiểm tra dữ liệu, không phải sửa quy định gốc.
+**Đối chiếu tổng tín chỉ ngày 18/11/2026:** [Bảng gốc công bố 08/07/2026](https://uet.edu.vn/chuong-trinh-dao-tao-ky-thuat-hang-khong-vu-tru-nganh-ky-thuat-khong-gian-3/) tách III.1 Kỹ năng bổ trợ là học phần điều kiện không tính tích lũy và III.2 **3 tín chỉ bổ trợ tự chọn** (UET.AI2010 hoặc UET.CS2045). Tổng **150 = 56 + 78 + 3 tự chọn bổ trợ + 13 thực tập/tốt nghiệp**. Không trừ thêm 3 tín chỉ để thành 147. Ghi chú này thay cách diễn giải trước đã gộp nhầm hai mục bổ trợ, không thay bảng môn gốc.
 
 *– Khối lượng học tập của chương trình đào tạo, của mỗi thành phần hoặc của mỗi học phần trong chương trình đào tạo được xác định bằng số tín chỉ:*
 
