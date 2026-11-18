@@ -320,6 +320,8 @@ def _run_model(question: str, history: list[ConversationTurn], intent: Intent,
         if not used and not attachment and (not hits or not valid_citations(answer, len(hits))):
             raise Ungrounded
     except Ungrounded:
+        if hits:
+            yield {"type": "sources", "sources": []}
         yield from _fallback(search_query, [], None, replace=started, lang=lang)
         return
     except RuntimeError as exc:

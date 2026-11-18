@@ -404,6 +404,7 @@ export function FullChatPage() {
         if (completed) continue
         if (event.type === 'sources') {
           ensureMessage({ sources: event.sources })
+          patch({ sources: event.sources })
         } else if (event.type === 'delta') {
           ensureMessage({})
           text += event.text
