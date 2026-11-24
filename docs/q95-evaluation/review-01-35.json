@@ -1,0 +1,916 @@
+[
+  {
+    "id": 1,
+    "status": "partial",
+    "category": "answer_error",
+    "severity": "low",
+    "issues": [
+      "Giải thích sai ký hiệu Σ là 'Tổng số học phần'; tổng số học phần là n, còn Σ biểu thị phép lấy tổng. Công thức trung bình trọng số và bảng điểm còn lại đúng."
+    ],
+    "expected_correction": "Giữ công thức và bảng quy đổi; sửa chú giải thành Σ là ký hiệu lấy tổng, n là tổng số học phần thuộc phạm vi GPA hoặc CPA.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 668,
+        "quote": "A = \\frac{\\sum_{i=1}^{n} a_i n_i}{\\sum_{i=1}^{n} n_i}"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 674,
+        "quote": "$n$: Là tổng số học phần trong học kỳ"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "medium",
+    "issues": [
+      "Thiếu toàn bộ cột điểm hệ 4 được hỏi và kết luận rằng nguồn không cung cấp bảng quy đổi hệ 4, trong khi Điều 43 có đủ A+→4,0; A→3,7; B+→3,5; B→3,0; C+→2,5; C→2,0; D+→1,5; D→1,0; F→0. Danh sách truy xuất không có Điều 43."
+    ],
+    "expected_correction": "Truy xuất thêm Điều 43 rồi ghép thành bảng ba cột hệ 10, điểm chữ và hệ 4; bỏ nhận định không có dữ liệu hệ 4.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 653,
+        "quote": "mức điểm chữ của mỗi học phần được quy đổi thành điểm số như sau"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 657,
+        "quote": "| **A+** | 4,0 |"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 658,
+        "quote": "| **A** | 3,7 |"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 665,
+        "quote": "| **F** | 0 |"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 283,
+        "quote": "Điểm học phần cũ bị hủy bỏ khi việc đăng ký học lại để cải thiện điểm được chấp nhận"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "status": "partial",
+    "category": "answer_error",
+    "severity": "low",
+    "issues": [
+      "Nội dung bắt buộc học lại là đúng, nhưng phần bổ sung khẳng định cứ tổng F vượt 24 tín chỉ là sẽ bị cảnh báo, thiếu điều kiện đơn vị đào tạo lựa chọn áp dụng một hoặc hai trong ba tiêu chí cảnh báo."
+    ],
+    "expected_correction": "Giữ yêu cầu đăng ký học lại học phần bắt buộc bị F; nếu nêu cảnh báo học vụ phải nói tiêu chí trên được áp dụng theo quy định cụ thể của đơn vị đào tạo.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 281,
+        "quote": "Đối với các học phần bắt buộc, nếu bị điểm F, sinh viên phải đăng ký học lại học phần đó"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 686,
+        "quote": "Tổng số tín chỉ của các học phần bị điểm F còn tồn đọng"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 687,
+        "quote": "thủ trưởng đơn vị quy định áp dụng một hoặc hai trong ba điều kiện nêu trên"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 684,
+        "quote": "dưới 1,20 đối với sinh viên năm thứ nhất"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 685,
+        "quote": "dưới 0,80 đối với học kỳ đầu của khóa học, dưới 1,00 đối với các học kỳ tiếp theo"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 686,
+        "quote": "quá 24 tín chỉ hoặc tổng số tín chỉ không đạt trong học kì vượt quá 50%"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 687,
+        "quote": "nhưng không quá 2 lần liên tiếp"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "low",
+    "issues": [
+      "Bot trả lời đúng giới hạn không quá 2 lần liên tiếp và cơ chế buộc thôi học khi vượt giới hạn do đơn vị quy định, nhưng chưa thể cho con số tổng cộng mà người hỏi yêu cầu. Tài liệu chỉ giao đơn vị đào tạo quy định, không có ngưỡng tổng cộng cụ thể; đây là khoảng trống dữ liệu, không phải bịa đặt."
+    ],
+    "expected_correction": "Giữ lời giải thích có căn cứ; cần bổ sung quy định cụ thể của đơn vị đào tạo vào kho tài liệu để xác định số lần cảnh báo tổng cộng, không suy ra một ngưỡng cố định từ giới hạn liên tiếp.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 687,
+        "quote": "quy định số lần cảnh báo học vụ, nhưng không quá 2 lần liên tiếp"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 689,
+        "quote": "vượt quá giới hạn theo quy định của Thủ trưởng đơn vị đào tạo"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 268,
+        "quote": "tối thiểu không ít hơn 2/3 khối lượng trung bình một học kỳ"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 268,
+        "quote": "tối đa không vượt quá 3/2 khối lượng trung bình một học kỳ"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 309,
+        "quote": "không quá 18 tín chỉ trong mỗi học kỳ chính"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 310,
+        "quote": "trong 2 tuần kể từ đầu học kỳ chính, 1 tuần kể từ đầu học kỳ phụ"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 315,
+        "quote": "sau khi giảng viên phụ trách học phần nhận được giấy báo của Phòng Đào tạo"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 150,
+        "quote": "Mẫu đơn đăng ký điều chỉnh môn học"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 151,
+        "quote": "Phòng 107 – G2"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 218,
+        "quote": "không vượt quá 2 lần thời gian theo kế hoạch học tập chuẩn toàn khoá"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 215,
+        "quote": "8 học kỳ chính đối với đào tạo cử nhân"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "status": "partial",
+    "category": "answer_error",
+    "severity": "medium",
+    "issues": [
+      "Nêu đúng tám điều kiện của Điều 46 nhưng bỏ sót ràng buộc có liên quan trực tiếp từ tài liệu kỷ luật: sinh viên đang thi hành quyết định kỷ luật bị dừng xét tốt nghiệp. Danh sách hiện tại có thể khiến người đang bị kỷ luật tưởng đáp ứng Điều 46 là đủ."
+    ],
+    "expected_correction": "Bổ sung rằng sinh viên đang trong thời gian thi hành quyết định kỷ luật bị dừng xét tốt nghiệp theo tài liệu kỷ luật; dẫn nguồn này cạnh các điều kiện Điều 46.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 713,
+        "quote": "nếu có đủ các điều kiện sau"
+      },
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 51,
+        "quote": "Sinh viên đang trong thời gian thi hành quyết định kỷ luật sẽ bị **dừng xét tốt nghiệp**."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "low",
+    "issues": [
+      "Đã trả lời đúng mức ngoại ngữ bậc 3/bậc 4 theo quy chế và thừa nhận không có chuẩn tin học chung cụ thể. Phần tin học mà câu hỏi yêu cầu chưa được giải quyết bằng một chuẩn kiểm tra/chứng chỉ/ngưỡng cụ thể vì kho tài liệu không quy định chuẩn chung đó."
+    ],
+    "expected_correction": "Giữ phân biệt chuẩn ngoại ngữ theo loại chương trình và CNTT 'nếu có'; bổ sung văn bản chuẩn đầu ra tin học áp dụng cho ngành/khóa để trả lời chính xác, không tự đặt chứng chỉ hoặc ngưỡng điểm.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 174,
+        "quote": "Tương đương trình độ bậc 3"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 175,
+        "quote": "Tương đương trình độ bậc 4"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 739,
+        "quote": "chuẩn đầu ra về ngoại ngữ, công nghệ thông tin (nếu có)"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "low",
+    "issues": [
+      "Trả lời đúng các trường hợp nghỉ, cách tính thời gian đào tạo và mốc nộp đơn trở lại học theo Điều 36. Chưa thể đưa thời gian bảo lưu tối đa cụ thể được hỏi vì nguồn không đặt một số tháng/năm tối đa riêng."
+    ],
+    "expected_correction": "Giữ kết luận không có số tháng bảo lưu tối đa chung trong nguồn; cần quy định riêng hoặc quyết định cho nghỉ của từng trường hợp để xác định hạn. Không thay thế bằng một con số không có căn cứ.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 542,
+        "quote": "Nghỉ học tạm thời và bảo lưu kết quả"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 546,
+        "quote": "Thời gian nghỉ học tạm thời vì nhu cầu cá nhân được tính vào thời gian tối đa được phép học."
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 548,
+        "quote": "thời gian nghỉ học tạm thời không tính vào thời gian tối đa được phép học"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 107,
+        "quote": "M = a \\sum_{i=1}^{k} h_j n_i"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 110,
+        "quote": "Định mức học phí cho một tín chỉ"
+      },
+      {
+        "file": "chatbot/data/Quy_dinh_ve_hoc_phi.md",
+        "line": 59,
+        "quote": "theo số lượng tín chỉ đăng ký thực tế"
+      },
+      {
+        "file": "chatbot/data/Quy_dinh_ve_hoc_phi.md",
+        "line": 64,
+        "quote": "Tính hoàn toàn theo **số tín chỉ**"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "status": "partial",
+    "category": "answer_error",
+    "severity": "medium",
+    "issues": [
+      "Khẳng định trường thường thông báo kế hoạch thu học phí và thời hạn vào 'đầu mỗi học kỳ', gắn [3],[4], nhưng [3] quy định theo dõi tuần thứ 6; [4] là thời điểm đầu kỳ của hồ sơ miễn giảm, không phải lịch thu học phí. Kết luận không có một ngày đóng cố định là đúng."
+    ],
+    "expected_correction": "Nêu hạn nộp cụ thể theo thông báo của trường; kho chưa có một ngày đóng cố định. Phân biệt thủ tục xin nộp muộn yêu cầu theo dõi từ tuần thứ 6 với thủ tục miễn giảm được theo dõi đầu mỗi kỳ. Không lấy lịch miễn giảm làm căn cứ cho lịch thu học phí, và cũng không coi tuần thứ 6 là hạn đóng chung cho mọi trường hợp.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 43,
+        "quote": "Tuần thứ 6 của mỗi học kỳ"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 51,
+        "quote": "Xin xác nhận trợ cấp xã hội, miễn giảm học phí, hỗ trợ chi phí học tập"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 52,
+        "quote": "Đầu mỗi học kỳ theo thông báo chính thức"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_dinh_ve_hoc_phi.md",
+        "line": 44,
+        "quote": "ứng dụng ngân hàng (Mobile Banking) hoặc ví điện tử bất kỳ"
+      },
+      {
+        "file": "chatbot/data/Quy_dinh_ve_hoc_phi.md",
+        "line": 51,
+        "quote": "tối đa 5 lần"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "status": "fail",
+    "category": "retrieval_gap",
+    "severity": "high",
+    "issues": [
+      "Bot trả về no_match và không có nội dung trả lời, dù kho dữ liệu có cả khung xử lý cố tình chậm/không nộp học phí không có lý do chính đáng và điều kiện phải đóng đủ học phí mới được dự thi cuối kỳ."
+    ],
+    "expected_correction": "Trả lời có điều kiện: cố tình chậm/không nộp không có lý do chính đáng có khung lần 1 khiển trách, lần 2 cảnh cáo, lần 3 đình chỉ thi, lần 4 buộc thôi học; dự thi kết thúc học phần yêu cầu trả học phí đầy đủ. Giải thích có thủ tục xin nộp muộn theo thông báo, không áp khung cố tình vi phạm cho mọi hoàn cảnh.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 73,
+        "quote": "Cố tình chậm nộp hoặc không nộp học phí, BHYT không có lý do chính đáng"
+      },
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 73,
+        "quote": "| Khiển trách | Cảnh cáo | Đình chỉ thi | Buộc thôi học |"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 570,
+        "quote": "trả học phí đầy đủ"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 44,
+        "quote": "Đơn xin nộp học phí muộn theo mẫu"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_dinh_ve_hoc_phi.md",
+        "line": 73,
+        "quote": "Đối tượng được miễn 100% học phí"
+      },
+      {
+        "file": "chatbot/data/Quy_dinh_ve_hoc_phi.md",
+        "line": 87,
+        "quote": "Đối tượng được giảm 70% học phí"
+      },
+      {
+        "file": "chatbot/data/Quy_dinh_ve_hoc_phi.md",
+        "line": 93,
+        "quote": "Đối tượng được giảm 50% học phí"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 52,
+        "quote": "Đầu mỗi học kỳ"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 53,
+        "quote": "Đơn theo mẫu đính kèm trong thông báo và các giấy tờ minh chứng đối tượng chính sách hợp lệ"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 54,
+        "quote": "Phòng 210 – G2"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "low",
+    "issues": [
+      "Trả lời đúng việc hoàn học phí khi rút học phần đúng hạn. Phần xin nghỉ học tạm thời chưa có kết luận có/không hoàn phí vì nguồn chỉ nêu kiểm tra và hoàn tất công nợ, không nêu chính sách hoàn phí; bot đã nói rõ giới hạn dữ liệu."
+    ],
+    "expected_correction": "Giữ nội dung hoàn phí khi rút đúng hạn; cần bổ sung chính sách hoàn phí khi nghỉ học tạm thời để kết luận phần còn lại, không suy ra chính sách hoàn phí từ thủ tục kiểm tra công nợ.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 310,
+        "quote": "và được trả lại học phí"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 91,
+        "quote": "Phòng CTSV kiểm tra công nợ học phí"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_dinh_ve_hoc_phi.md",
+        "line": 64,
+        "quote": "Tính hoàn toàn theo **số tín chỉ**"
+      },
+      {
+        "file": "chatbot/data/Quy_dinh_ve_hoc_phi.md",
+        "line": 65,
+        "quote": "Định mức học phí cho từng tín chỉ học lại/cải thiện"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 111,
+        "quote": "học lần đầu ($h_1$), học lại ($h_2$), học cải thiện điểm ($h_3$)"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 17,
+        "quote": "đang trong thời gian đào tạo chuẩn"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 19,
+        "quote": "loại Khá trở lên"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 20,
+        "quote": "khiển trách trở lên"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 37,
+        "quote": "ít nhất 15 tín chỉ"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 28,
+        "quote": "3.60"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 29,
+        "quote": "3.20"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 30,
+        "quote": "2.50"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 43,
+        "quote": "dựa trên mức thấp hơn giữa kết quả học tập và kết quả rèn luyện"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 44,
+        "quote": "mức học bổng được xét là **loại Giỏi**"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 37,
+        "quote": "ít nhất 15 tín chỉ"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 38,
+        "quote": "Riêng học kỳ cuối cùng"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 34,
+        "quote": "học trong kỳ hè được tính điểm vào học kỳ 2"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "status": "partial",
+    "category": "answer_error",
+    "severity": "low",
+    "issues": [
+      "Đã nêu đúng rằng học lại/cải thiện vẫn được tính và chỉ dùng điểm thi lần thứ nhất. Tuy nhiên câu hỏi có riêng tình huống 'thi lại'; câu trả lời chuyển sang 'học cải thiện' và không nói rõ điểm thi lại có được thay điểm lần đầu để xét học bổng hay không."
+    ],
+    "expected_correction": "Phân biệt học lại/cải thiện học phần với thi lại: học lại/cải thiện được tính trong kết quả xét học bổng nhưng căn cứ điểm thi/kiểm tra hết môn lần thứ nhất của kỳ; không dùng điểm thi lại để thay điểm lần thứ nhất khi xét học bổng. Còn phải đáp ứng đủ điều kiện chung và tín chỉ.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 33,
+        "quote": "điểm thi/kiểm tra hết môn lần thứ nhất"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 33,
+        "quote": "bao gồm cả các học phần học lại, học cải thiện, học tự chọn tự do"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 72,
+        "quote": "90 – 100 điểm"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 73,
+        "quote": "80 – 89 điểm"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 74,
+        "quote": "65 – 79 điểm"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 75,
+        "quote": "50 – 64 điểm"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 76,
+        "quote": "35 – 49 điểm"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 77,
+        "quote": "Dưới 35 điểm"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "status": "partial",
+    "category": "answer_error",
+    "severity": "medium",
+    "issues": [
+      "Gộp vi phạm phòng thi bị đình chỉ thi vào nhóm sẽ dẫn đến đình chỉ học tập/buộc thôi học. Điều 35 chỉ quy định đình chỉ thi làm bài thi nhận 0 và phải ra khỏi phòng; đình chỉ học tập 1 năm/buộc thôi học ở đây là chế tài riêng cho thi hộ/nhờ thi hộ, không tự động áp cho mọi đình chỉ thi.",
+      "Danh mục hoạt động và mức cộng/trừ ĐRL cụ thể được hỏi không có trong nguồn; bot đã minh bạch về khoảng trống này. Đây là giới hạn dữ liệu riêng, không phải bịa danh mục."
+    ],
+    "expected_correction": "Tách rõ đình chỉ thi khỏi đình chỉ học tập; chỉ gắn thi hộ/nhờ thi hộ với đình chỉ 1 năm lần đầu, buộc thôi học lần hai theo Điều 35. Giữ giải thích 70 điểm cơ sở và giới hạn dữ liệu về bảng hoạt động, bổ sung bảng tiêu chí chính thức nếu muốn trả lời chi tiết.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 530,
+        "quote": "Sinh viên bị kỷ luật đình chỉ thi sẽ bị điểm không (0) bài thi"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 531,
+        "quote": "thi hộ hoặc nhờ người thi hộ bị kỷ luật ở mức đình chỉ học tập 1 năm"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 64,
+        "quote": "cộng hoặc trừ điểm theo minh chứng hoạt động thực tế"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "medium",
+    "issues": [
+      "Nêu đúng bước sinh viên tự đánh giá nhưng chưa có toàn bộ quy trình xét/duyệt và khiếu nại ĐRL được hỏi; kho chỉ nêu bước tự đánh giá và không quy định quy trình khiếu nại cụ thể. Bot nói rõ không có dữ liệu; quy trình xin giấy xác nhận là thủ tục khác và không giải quyết khiếu nại."
+    ],
+    "expected_correction": "Cần bổ sung quy chế xét duyệt và khiếu nại ĐRL; hiện chỉ có thể hướng dẫn tự đánh giá trên StudentHub và liên hệ Phòng CTSV. Không dùng thời gian trả giấy xác nhận 1 ngày làm thời hạn xử lý khiếu nại.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 62,
+        "quote": "Sinh viên tự đánh giá điểm rèn luyện"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 164,
+        "quote": "Xin Giấy xác nhận Điểm rèn luyện"
+      },
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 65,
+        "quote": "**Thắc mắc điểm rèn luyện (ĐRL)**"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "medium",
+    "issues": [
+      "Không trả lời được chế tài cho hai học kỳ rèn luyện Yếu/Kém liên tiếp vì 27 tài liệu không chứa quy định này; bot minh bạch rằng không tìm thấy, không tự đặt hình thức đình chỉ hoặc buộc thôi học."
+    ],
+    "expected_correction": "Bổ sung văn bản công tác sinh viên quy định xử lý ĐRL Yếu/Kém liên tiếp; hiện không thể kết luận chế tài từ khung phân loại ĐRL hoặc Điều 44 về học vụ.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 76,
+        "quote": "**Yếu** | **35 – 49 điểm**"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 77,
+        "quote": "**Kém** | **Dưới 35 điểm**"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 683,
+        "quote": "Cảnh báo học vụ"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 23,
+        "quote": "**Sinh viên Xuất sắc**"
+      },
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 24,
+        "quote": "**Sinh viên Giỏi**"
+      },
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 27,
+        "quote": "dưới mức trung bình ($< 2.00$)"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "status": "partial",
+    "category": "answer_error",
+    "severity": "low",
+    "issues": [
+      "Đã trả lời đúng bảng thưởng NCKH và hình thức khen thưởng Olympic, nhưng bỏ điều kiện bắt buộc chia đều điểm thưởng NCKH nếu công trình do nhiều sinh viên thực hiện; bảng điểm hiện đọc như mức mỗi cá nhân luôn được nhận.",
+      "Phần tuyển thẳng cho thành viên đội tuyển Olympic quốc tế bỏ điều kiện môn thi phải phù hợp với ngành học, làm rộng điều kiện so với nguồn."
+    ],
+    "expected_correction": "Thêm quy tắc điểm thưởng công trình nhóm được chia đều theo số sinh viên tham gia. Nếu nêu tuyển thẳng Olympic, phải kèm điều kiện môn học phù hợp với ngành học. Giữ quy tắc chỉ cộng giải cao nhất và không dùng điểm thưởng xếp loại học lực/hạng tốt nghiệp.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 460,
+        "quote": "điểm thưởng được chia đều cho số sinh viên cùng tham gia"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 365,
+        "quote": "Olympic quốc tế về môn học phù hợp với ngành học"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 449,
+        "quote": "không dùng để xếp loại học lực hoặc xác định hạng tốt nghiệp"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 46,
+        "quote": "Khiển trách"
+      },
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 47,
+        "quote": "Cảnh cáo"
+      },
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 48,
+        "quote": "Đình chỉ học tập có thời hạn"
+      },
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 49,
+        "quote": "Buộc thôi học"
+      },
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 51,
+        "quote": "dừng xét tốt nghiệp"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 520,
+        "quote": "trừ 25%"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 525,
+        "quote": "trừ 50%"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 530,
+        "quote": "điểm không (0)"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 531,
+        "quote": "đình chỉ học tập 1 năm nếu vi phạm lần thứ nhất và buộc thôi học nếu vi phạm lần thứ hai"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 54,
+        "quote": "Sau **03 tháng**"
+      },
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 55,
+        "quote": "Sau **06 tháng**"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "status": "partial",
+    "category": "answer_error",
+    "severity": "high",
+    "issues": [
+      "Khẳng định chỉ sinh viên đang thi hành kỷ luật 'từ mức Cảnh cáo trở lên' bị dừng xét tốt nghiệp. Nguồn được dẫn nói sinh viên đang thi hành quyết định kỷ luật sẽ bị dừng xét tốt nghiệp, không giới hạn Cảnh cáo; cụm Cảnh cáo trở lên trong cùng dòng áp dụng cho lưu hồ sơ/thông báo gia đình. Bot gắn nhầm điều kiện đó sang tốt nghiệp."
+    ],
+    "expected_correction": "Sửa thành sinh viên đang trong thời gian thi hành quyết định kỷ luật bị dừng xét tốt nghiệp theo nguồn. Tách riêng quy tắc lưu hồ sơ/thông báo và quy tắc hạ hạng tốt nghiệp (cảnh cáo trở lên). Giữ điều kiện học bổng không bị khiển trách trở lên trong kỳ.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 51,
+        "quote": "Hình thức kỷ luật từ mức **Cảnh cáo trở lên** phải được ghi lưu vào hồ sơ"
+      },
+      {
+        "file": "chatbot/data/Khen_thuong_ky_luat.md",
+        "line": 51,
+        "quote": "Sinh viên đang trong thời gian thi hành quyết định kỷ luật sẽ bị **dừng xét tốt nghiệp**."
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 736,
+        "quote": "hạng tốt nghiệp sẽ bị hạ một hạng nếu bị kỷ luật từ mức cảnh cáo trở lên"
+      }
+    ]
+  }
+]

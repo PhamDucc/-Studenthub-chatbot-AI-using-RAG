@@ -1,0 +1,572 @@
+[
+  {
+    "id": 1,
+    "question": "Cách tính điểm trung bình chung học kỳ (GPA) và điểm trung bình chung tích lũy (CPA) theo thang điểm 4 được quy định như thế nào?",
+    "target": "Quy_che_dao_tao.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 2,
+    "question": "Bảng quy đổi từ điểm hệ 10 sang điểm chữ (A+, A, B+, B, C+, C, D+, D, F) và điểm hệ 4 cụ thể ra sao?",
+    "target": "Quy_che_dao_tao.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 3,
+    "question": "Các học phần đạt điểm D hoặc D+ có được đăng ký học cải thiện điểm không và điểm sau cải thiện được tính thế nào?",
+    "target": "Quy_che_dao_tao.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 4,
+    "question": "Sinh viên bị điểm F một học phần bắt buộc thì phải xử lý như thế nào?",
+    "target": "Quy_che_dao_tao.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 5,
+    "question": "Điều kiện nào khiến sinh viên bị cảnh báo học vụ sau mỗi học kỳ?",
+    "target": "Quy_che_dao_tao.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 6,
+    "question": "Sinh viên bị cảnh báo học vụ bao nhiêu lần liên tiếp hoặc tổng cộng bao nhiêu lần thì bị buộc thôi học?",
+    "target": "Quy_che_dao_tao.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 7,
+    "question": "Số tín chỉ tối thiểu và tối đa sinh viên được phép đăng ký trong một học kỳ chính là bao nhiêu?",
+    "target": "Quy_che_dao_tao.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 8,
+    "question": "Quy định và thời hạn rút bớt học phần đã đăng ký trong học kỳ như thế nào?",
+    "target": "Quy_che_dao_tao.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 9,
+    "question": "Thời gian đào tạo tối đa để sinh viên hoàn thành chương trình đại học chính quy là bao lâu?",
+    "target": "Quy_che_dao_tao.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 10,
+    "question": "Sinh viên cần đáp ứng những điều kiện gì để được xét công nhận tốt nghiệp?",
+    "target": "Quy_che_dao_tao.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 11,
+    "question": "Quy định về chuẩn đầu ra ngoại ngữ và tin học để xét tốt nghiệp là gì?",
+    "target": "Quy_che_dao_tao.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 12,
+    "question": "Trường hợp nào sinh viên được phép xin nghỉ học tạm thời (bảo lưu kết quả) và thời gian bảo lưu tối đa là bao lâu?",
+    "target": "Quy_che_dao_tao.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 13,
+    "question": "Học phí của sinh viên được tính dựa trên công thức và đơn giá tín chỉ như thế nào?",
+    "target": "Quy_dinh_ve_hoc_phi.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 14,
+    "question": "Thời hạn hoàn thành nghĩa vụ đóng học phí của mỗi học kỳ được quy định ra sao?",
+    "target": "Quy_dinh_ve_hoc_phi.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 15,
+    "question": "Sinh viên có thể nộp học phí qua những hình thức nào và được tạo mã QR nộp học phí tối đa bao nhiêu lần một ngày?",
+    "target": "Quy_dinh_ve_hoc_phi.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 16,
+    "question": "Sinh viên nộp học phí muộn hoặc còn nợ học phí sang học kỳ sau sẽ bị xử lý như thế nào?",
+    "target": "Quy_dinh_ve_hoc_phi.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 17,
+    "question": "Những đối tượng sinh viên nào thuộc diện được miễn hoặc giảm học phí theo quy định?",
+    "target": "Quy_dinh_ve_hoc_phi.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 18,
+    "question": "Hồ sơ và thời hạn nộp đơn xin miễn giảm học phí diễn ra vào thời điểm nào trong năm học?",
+    "target": "Quy_dinh_ve_hoc_phi.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 19,
+    "question": "Sinh viên rút học phần đúng hạn hoặc xin nghỉ học tạm thời có được hoàn trả lại học phí đã đóng không?",
+    "target": "Quy_dinh_ve_hoc_phi.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 20,
+    "question": "Học phí đối với các lớp học lại và học cải thiện điểm có khác với học phí học lần đầu không?",
+    "target": "Quy_dinh_ve_hoc_phi.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 21,
+    "question": "Điều kiện để sinh viên được xét cấp học bổng khuyến khích học tập (KKHT) là gì?",
+    "target": "Hoc_bong_va_diem_ren_luyen.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 22,
+    "question": "Có bao nhiêu mức học bổng khuyến khích học tập (Xuất sắc, Giỏi, Khá) và ngưỡng điểm tương ứng của từng mức là bao nhiêu?",
+    "target": "Hoc_bong_va_diem_ren_luyen.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 23,
+    "question": "Nguyên tắc \"lấy mức thấp hơn\" giữa kết quả học tập và kết quả rèn luyện khi xét học bổng được áp dụng như thế nào?",
+    "target": "Hoc_bong_va_diem_ren_luyen.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 24,
+    "question": "Sinh viên phải tích lũy tối thiểu bao nhiêu tín chỉ trong học kỳ để đủ điều kiện xét học bổng KKHT?",
+    "target": "Hoc_bong_va_diem_ren_luyen.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 25,
+    "question": "Sinh viên học lại hoặc thi lại trong học kỳ có còn cơ hội được xét học bổng khuyến khích học tập không?",
+    "target": "Hoc_bong_va_diem_ren_luyen.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 26,
+    "question": "Khung đánh giá và phân loại điểm rèn luyện (Xuất sắc, Tốt, Khá, Trung bình, Yếu, Kém) quy định các mốc điểm cụ thể ra sao?",
+    "target": "Hoc_bong_va_diem_ren_luyen.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 27,
+    "question": "Những hoạt động nào giúp sinh viên được cộng điểm rèn luyện và các lỗi nào khiến sinh viên bị trừ điểm rèn luyện?",
+    "target": "Hoc_bong_va_diem_ren_luyen.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 28,
+    "question": "Quy trình chấm điểm rèn luyện và cách thức khiếu nại nếu thấy điểm rèn luyện chưa chính xác là gì?",
+    "target": "Hoc_bong_va_diem_ren_luyen.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 29,
+    "question": "Sinh viên có kết quả rèn luyện xếp loại Yếu hoặc Kém trong hai học kỳ liên tiếp sẽ bị xử lý thế nào?",
+    "target": "Hoc_bong_va_diem_ren_luyen.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 30,
+    "question": "Tiêu chuẩn để sinh viên được xét danh hiệu Sinh viên Giỏi và Sinh viên Xuất sắc cuối năm học là gì?",
+    "target": "Khen_thuong_ky_luat.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 31,
+    "question": "Sinh viên đạt thành tích cao trong nghiên cứu khoa học hoặc các kỳ thi Olympic được khen thưởng như thế nào?",
+    "target": "Khen_thuong_ky_luat.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 32,
+    "question": "Hệ thống kỷ luật sinh viên bao gồm những hình thức nào từ nhẹ đến nặng?",
+    "target": "Khen_thuong_ky_luat.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 33,
+    "question": "Sinh viên vi phạm quy chế thi (mang tài liệu, sử dụng điện thoại, nhìn bài hoặc thi hộ) sẽ chịu mức kỷ luật gì?",
+    "target": "Khen_thuong_ky_luat.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 34,
+    "question": "Thời hạn chấm dứt hiệu lực của quyết định kỷ luật khiển trách và cảnh cáo là bao lâu?",
+    "target": "Khen_thuong_ky_luat.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 35,
+    "question": "Sinh viên đang trong thời gian chịu kỷ luật có bị hạn chế quyền lợi gì về xét học bổng hoặc xét tốt nghiệp không?",
+    "target": "Khen_thuong_ky_luat.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 36,
+    "question": "Quy trình và thời gian giải quyết thủ tục xin cấp bảng điểm học tập có xác nhận của nhà trường là bao lâu?",
+    "target": "Thu_tuc_hanh_chinh...md",
+    "out_of_scope": false
+  },
+  {
+    "id": 37,
+    "question": "Sinh viên cần làm thủ tục gì để xin giấy xác nhận sinh viên phục vụ vay vốn ngân hàng hoặc tạm hoãn nghĩa vụ quân sự?",
+    "target": "Thu_tuc_hanh_chinh...md",
+    "out_of_scope": false
+  },
+  {
+    "id": 38,
+    "question": "Khi bị mất thẻ sinh viên, thủ tục xin cấp lại thẻ gồm những bước nào và lệ phí bao nhiêu?",
+    "target": "Thu_tuc_hanh_chinh...md",
+    "out_of_scope": false
+  },
+  {
+    "id": 39,
+    "question": "Thủ tục nộp đơn xin nghỉ học tạm thời và thủ tục xin quay trở lại học tập sau bảo lưu cần những giấy tờ gì?",
+    "target": "Thu_tuc_hanh_chinh...md",
+    "out_of_scope": false
+  },
+  {
+    "id": 40,
+    "question": "Sinh viên muốn xin phúc khảo bài thi kết thúc học phần cần nộp đơn ở đâu và trong thời hạn bao nhiêu ngày sau khi công bố điểm?",
+    "target": "Thu_tuc_hanh_chinh...md",
+    "out_of_scope": false
+  },
+  {
+    "id": 41,
+    "question": "Trường hợp ốm đau đột xuất không thể dự thi cuối kỳ, sinh viên cần làm thủ tục xin hoãn thi như thế nào?",
+    "target": "Thu_tuc_hanh_chinh...md",
+    "out_of_scope": false
+  },
+  {
+    "id": 42,
+    "question": "Điều kiện và thủ tục xin chuyển ngành hoặc chuyển chương trình đào tạo được quy định ra sao?",
+    "target": "Thu_tuc_hanh_chinh...md",
+    "out_of_scope": false
+  },
+  {
+    "id": 43,
+    "question": "Sinh viên có thể tải các mẫu biểu hành chính (đơn xin nghỉ học, đơn xin bảng điểm, đơn phúc khảo) ở đâu?",
+    "target": "Thu_tuc_hanh_chinh...md",
+    "out_of_scope": false
+  },
+  {
+    "id": 44,
+    "question": "Địa chỉ phòng làm việc, số điện thoại và email liên hệ của Phòng Đào tạo là gì?",
+    "target": "Thong_tin_lien_he...md",
+    "out_of_scope": false
+  },
+  {
+    "id": 45,
+    "question": "Khi cần giải đáp thắc mắc về học bổng, điểm rèn luyện hoặc chế độ chính sách thì liên hệ Phòng Công tác sinh viên qua kênh nào?",
+    "target": "Thong_tin_lien_he...md",
+    "out_of_scope": false
+  },
+  {
+    "id": 46,
+    "question": "Thông tin liên hệ của Phòng Kế hoạch - Tài chính để giải quyết các vấn đề về học phí và biên lai nằm ở đâu?",
+    "target": "Thong_tin_lien_he...md",
+    "out_of_scope": false
+  },
+  {
+    "id": 47,
+    "question": "Giờ tiếp sinh viên trực tiếp tại bộ phận một cửa của nhà trường trong tuần diễn ra vào khung giờ nào?",
+    "target": "Thong_tin_lien_he...md",
+    "out_of_scope": false
+  },
+  {
+    "id": 48,
+    "question": "Mình bị tạch môn thì học kỳ sau đăng ký học lại thế nào và điểm F cũ có bị xóa khỏi bảng điểm không?",
+    "target": "Paraphrase / Quy chế",
+    "out_of_scope": false
+  },
+  {
+    "id": 49,
+    "question": "GPA kỳ này của mình được 3.65 nhưng điểm rèn luyện chỉ đạt 75 thì mình được nhận học bổng mức nào?",
+    "target": "Suy luận ngưỡng học bổng",
+    "out_of_scope": false
+  },
+  {
+    "id": 50,
+    "question": "Ký túc xá của trường có cho phép sinh viên nuôi mèo hoặc nấu ăn trong phòng không?",
+    "target": "Out-of-scope / Handoff",
+    "out_of_scope": true
+  },
+  {
+    "id": 51,
+    "question": "Chương trình đào tạo ngành Công nghệ thông tin yêu cầu tổng cộng bao nhiêu tín chỉ tích lũy và thời gian đào tạo chuẩn là mấy năm?",
+    "target": "CTDT_CNTT.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 52,
+    "question": "Các học phần thuộc khối kiến thức cơ sở ngành và chuyên ngành bắt buộc của ngành Khoa học máy tính gồm những môn nào?",
+    "target": "CTDT_KHMT.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 53,
+    "question": "Ngành Hệ thống thông tin có những định hướng chuyên sâu nào và yêu cầu chuẩn đầu ra ngoại ngữ bậc mấy?",
+    "target": "CTDT_HTTT.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 54,
+    "question": "Sinh viên theo học ngành An toàn thông tin được trang bị những nhóm kỹ năng cốt lõi và học phần đặc thù gì?",
+    "target": "CTDT_An_toan_thong_tin.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 55,
+    "question": "Chương trình đào tạo ngành Mạng máy tính và Truyền thông dữ liệu phân bổ số tín chỉ lý thuyết, thực hành và thực tập doanh nghiệp như thế nào?",
+    "target": "CTDT_MMT&TTDL.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 56,
+    "question": "Ngành Trí tuệ nhân tạo yêu cầu sinh viên hoàn thành bao nhiêu tín chỉ tự chọn và có những học phần chuyên sâu nào về học máy, thị giác máy tính?",
+    "target": "CTDT_Tri_tue_nhan_tao.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 57,
+    "question": "Chuẩn đầu ra về kiến thức, kỹ năng và vị trí việc làm sau khi tốt nghiệp của ngành Khoa học dữ liệu được quy định ra sao?",
+    "target": "CTDT_Khoa_hoc_du_lieu.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 58,
+    "question": "Điều kiện về số tín chỉ tích lũy hoặc điểm trung bình để sinh viên ngành Khoa học máy tính được đăng ký làm Khóa luận tốt nghiệp là gì?",
+    "target": "CTDT_KHMT.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 59,
+    "question": "Tổng số tín chỉ toàn khóa và cấu trúc các khối kiến thức của ngành Kỹ thuật máy tính được chia thành mấy phần?",
+    "target": "CTDT_KTMT.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 60,
+    "question": "Ngành Kỹ thuật điện tử - viễn thông đào tạo những chuyên ngành hoặc định hướng nghiên cứu chính nào?",
+    "target": "CTDT_KT TVT.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 61,
+    "question": "Các học phần thực hành, thí nghiệm và đồ án môn học bắt buộc trong chương trình đào tạo Kỹ thuật cơ điện tử gồm những môn nào?",
+    "target": "CTDT_Ky_thuat_co_dien_tu.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 62,
+    "question": "Mục tiêu đào tạo và chuẩn đầu ra của ngành Kỹ thuật điều khiển và tự động hóa có điểm gì nổi bật?",
+    "target": "CTDT_Ky_thuat_dieu_khien_va_tu_dong_hoa.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 63,
+    "question": "Chương trình đào tạo ngành Kỹ thuật Robot gồm bao nhiêu tín chỉ và sinh viên tốt nghiệp có thể đảm nhận những vị trí công việc nào?",
+    "target": "CTDT_KTRobot.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 64,
+    "question": "Các học phần toán và khoa học tự nhiên bắt buộc ở năm nhất của nhóm ngành Kỹ thuật máy tính và Điện tử viễn thông gồm những môn gì?",
+    "target": "CTDT_KTMT / KT TVT",
+    "out_of_scope": false
+  },
+  {
+    "id": 65,
+    "question": "Ngành Vật lý kỹ thuật yêu cầu tổng số tín chỉ bao nhiêu và có các hướng chuyên sâu nào?",
+    "target": "CTDT_VLKT.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 66,
+    "question": "Chương trình đào tạo Kỹ thuật vật liệu và Vi điện tử bao gồm những học phần chuyên ngành trọng tâm nào?",
+    "target": "CTDT_Ky_thuat_vat_lieu_va_vi_dien_tu.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 67,
+    "question": "Cấu trúc chương trình đào tạo và tỷ lệ tín chỉ giữa khối kiến thức đại cương với khối kiến thức ngành của Cơ kỹ thuật ra sao?",
+    "target": "CTDT_Co_ky_thuat.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 68,
+    "question": "Sinh viên ngành Kỹ thuật hàng không vũ trụ cần tích lũy bao nhiêu tín chỉ và tham gia các học phần thực tập nào?",
+    "target": "CTDT_Ky_thuat_hang_khong_vu_tru.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 69,
+    "question": "Ngành Kỹ thuật xây dựng quy định các học phần đồ án thiết kế và chuẩn đầu ra nghề nghiệp như thế nào?",
+    "target": "CTDT_Ky_thuat_xay_dung.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 70,
+    "question": "Danh sách các học phần giáo dục thể chất và giáo dục quốc phòng an ninh trong khung chương trình đào tạo của ngành Kỹ thuật xây dựng được tính vào tổng tín chỉ tích lũy hay không?",
+    "target": "CTDT_Ky_thuat_xay_dung.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 71,
+    "question": "Chương trình đào tạo Công nghệ kỹ thuật sinh học gồm bao nhiêu tín chỉ và tập trung vào những lĩnh vực ứng dụng nào?",
+    "target": "CTDT_Cong_nghe_ky_thuat_sinh_hoc.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 72,
+    "question": "Ngành Công nghệ nông nghiệp có những học phần cơ sở ngành và chuyên ngành nào kết hợp giữa công nghệ số với nông nghiệp?",
+    "target": "CTDT_Cong_nghe_nong_nghiep.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 73,
+    "question": "Mục tiêu đào tạo, tổng số tín chỉ và cơ hội nghề nghiệp của ngành Kỹ thuật năng lượng được mô tả như thế nào?",
+    "target": "CTDT_KTNL.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 74,
+    "question": "Chương trình đào tạo Thiết kế công nghiệp và Đồ họa phân bổ các học phần studio/đồ án thiết kế và thực tập ra sao?",
+    "target": "CTDT_Thiet_ke_cong_nghiep_va_do_hoa.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 75,
+    "question": "Chuẩn đầu ra về năng lực ngoại ngữ và kỹ năng mềm của ngành Thiết kế công nghiệp và Đồ họa có khác gì so với các ngành kỹ thuật khác không?",
+    "target": "CTDT_Thiet_ke_cong_nghiep_va_do_hoa.md",
+    "out_of_scope": false
+  },
+  {
+    "id": 76,
+    "question": "Sự khác nhau về mục tiêu đào tạo và các học phần chuyên ngành giữa Khoa học máy tính và Công nghệ thông tin là gì?",
+    "target": "So sánh KHMT vs CNTT",
+    "out_of_scope": false
+  },
+  {
+    "id": 77,
+    "question": "So sánh khối kiến thức chuyên ngành của Khoa học dữ liệu với Trí tuệ nhân tạo.",
+    "target": "So sánh KHDL vs TTNT",
+    "out_of_scope": false
+  },
+  {
+    "id": 78,
+    "question": "Ngành Kỹ thuật máy tính khác gì so với Khoa học máy tính về định hướng phần cứng và phần mềm?",
+    "target": "So sánh KTMT vs KHMT",
+    "out_of_scope": false
+  },
+  {
+    "id": 79,
+    "question": "So sánh chương trình đào tạo giữa Kỹ thuật cơ điện tử và Kỹ thuật Robot.",
+    "target": "So sánh Cơ điện tử vs Robot",
+    "out_of_scope": false
+  },
+  {
+    "id": 80,
+    "question": "Ngành An toàn thông tin và Mạng máy tính và Truyền thông dữ liệu có những học phần cơ sở ngành nào trùng nhau và khác nhau ở điểm nào?",
+    "target": "So sánh ATTT vs MMT&TTDL",
+    "out_of_scope": false
+  },
+  {
+    "id": 81,
+    "question": "So sánh tổng số tín chỉ tích lũy toàn khóa giữa hai ngành Cơ kỹ thuật và Kỹ thuật hàng không vũ trụ.",
+    "target": "So sánh Cơ KT vs HKVT",
+    "out_of_scope": false
+  },
+  {
+    "id": 82,
+    "question": "Sự khác biệt trong định hướng đào tạo giữa Vật lý kỹ thuật và Kỹ thuật vật liệu và Vi điện tử là gì?",
+    "target": "So sánh VLKT vs KTVL&VĐT",
+    "out_of_scope": false
+  },
+  {
+    "id": 83,
+    "question": "Ngành Hệ thống thông tin và Khoa học dữ liệu khác nhau thế nào về vị trí việc làm sau tốt nghiệp?",
+    "target": "So sánh HTTT vs KHDL",
+    "out_of_scope": false
+  },
+  {
+    "id": 84,
+    "question": "Ngành Trí tuệ nhân tạo yêu cầu tổng cộng bao nhiêu tín chỉ, và nếu mình đăng ký tối đa số tín chỉ cho phép mỗi học kỳ theo Quy chế đào tạo thì mất ít nhất mấy kỳ để học xong?",
+    "target": "Cross-doc: CTDT + Quy chế",
+    "out_of_scope": false
+  },
+  {
+    "id": 85,
+    "question": "Mình đang học ngành Hệ thống thông tin, nếu muốn đăng ký học cải thiện một môn cơ sở ngành bị điểm D thì tính điểm và đóng học phí như thế nào?",
+    "target": "Cross-doc: CTDT + Học phí",
+    "out_of_scope": false
+  },
+  {
+    "id": 86,
+    "question": "Điều kiện làm khóa luận tốt nghiệp của ngành An toàn thông tin là gì, và sinh viên không đủ điều kiện làm khóa luận sẽ phải học thay thế như thế nào theo Quy chế đào tạo?",
+    "target": "Cross-doc: CTDT + Quy chế",
+    "out_of_scope": false
+  },
+  {
+    "id": 87,
+    "question": "Sinh viên ngành Kỹ thuật điều khiển và tự động hóa cần đạt chuẩn ngoại ngữ gì để xét tốt nghiệp, và nộp chứng chỉ ngoại ngữ ở phòng ban nào?",
+    "target": "Cross-doc: CTDT + Liên hệ",
+    "out_of_scope": false
+  },
+  {
+    "id": 88,
+    "question": "Mình học ngành Công nghệ thông tin muốn xin chuyển sang ngành Khoa học máy tính thì cần đáp ứng điều kiện gì và làm thủ tục ở đâu?",
+    "target": "Cross-doc: CTDT + Thủ tục",
+    "out_of_scope": false
+  },
+  {
+    "id": 89,
+    "question": "Nếu sinh viên ngành Kỹ thuật xây dựng xin nghỉ học tạm thời 1 năm đi thực tập thì thời gian đào tạo tối đa của khóa học được tính ra sao?",
+    "target": "Cross-doc: CTDT + Quy chế",
+    "out_of_scope": false
+  },
+  {
+    "id": 90,
+    "question": "Học phí của chương trình đào tạo ngành Khoa học dữ liệu có khác gì so với các ngành đào tạo chuẩn khác của trường không?",
+    "target": "Cross-doc: CTDT + Học phí",
+    "out_of_scope": false
+  },
+  {
+    "id": 91,
+    "question": "Cho mình xin lộ trình các môn chuyên ngành của bên Tự động hóa UET với!",
+    "target": "Paraphrase / Tự động hóa",
+    "out_of_scope": false
+  },
+  {
+    "id": 92,
+    "question": "Học ngành Thiết kế đồ họa ở UET thì ra trường làm được những nghề gì và cần bao nhiêu tín chỉ để tốt nghiệp?",
+    "target": "Paraphrase / Thiết kế ĐH",
+    "out_of_scope": false
+  },
+  {
+    "id": 93,
+    "question": "Bên ngành Hàng không vũ trụ của trường mình có dạy về thiết kế vệ tinh hay khí động lực học không?",
+    "target": "Paraphrase / HKVT",
+    "out_of_scope": false
+  },
+  {
+    "id": 94,
+    "question": "Chương trình đào tạo ngành Y đa khoa của trường UET yêu cầu bao nhiêu tín chỉ thực hành lâm sàng?",
+    "target": "Out-of-scope (Ngành không tồn tại)",
+    "out_of_scope": true
+  },
+  {
+    "id": 95,
+    "question": "Điểm chuẩn xét tuyển học bạ và điểm thi THPT quốc gia năm nay của ngành Trí tuệ nhân tạo UET là bao nhiêu?",
+    "target": "Out-of-scope (Dữ liệu tuyển sinh)",
+    "out_of_scope": true
+  }
+]

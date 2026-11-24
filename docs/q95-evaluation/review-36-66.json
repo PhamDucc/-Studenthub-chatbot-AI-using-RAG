@@ -1,0 +1,886 @@
+[
+  {
+    "id": 36,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không cần sửa: tạo yêu cầu bảng điểm trên StudentHub; nhận sau 15:00 thứ Tư/thứ Sáu tại P.107-G2. Nguồn chỉ nêu lịch trả, không nêu số ngày xử lý.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 24,
+        "quote": "Vào mục **Thủ tục hành chính** > **Tạo yêu cầu**."
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 25,
+        "quote": "Nhận kết quả sau **15:00**, các ngày **thứ Tư và thứ Sáu** hàng tuần"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "status": "partial",
+    "category": "answer_error",
+    "severity": "medium",
+    "issues": [
+      "Quy trình vay vốn/giấy xác nhận SV, thời gian và nơi nhận đều đúng. Tuy nhiên câu 'Giấy xác nhận sinh viên thông thường là đủ để phục vụ mục đích tạm hoãn nghĩa vụ quân sự' là khẳng định không có trong 27 tài liệu, cũng không có trích dẫn hỗ trợ. Nguồn chỉ mô tả giấy xác nhận SV, vay CSXH và bảo lưu khi có lệnh nhập ngũ; không quy định hồ sơ đủ điều kiện tạm hoãn nghĩa vụ quân sự."
+    ],
+    "expected_correction": "Giữ hướng dẫn StudentHub và kết quả sau 1 ngày làm việc tại P.107-G2; nói rõ tài liệu chưa hướng dẫn riêng hồ sơ tạm hoãn nghĩa vụ quân sự và cần xác nhận yêu cầu với CTSV/cơ quan tiếp nhận, không bảo đảm chỉ một giấy xác nhận là đủ.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 18,
+        "quote": "Chọn loại giấy xác nhận phù hợp."
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 60,
+        "quote": "Cập nhật đầy đủ thông tin cá nhân tại mục **Thông tin đào tạo** > **Thông tin cá nhân**."
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 89,
+        "quote": "Lệnh gọi nhập ngũ (đối với diện tham gia nghĩa vụ quân sự)."
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "low",
+    "issues": [
+      "Hướng dẫn cấp lại thẻ và thông tin CTSV đúng. Lệ phí được hỏi không có trong dữ liệu; chatbot đã thừa nhận thiếu thông tin và hướng dẫn liên hệ phù hợp. Đây là giới hạn dữ liệu, không phải bịa mức phí."
+    ],
+    "expected_correction": "Giữ câu trả lời hiện tại; cần bổ sung tài liệu có mức lệ phí chính thức để trả lời đủ cả hai phần.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 68,
+        "quote": "Cập nhật thông tin cá nhân và tải ảnh thẻ chân dung"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 71,
+        "quote": "Mang tờ khai nộp tại Chi nhánh Ngân hàng BIDV (106 Hoàng Quốc Việt)."
+      },
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 22,
+        "quote": "`ctsv_dhcn@vnu.edu.vn`"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không cần sửa phần chính: đủ đơn có ký/xác nhận, giấy không nợ sách, minh chứng theo lý do nghỉ, xử lý công nợ và quy trình trở lại. Có thể nói giấy bác sĩ áp dụng khi nghỉ chữa bệnh và tránh tự thêm mốc 'kể từ khi hồ sơ được duyệt' cho thủ tục trở lại vì mục 11 chỉ nêu sau 5 ngày làm việc.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 86,
+        "quote": "xin chữ ký phụ huynh và xác nhận của chính quyền địa phương. Tiến hành scan (không chụp ảnh)"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 94,
+        "quote": "Sau **05 ngày làm việc** kể từ ngày hồ sơ được duyệt"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 99,
+        "quote": "trước khi hết hạn nghỉ học ít nhất **05 ngày làm việc**."
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 101,
+        "quote": "Nhận Quyết định tiếp nhận trở lại sau **05 ngày làm việc**"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không cần sửa: StudentHub > Thủ tục hành chính > Tạo yêu cầu, trong 5 ngày làm việc kể từ khi công bố điểm; kết quả thông báo bằng văn bản cuối đợt.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 36,
+        "quote": "Vào mục **Thủ tục hành chính** > **Tạo yêu cầu**."
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 37,
+        "quote": "Trong vòng **05 ngày làm việc** tính từ ngày điểm thi được công bố."
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không cần sửa: tạo yêu cầu hoãn thi và đính kèm minh chứng, trước 3 ngày hoặc ngay sau thi nếu cấp bách/bất khả kháng. Mức I trong trường hợp được phép có căn cứ.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 30,
+        "quote": "Đính kèm bản mềm minh chứng chứng minh lý do hoãn thi."
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 31,
+        "quote": "ít nhất 3 ngày** (hoặc ngay sau khi thi đối với trường hợp cấp bách/bất khả kháng)."
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 639,
+        "quote": "sinh viên bị ốm hoặc bị tai nạn không thể dự kiểm tra hoặc thi, được Thủ trưởng đơn vị đào tạo cho phép;"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "high",
+    "issues": [
+      "Bỏ sót toàn bộ Điều 28 về chuyển ngành dù văn bản có đủ: sau năm thứ nhất; đủ điều kiện trúng tuyển; đủ tín chỉ theo tiến độ chuẩn; điểm trung bình chung các học phần từ 2,50; không bị cảnh báo/xét kỷ luật; ngành còn chỉ tiêu và có các cấp đồng ý. Không xét sinh viên đã học từ năm thứ hai.",
+      "Kết luận nguồn chỉ đề cập chuyển đổi tài năng/CLC và học song song là sai so với toàn bộ kho dữ liệu. Nội dung học thêm chương trình thứ hai không thay thế thủ tục chuyển ngành.",
+      "Đổi sai thước đo 'điểm trung bình chung các học phần tính đến thời điểm xét' thành 'điểm trung bình chung tích lũy' trong các điều kiện 2,5/3,0 của Điều 27. Hai đại lượng được Điều 42 phân biệt."
+    ],
+    "expected_correction": "Trả lời riêng chuyển ngành theo Điều 28 với đủ điều kiện và giới hạn thời điểm; sau đó tóm tắt chuyển chương trình theo Điều 27, dùng đúng điểm trung bình chung các học phần. Nói rõ mẫu đơn/nơi nộp chuyển ngành chưa được mô tả, không tuyên bố quy định chuyển ngành không tồn tại.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 398,
+        "quote": "Sinh viên hoàn thành năm học thứ nhất được xem xét chuyển sang học một ngành học khác"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 400,
+        "quote": "Có số tín chỉ tích lũy tối thiểu bằng khối lượng thiết kế theo kế hoạch học tập chuẩn"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 401,
+        "quote": "Điểm trung bình chung các học phần tính đến thời điểm xét đạt từ 2,50 trở lên;"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 405,
+        "quote": "Không xem xét chuyển ngành học đối với sinh viên đã học từ năm thứ hai."
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 391,
+        "quote": "Điểm trung bình chung các học phần tính đến thời điểm xét đạt tối thiểu 3,0"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không cần sửa: chỉ đúng StudentHub và Sổ tay người học, có đường dẫn và cách tìm mẫu/yêu cầu.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 9,
+        "quote": "**Cổng dịch vụ trực tuyến (Student Hub):** https://studenthub.uet.edu.vn/"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 86,
+        "quote": "Tải mẫu Đơn xin nghỉ học có thời hạn"
+      },
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 52,
+        "quote": "https://handbook.uet.vnu.edu.vn/sinh-vien"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "low",
+    "issues": [
+      "Phòng 213-G2, địa chỉ và điện thoại 024 3202 6858 đúng. Kho dữ liệu không cho email trực tiếp của Phòng Đào tạo; chatbot đã minh bạch giới hạn này và không bịa email."
+    ],
+    "expected_correction": "Giữ thông tin và lời giải thích hiện tại; bổ sung email chính thức vào dữ liệu mới có thể đáp ứng đủ yêu cầu ba kênh.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 40,
+        "quote": "`024 3202 6858`"
+      },
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 41,
+        "quote": "Phòng 213, Nhà G2, 144 Xuân Thủy, Cầu Giấy, Hà Nội"
+      },
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 66,
+        "quote": "Gửi hỗ trợ trên cổng đào tạo hoặc **P.213-G2**"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không cần sửa: đúng phòng theo nhu cầu, email, điện thoại và website CTSV.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 21,
+        "quote": "`024 3754 8864`"
+      },
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 22,
+        "quote": "`ctsv_dhcn@vnu.edu.vn`"
+      },
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 64,
+        "quote": "**P.210-G2** hoặc email: `ctsv_dhcn@vnu.edu.vn`"
+      },
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 65,
+        "quote": "**P.107-G2** / **P.210-G2**"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "low",
+    "issues": [
+      "P.210-G2 và hangtt@vnu.edu.vn có căn cứ là kênh phối hợp CTSV & KHTC để nộp học phí muộn/thắc mắc công nợ. Kho không nêu danh bạ trực tiếp của Phòng KHTC hay kênh riêng cho biên lai; câu trả lời chưa làm rõ giới hạn này. Không có bằng chứng bịa địa chỉ/email."
+    ],
+    "expected_correction": "Nêu rõ chưa có số điện thoại/email/văn phòng trực tiếp KHTC hoặc đầu mối biên lai trong tài liệu. Với học phí/công nợ có thể dùng kênh phối hợp P.210-G2, hangtt@vnu.edu.vn như nguồn ghi.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 69,
+        "quote": "| **Đóng học phí muộn, thắc mắc công nợ** | Phòng CTSV & KHTC | Nộp đơn tại **P.210-G2** hoặc email: `hangtt@vnu.edu.vn` |"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 46,
+        "quote": "Nộp trực tiếp tại Phòng Công tác Sinh viên (**Phòng 210 – G2**)."
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "low",
+    "issues": [
+      "Tài liệu không nêu giờ tiếp sinh viên chung của bộ phận một cửa; chatbot đã từ chối suy đoán và phân biệt lịch trả một số kết quả. Giờ sau 15:00 thứ Tư/thứ Sáu có căn cứ nhưng không giải đáp được khung giờ làm việc chung được hỏi."
+    ],
+    "expected_correction": "Giữ phần thừa nhận thiếu giờ làm việc; có thể bổ sung kênh CTSV để hỏi giờ. Muốn trả lời đầy đủ cần dữ liệu lịch tiếp sinh viên chính thức.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 24,
+        "quote": "**Bộ phận Một cửa (Tiếp nhận & Trả kết quả giấy tờ, thẻ SV):** Phòng 107, Nhà G2"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 25,
+        "quote": "sau **15:00**, các ngày **thứ Tư và thứ Sáu** hàng tuần"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 130,
+        "quote": "Nhận sau **15:00**, các ngày **thứ Tư và thứ Sáu** hàng tuần"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "low",
+    "issues": [
+      "Cách đăng ký học lại, hạn trước học kỳ một tháng, phân biệt bắt buộc/tự chọn đều đúng. Chatbot không áp dụng tùy tiện quy định hủy điểm D/D+ cho F, nhưng chưa trả lời dứt điểm câu F có bị xóa khỏi bảng điểm vì kho không quy định rõ cách hiển thị đó."
+    ],
+    "expected_correction": "Giữ hướng dẫn học lại và minh bạch rằng tài liệu không nói rõ F cũ có còn hiển thị trên bảng điểm; có thể bổ sung Điều 42 phân biệt GPA tính cả học phần không đạt và CPA chỉ tính học phần đạt, không đồng nhất điều đó với xóa bản ghi F.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 278,
+        "quote": "Chậm nhất là 1 tháng trước khi bắt đầu mỗi học kỳ, sinh viên phải hoàn thành đăng ký các học phần;"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 281,
+        "quote": "Đối với các học phần bắt buộc, nếu bị điểm F, sinh viên phải đăng ký học lại học phần đó;"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 283,
+        "quote": "Đối với các học phần đạt điểm D, D+"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 650,
+        "quote": "các học phần đã được đánh giá loại đạt mà sinh viên đã tích lũy được"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "status": "pass",
+    "category": "ok",
+    "severity": "low",
+    "issues": [
+      "Ghi chú trình bày nhỏ: câu trả lời truyền về có cú pháp toán thô '$\\ge 3.60$'; kết luận mức được xét là Khá đúng. Không coi đây là sai nội dung. Có thể nhắc thêm điều kiện >=15 tín chỉ và xét theo chỉ tiêu để tránh hiểu hai điểm số bảo đảm được cấp."
+    ],
+    "expected_correction": "Giữ kết luận chỉ được xét mức Khá nếu đủ điều kiện khác; viết 'từ 3,60' hoặc ký tự ≥ thay cú pháp toán thô. Không khẳng định chắc chắn được cấp khi chưa xét điều kiện tín chỉ/chỉ tiêu.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 28,
+        "quote": "**Xuất sắc** ($\\ge 3.60$)"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 30,
+        "quote": "**Loại Khá**"
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 43,
+        "quote": "Mức học bổng xét cấp dựa trên mức thấp hơn giữa kết quả học tập và kết quả rèn luyện."
+      },
+      {
+        "file": "chatbot/data/Hoc_bong_va_diem_ren_luyen.md",
+        "line": 37,
+        "quote": "sinh viên phải hoàn thành **ít nhất 15 tín chỉ**."
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "status": "out_of_scope_pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không cần sửa: từ chối hợp lý vì kho không có nội quy ký túc xá về nuôi mèo/nấu ăn, hướng dẫn hỏi nhân viên hỗ trợ.",
+    "source_evidence": []
+  },
+  {
+    "id": 51,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không cần sửa: CNTT 135 tín chỉ, thời gian chuẩn 4 năm.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_CNTT.md",
+        "line": 16,
+        "quote": "Thời gian đào tạo: 4,0 năm"
+      },
+      {
+        "file": "chatbot/data/CTDT_CNTT.md",
+        "line": 190,
+        "quote": "|  | **Tổng cộng** |  | **135** |  |  |  |  |  |"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không cần sửa: đủ sáu học phần cơ sở ngành bắt buộc 18 TC và bốn học phần cốt lõi ngành bắt buộc 12 TC với tên/mã đúng.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_KHMT.md",
+        "line": 126,
+        "quote": "| **II.1.1** |  | **Bắt buộc** | **18** |"
+      },
+      {
+        "file": "chatbot/data/CTDT_KHMT.md",
+        "line": 127,
+        "quote": "UET.CS2043 | Lập trình nâng cao"
+      },
+      {
+        "file": "chatbot/data/CTDT_KHMT.md",
+        "line": 132,
+        "quote": "UET.IS2100 | Nguyên lý hệ điều hành"
+      },
+      {
+        "file": "chatbot/data/CTDT_KHMT.md",
+        "line": 139,
+        "quote": "| **II.2.1** |  | **Bắt buộc** | **12** |"
+      },
+      {
+        "file": "chatbot/data/CTDT_KHMT.md",
+        "line": 143,
+        "quote": "UET.CS3139 | Các vấn đề hiện đại trong Khoa học Máy tính"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "medium",
+    "issues": [
+      "Phần định hướng chuyên sâu bị thay bằng danh sách vị trí việc làm. Không nêu hai định hướng có tên chính thức trong CTĐT: Tích hợp dịch vụ và quản lý dữ liệu lớn; Khoa học dữ liệu và phân tích kinh doanh.",
+      "Chuẩn ngoại ngữ tối thiểu 3/6 theo CTĐT đúng; lưu ý chuẩn 4/6 cho chương trình CLC cũng có căn cứ trong quy chế, nhưng không bù được thiếu hai định hướng."
+    ],
+    "expected_correction": "Nêu đúng hai định hướng từ bảng học phần II.2.2 và chuẩn ngoại ngữ tối thiểu 3/6 trong CTĐT; nếu cần giữ lưu ý loại hình chương trình thì giải thích rõ ngữ cảnh thay vì thay định hướng bằng nghề nghiệp.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_HTTT.md",
+        "line": 149,
+        "quote": "***Định hướng về Tích hợp dịch vụ và quản lý dữ liệu lớn***"
+      },
+      {
+        "file": "chatbot/data/CTDT_HTTT.md",
+        "line": 158,
+        "quote": "***Định hướng về Khoa học dữ liệu và phân tích kinh doanh***"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "medium",
+    "issues": [
+      "Tóm tắt kỹ năng tương đối đầy đủ và đúng nguồn. Nhưng tuyên bố tài liệu 'chưa liệt kê danh sách chi tiết các học phần cụ thể' là sai với dữ liệu: phần 3/4 có toàn bộ học phần, gồm môn an ninh mạng, an ninh máy tính, mật mã, thực hành dự án... Truy xuất chỉ lấy mục tiêu/chuẩn đầu ra và dữ liệu ngành khác nên bỏ trọn nửa câu hỏi về học phần đặc thù."
+    ],
+    "expected_correction": "Giữ kỹ năng cốt lõi, bổ sung học phần đặc thù có thật: An toàn và an ninh mạng, An ninh máy tính, Mật mã học, Các chủ đề hiện đại trong ATTT, Thực hành nghiên cứu, Thực hành Dự án ATTT; có thể thêm ví dụ hai hướng An toàn phần mềm/An toàn không gian mạng.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_An_toan_thong_tin.md",
+        "line": 194,
+        "quote": "UET.CN3124 | An toàn và an ninh mạng"
+      },
+      {
+        "file": "chatbot/data/CTDT_An_toan_thong_tin.md",
+        "line": 195,
+        "quote": "UET.CN3129 | An ninh máy tính"
+      },
+      {
+        "file": "chatbot/data/CTDT_An_toan_thong_tin.md",
+        "line": 196,
+        "quote": "UET.ISE3003 | Mật mã học"
+      },
+      {
+        "file": "chatbot/data/CTDT_An_toan_thong_tin.md",
+        "line": 199,
+        "quote": "UET.ISE3002 | Thực hành Dự án An toàn thông tin"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "low",
+    "issues": [
+      "Tổng 150 TC, thực tập doanh nghiệp 3 TC và đồ án/thay thế 10 TC đúng. Không có bảng tổng số tín chỉ độc lập cho lý thuyết/thực hành; bảng chi tiết cung cấp số giờ mỗi môn, vì vậy chatbot minh bạch phần chưa thể kết luận. Câu hỏi phân bổ lý thuyết/thực hành chỉ được giải đáp một phần, không nên coi là bịa hay bỏ dữ liệu tổng hợp vốn không có."
+    ],
+    "expected_correction": "Giữ các số được chứng minh và nói rõ bảng CTĐT phân bổ giờ lý thuyết/thực hành theo từng học phần, không có hai tổng tín chỉ riêng. Có thể nêu ví dụ giờ theo môn nếu người dùng cần.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_MMT&TTDL.md",
+        "line": 105,
+        "quote": "| **Lý thuyết** | **Thực hành** | **Bài tập** | **Tự học** |"
+      },
+      {
+        "file": "chatbot/data/CTDT_MMT&TTDL.md",
+        "line": 178,
+        "quote": "UET.CS4022 | Thực tập doanh nghiệp – IT   Industrial Internship | 3"
+      },
+      {
+        "file": "chatbot/data/CTDT_MMT&TTDL.md",
+        "line": 183,
+        "quote": "|  | **Tổng cộng** |  | **150** |"
+      },
+      {
+        "file": "chatbot/data/CTDT_MMT&TTDL.md",
+        "line": 189,
+        "quote": "tối thiểu 15 giờ giảng hoặc 30 giờ thực hành, thí nghiệm, thảo luận"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "status": "fail",
+    "category": "answer_error",
+    "severity": "high",
+    "issues": [
+      "Kết luận tổng 18 tín chỉ tự chọn sai: bỏ 3 TC tự chọn thuộc đại cương theo lĩnh vực (I.2.2). Tổng tối thiểu thông thường từ bảng chi tiết là 21 TC =3 đại cương +3 cơ sở ngành +12 cốt lõi ngành +3 bổ trợ, chưa tính 6 TC chỉ phát sinh ở phương án thay khóa luận.",
+      "Câu lưu ý nói danh sách học phần trích từ 'các học phần tự chọn' sai: Học sâu (AI3056) và Xử lý và phân tích hình ảnh (AI3063) nằm trong nhóm cốt lõi bắt buộc 27 TC. Bỏ Học máy bắt buộc dù đây là ví dụ trực tiếp cho lĩnh vực được hỏi."
+    ],
+    "expected_correction": "Trả lời 21 TC tự chọn theo bảng chi tiết; tách rõ 6 TC chọn thêm nếu dùng phương án thay khóa luận. Phân biệt Học máy, Học sâu, Xử lý và phân tích hình ảnh là bắt buộc với các môn tự chọn như Học tăng cường và lập kế hoạch, Lý thuyết đồ thị cho Học máy, Thiết kế phần cứng cho Học sâu.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 172,
+        "quote": "| **I.2.2** |  | **Tự chọn** | **3** |"
+      },
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 190,
+        "quote": "| **II.1.2** |  | **Tự chọn** | **3** |"
+      },
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 207,
+        "quote": "| **II.2.2** |  | **Tự chọn** | **12** |"
+      },
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 231,
+        "quote": "**3**"
+      },
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 197,
+        "quote": "| **II.2.1** |  | **Bắt buộc** | **27** |"
+      },
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 202,
+        "quote": "UET.AI3056 | Học sâu"
+      },
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 205,
+        "quote": "UET.AI3063 | Xử lý và phân tích hình ảnh"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "medium",
+    "issues": [
+      "Chuẩn đầu ra kiến thức/kỹ năng/trách nhiệm được tóm tắt đúng. Phần 'vị trí việc làm' chỉ diễn lại PEO dưới dạng nhiệm vụ chung, bỏ các chức danh được liệt kê rõ: cán bộ phát triển/bảo trì hệ thống dữ liệu và dữ liệu lớn, phân tích dữ liệu/phân tích kinh doanh, R&D, quản lý hệ thống ứng dụng KHDL; trợ giảng/giảng viên/nghiên cứu viên. Trích dẫn [2] là mục tiêu đào tạo, không phải danh sách vị trí việc làm."
+    ],
+    "expected_correction": "Bổ sung các nhóm chức danh đúng mục 4 của CTĐT; có thể tóm tắt gọn theo môi trường doanh nghiệp và học thuật, giữ phần PLO đã đúng.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Khoa_hoc_du_lieu.md",
+        "line": 67,
+        "quote": "năng lực ngoại ngữ tương đương trình độ tối thiểu 3/6"
+      },
+      {
+        "file": "chatbot/data/CTDT_Khoa_hoc_du_lieu.md",
+        "line": 78,
+        "quote": "Cán bộ phân tích dữ liệu, phân tích kinh doanh; Cán bộ nghiên cứu phát triển (R&D)"
+      },
+      {
+        "file": "chatbot/data/CTDT_Khoa_hoc_du_lieu.md",
+        "line": 80,
+        "quote": "Trợ giảng, giảng viên, nghiên cứu viên tại các trường đại học, viện nghiên cứu."
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "low",
+    "issues": [
+      "Min GPA/min tín chỉ đăng ký khóa luận KHMT không được ghi trong kho; chatbot đã minh bạch và không bịa ngưỡng. Tên/mã CS4023, 10 TC và học kỳ 8 đúng.",
+      "Thông tin bổ trợ chưa đầy đủ: bỏ học phần tiên quyết UET.CS3138 ngay trong dòng khóa luận và bỏ Điều 21 khoản 7 quy định đơn vị đào tạo ban hành điều kiện/quy trình đăng ký. Vì vậy không nên đọc câu trả lời như thể hoàn toàn không có điều kiện tiên quyết được biết."
+    ],
+    "expected_correction": "Giữ việc không nêu ngưỡng GPA/tín chỉ khi thiếu văn bản; bổ sung CS3138 là tiên quyết theo CTĐT và Điều 21§7 giao thủ trưởng đơn vị đào tạo quy định điều kiện đăng ký. Hướng dẫn hỏi Phòng Đào tạo/Khoa về văn bản chi tiết.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_KHMT.md",
+        "line": 181,
+        "quote": "UET.CS4023 | Khoá luận tốt nghiệp – IT   Graduation Thesis – IT | 10 |  |  |  | \\* | UET.CS3138"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 287,
+        "quote": "Điều kiện được đăng ký, quy trình đăng ký nhận đề tài, hình thức và thời gian làm khoá luận hoặc đồ án tốt nghiệp;"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không cần sửa: tổng 150 TC chia 4 khối 56/78/3/13 đúng CTĐT KTMT.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_KTMT.md",
+        "line": 76,
+        "quote": "Khối kiến thức Giáo dục đại cương"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTMT.md",
+        "line": 79,
+        "quote": "Khối kiến thức Giáo dục chuyên nghiệp"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTMT.md",
+        "line": 178,
+        "quote": "| **III** |  | **Khối kiến thức bổ trợ** | **3** |"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTMT.md",
+        "line": 181,
+        "quote": "| **IV** |  | **Khối kiến thức thực tập và tốt nghiệp** | **13** |"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTMT.md",
+        "line": 187,
+        "quote": "|  | **Tổng cộng** |  | **150** |"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "medium",
+    "issues": [
+      "Nêu đúng hai hướng Thiết kế vi mạch và Xử lý tín hiệu và điện tử y sinh, nhưng hạ hai hướng chính thức khác thành 'lĩnh vực rộng hơn' thay vì trình bày đủ danh mục bốn hướng. Nguồn CTĐT có đúng tên Hệ thống tích hợp thông minh và Mạng và Truyền thông; danh sách suy diễn IoT/điều khiển không thay thế được tên các định hướng này."
+    ],
+    "expected_correction": "Liệt kê đủ bốn định hướng chính thức: Hệ thống tích hợp thông minh; Mạng và Truyền thông; Thiết kế vi mạch; Xử lý tín hiệu và điện tử y sinh. Có thể giữ ví dụ môn học để giải thích mỗi hướng.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_KTĐTVT.md",
+        "line": 144,
+        "quote": "***Định hướng Hệ thống tích hợp thông minh***"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTĐTVT.md",
+        "line": 153,
+        "quote": "***Định hướng Mạng và Truyền thông***"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTĐTVT.md",
+        "line": 162,
+        "quote": "***Định hướng Thiết kế vi mạch***"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTĐTVT.md",
+        "line": 171,
+        "quote": "***Định hướng Xử lý tín hiệu và điện tử y sinh***"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "status": "partial",
+    "category": "answer_error",
+    "severity": "medium",
+    "issues": [
+      "Sai mã học phần: gán UET.MTE3321 cho Thực tập kỹ thuật – MTE. Mã đúng là UET.MTE3324 (4 TC); UET.MTE3321 là Điều khiển PLC (3 TC). Nguồn [1] hiển thị cả hai dòng nhưng câu trả lời ghép nhầm.",
+      "Ba học phần còn lại và học kỳ tương ứng đúng. Không coi việc không liệt kê mọi môn có giờ thực hành tích hợp là sai danh sách các học phần thực hành/đồ án độc lập."
+    ],
+    "expected_correction": "Đổi duy nhất mã của Thực tập kỹ thuật – MTE thành UET.MTE3324; giữ ECE3205 học kỳ4, MTE3334 học kỳ6, MTE4048 học kỳ7. Có thể kèm số TC 2/4/3/3.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_co_dien_tu.md",
+        "line": 268,
+        "quote": "| 1 | UET.MTE3321 | Điều khiển PLC | 3 | Bắt buộc |"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_co_dien_tu.md",
+        "line": 269,
+        "quote": "| 2 | UET.MTE3324 | Thực tập kỹ thuật – MTE | 4 | Bắt buộc |"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_co_dien_tu.md",
+        "line": 270,
+        "quote": "| 3 | UET.MTE3334 | Đồ án thiết kế hệ cơ điện tử | 3 | Bắt buộc |"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_co_dien_tu.md",
+        "line": 278,
+        "quote": "UET.MTE4048 | Thực tập tốt nghiệp | 3 | Bắt buộc"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không cần sửa: mục tiêu và 7 PLO được tóm tắt đúng; chuẩn ngoại ngữ tối thiểu 3/6 và đối sánh PLO7 xuyên cả ba PEO có căn cứ.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_dieu_khien_va_tu_dong_hoa.md",
+        "line": 36,
+        "quote": "kiến thức nền tảng vững chắc và chuyên sâu về cơ khí, điện – điện tử, điều khiển – tự động hóa"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_dieu_khien_va_tu_dong_hoa.md",
+        "line": 67,
+        "quote": "năng lực ngoại ngữ tương đương trình độ tối thiểu 3/6"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_dieu_khien_va_tu_dong_hoa.md",
+        "line": 106,
+        "quote": "| x | x | x |"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "medium",
+    "issues": [
+      "Không trả lời tổng số TC và nói dữ liệu chưa đủ xác định dù CTDT_KTRobot.md ghi rõ tổng 150 TC ở phần3, cả tóm tắt lẫn bảng tổng cộng. Các đoạn truy xuất gồm phần1/2 và lịch học kỳ5–7 nên bỏ thông tin có sẵn.",
+      "Ba nhóm vị trí việc làm và hướng học tiếp được tóm tắt đúng."
+    ],
+    "expected_correction": "Bổ sung tổng 150 TC từ phần3; giữ ba nhóm nghề kỹ sư/thiết kế/quản lý, phân tích/tư vấn, nghiên cứu/giảng dạy.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_KTRobot.md",
+        "line": 169,
+        "quote": "|  | **Tổng cộng** |  | **150** |"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTRobot.md",
+        "line": 51,
+        "quote": "Nhóm 1: Kỹ sư kỹ thuật, thiết kế, quản lý nhóm, dự án"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTRobot.md",
+        "line": 52,
+        "quote": "Nhóm 2: Chuyên viên phân tích, tư vấn"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không cần sửa: cùng năm học đầu gồm Giải tích1/2, Đại số tuyến tính cho kỹ thuật, Vật lý đại cương1/2; không thêm Xác suất thống kê hay Toán rời rạc vì các môn đó học kỳ3.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_KTMT.md",
+        "line": 206,
+        "quote": "UET.MAT1050 | Giải tích 1 | 5 | Bắt buộc"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTMT.md",
+        "line": 207,
+        "quote": "UET.MAT1053 | Đại số tuyến tính cho kỹ thuật | 5 | Bắt buộc"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTMT.md",
+        "line": 214,
+        "quote": "UET.MAT1051 | Giải tích 2 | 5 | Bắt buộc"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTĐTVT.md",
+        "line": 212,
+        "quote": "UET.PHY1095 | Vật lý đại cương 1 | 3 | Bắt buộc"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTĐTVT.md",
+        "line": 220,
+        "quote": "UET.PHY1096 | Vật lý đại cương 2 | 3 | Bắt buộc"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "medium",
+    "issues": [
+      "Tổng 135 TC đúng. Tuyên bố tài liệu không liệt kê danh mục cụ thể các hướng chuyên sâu sai: bảng II.2.2 có hai tiêu đề rõ Công nghệ nano và ứng dụng, Công nghệ quang tử. Các môn laser/y-sinh là ví dụ môn, không phải tên hướng thay thế."
+    ],
+    "expected_correction": "Trả lời 135 TC; hai hướng chuyên sâu chính thức là Công nghệ nano và ứng dụng, Công nghệ quang tử. Có thể bổ sung ví dụ môn trong từng hướng.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_VLKT.md",
+        "line": 139,
+        "quote": "***Định hướng Công nghệ nano và ứng dụng***"
+      },
+      {
+        "file": "chatbot/data/CTDT_VLKT.md",
+        "line": 147,
+        "quote": "***Định hướng Công nghệ quang tử***"
+      },
+      {
+        "file": "chatbot/data/CTDT_VLKT.md",
+        "line": 171,
+        "quote": "|  | **Tổng cộng** |  | **135** |"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "status": "partial",
+    "category": "answer_error",
+    "severity": "low",
+    "issues": [
+      "Tên các môn trọng tâm và hai định hướng đều đúng, nhưng gọi cả 12 môn liệt kê là 'nhóm học phần cốt lõi ngành' sai cấu trúc CTĐT. 11 môn từ Vật lý bán dẫn và linh kiện đến Đồ án tổng hợp/chế tạo vật liệu thuộc II.1 cơ sở ngành; II.2 cốt lõi bắt buộc chỉ có Dự án công nghệ vật liệu và ứng dụng 3 TC. Đây là lỗi phân nhóm, không phải bịa môn."
+    ],
+    "expected_correction": "Gọi danh sách là các học phần chuyên môn trọng tâm; nếu chia theo khối thì phân biệt II.1 cơ sở ngành và II.2 cốt lõi ngành, trong đó môn bắt buộc của II.2 là MME3318 3 TC.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_vat_lieu_va_vi_dien_tu.md",
+        "line": 174,
+        "quote": "UET.ENP2079 | Vật lý bán dẫn và linh kiện"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_vat_lieu_va_vi_dien_tu.md",
+        "line": 184,
+        "quote": "UET.MME2106 | Đồ án tổng hợp và chế tạo vật liệu"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_vat_lieu_va_vi_dien_tu.md",
+        "line": 185,
+        "quote": "| **II.2** |  | **Nhóm học phần cốt lõi ngành** | **18** |"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_vat_lieu_va_vi_dien_tu.md",
+        "line": 186,
+        "quote": "| **II.2.1** |  | **Bắt buộc** | **3** |"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_vat_lieu_va_vi_dien_tu.md",
+        "line": 187,
+        "quote": "UET.MME3318 | Dự án công nghệ vật liệu và ứng dụng"
+      }
+    ]
+  }
+]

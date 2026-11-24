@@ -1,0 +1,12 @@
+metric,display_name,numerator,denominator,score_percent,calculation,evaluation_type,notes
+overall_weighted_quality,Điểm chất lượng tổng hợp,88.5,95,93.16,"(79 câu đầy đủ + 3 câu ngoài phạm vi xử lý đúng + 13 câu giới hạn nguồn × 0.5) / 95 × 100",derived_manual,"Metric tổng hợp tự quy ước; câu giới hạn nguồn nhận nửa điểm"
+full_answer_completeness,Độ đầy đủ câu trả lời,82,95,86.32,"(79 câu trả lời đầy đủ + 3 câu ngoài phạm vi xử lý đúng) / 95 × 100",manual_adjudication,"13 câu trả lời đúng phần có bằng chứng nhưng chưa đủ dữ liệu để trả lời trọn vẹn"
+retrieval_evidence_coverage,Độ bao phủ truy xuất và bằng chứng,79,92,85.87,"79 câu đủ bằng chứng / 92 câu thuộc phạm vi × 100",manual_adjudication,"Loại Q50 Q94 Q95 vì được xác định là ngoài phạm vi"
+source_safe_handling,Khả năng bám nguồn và nêu giới hạn,95,95,100.00,"95 câu cuối bám nguồn hoặc nói rõ giới hạn hoặc từ chối phù hợp / 95 × 100",manual_proxy,"Là proxy từ đánh giá thủ công; chưa phải điểm Faithfulness do RAGAS sinh tự động"
+answer_relevance,Độ liên quan của câu trả lời,95,95,100.00,"95 câu cuối trả đúng vấn đề hoặc xử lý ngoài phạm vi phù hợp / 95 × 100",manual_proxy,"Là proxy từ nhãn đánh giá cuối; chưa phải Answer Relevancy do LLM judge chấm độc lập"
+missing_information_handling,Xử lý câu thiếu hoặc mâu thuẫn dữ liệu,13,13,100.00,"13 câu nêu đúng giới hạn nguồn / 13 × 100",manual_adjudication,"Không tính việc thiếu dữ liệu nguồn là lỗi chatbot nếu chatbot không suy đoán"
+out_of_scope_handling,Xử lý câu ngoài phạm vi,3,3,100.00,"Q50 Q94 Q95 xử lý phù hợp / 3 × 100",manual_adjudication,"Ba câu phải từ chối hoặc yêu cầu dữ liệu phù hợp thay vì tự dựng đáp án"
+technical_reliability,Độ ổn định kỹ thuật ở kết quả cuối,95,95,100.00,"95 câu có kết quả cuối không còn lỗi HTTP stream quota hoặc transport / 95 × 100",observed_run,"Chỉ phản ánh lượt kết quả cuối đã lưu; không bảo đảm mọi lần gọi tương lai"
+latency_under_15s,Tỷ lệ phản hồi dưới 15 giây ở lượt đầu,95,95,100.00,"95 câu có thời gian không vượt 15 giây / 95 × 100",observed_run,"Lượt đầu có trung bình 6.07 giây; trung vị 6.22 giây; tối đa 12.23 giây"
+initial_weighted_quality,Điểm chất lượng tổng hợp trước sửa,68.5,95,72.11,"(44 câu đạt + 3 câu ngoài phạm vi xử lý đúng + 43 câu chưa đầy đủ × 0.5) / 95 × 100",derived_manual,"5 câu không đạt nhận 0 điểm"
+weighted_quality_improvement,Mức tăng điểm sau sửa,21.05,100,21.05,"93.16 - 72.11",derived_manual,"Đơn vị là điểm phần trăm"

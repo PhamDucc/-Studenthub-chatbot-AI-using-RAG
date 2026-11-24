@@ -1,0 +1,910 @@
+[
+  {
+    "id": 67,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Co_ky_thuat.md",
+        "line": 204,
+        "quote": "56"
+      },
+      {
+        "file": "chatbot/data/CTDT_Co_ky_thuat.md",
+        "line": 210,
+        "quote": "78"
+      },
+      {
+        "file": "chatbot/data/CTDT_Co_ky_thuat.md",
+        "line": 232,
+        "quote": "150"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "medium",
+    "issues": [
+      "Không nêu được tên học phần thực tập dù khung chương trình có UET.AE4000 Thực tập tốt nghiệp, 3 tín chỉ; 13 tín chỉ là cả khối thực tập và tốt nghiệp.",
+      "Nêu chắc chắn 150 tín chỉ tích lũy trong khi tài liệu có tổng bảng 150 nhưng ghi Kỹ năng bổ trợ không tính vào tổng; đây là mâu thuẫn dữ liệu cần nói rõ, không thể coi 150 tích lũy là một đáp án vàng duy nhất."
+    ],
+    "expected_correction": "Nêu Thực tập tốt nghiệp UET.AE4000, 3 tín chỉ; 13 tín chỉ là cả khối thực tập và tốt nghiệp. Tổng bảng chương trình ghi 150; chú thích không tính Kỹ năng bổ trợ chưa thống nhất với một số dòng tổng. Nên thông báo giới hạn đó và đối chiếu cách tính của khóa, không tự chốt một tổng thay thế 147.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_hang_khong_vu_tru.md",
+        "line": 231,
+        "quote": "UET.AE4000 | Thực tập tốt nghiệp"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_hang_khong_vu_tru.md",
+        "line": 133,
+        "quote": "150"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_hang_khong_vu_tru.md",
+        "line": 240,
+        "quote": "không được tính vào tổng số tín chỉ của chương trình đào tạo"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "medium",
+    "issues": [
+      "Tóm tắt chuẩn đầu ra đúng, nhưng phần đồ án chỉ nêu nhánh giao thông 4B/5B và tốt nghiệp; bỏ các đồ án bắt buộc 1, 2, 3 và lựa chọn nhánh dân dụng 4A/5A. Ghi danh sách không đầy đủ vẫn chưa giải thích được hệ thống đồ án của ngành."
+    ],
+    "expected_correction": "Bổ sung Đồ án 1 Kết cấu bê tông cốt thép, Đồ án 2 Kết cấu thép, Đồ án 3 Nền móng (mỗi môn 2 tín chỉ, bắt buộc); phân biệt các lựa chọn 4A/5A và 4B/5B (2 tín chỉ/môn); giữ phần chuẩn đầu ra và thực tập/đồ án tốt nghiệp đã trả lời đúng.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_xay_dung.md",
+        "line": 184,
+        "quote": "Đồ án 1: Kết cấu bê tông cốt thép"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_xay_dung.md",
+        "line": 186,
+        "quote": "Đồ án 3: Nền móng"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_xay_dung.md",
+        "line": 187,
+        "quote": "Đồ án 2: Kết cấu thép"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_xay_dung.md",
+        "line": 196,
+        "quote": "Đồ án 4A"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_xay_dung.md",
+        "line": 197,
+        "quote": "Đồ án 5A"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_xay_dung.md",
+        "line": 69,
+        "quote": "trình độ tối thiểu 3/6"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_xay_dung.md",
+        "line": 217,
+        "quote": "không được tính vào tổng số tín chỉ của chương trình đào tạo"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Cong_nghe_ky_thuat_sinh_hoc.md",
+        "line": 152,
+        "quote": "150"
+      },
+      {
+        "file": "chatbot/data/CTDT_Cong_nghe_ky_thuat_sinh_hoc.md",
+        "line": 196,
+        "quote": "Kỹ thuật sinh học tính toán"
+      },
+      {
+        "file": "chatbot/data/CTDT_Cong_nghe_ky_thuat_sinh_hoc.md",
+        "line": 200,
+        "quote": "chỉnh sửa gen"
+      },
+      {
+        "file": "chatbot/data/CTDT_Cong_nghe_ky_thuat_sinh_hoc.md",
+        "line": 209,
+        "quote": "Chăn nuôi và thủy sản"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Cong_nghe_nong_nghiep.md",
+        "line": 168,
+        "quote": "Công cụ thống kê"
+      },
+      {
+        "file": "chatbot/data/CTDT_Cong_nghe_nong_nghiep.md",
+        "line": 178,
+        "quote": "Thiết kế, quản lý và vận hành các hệ thống thiết bị nông nghiệp"
+      },
+      {
+        "file": "chatbot/data/CTDT_Cong_nghe_nong_nghiep.md",
+        "line": 188,
+        "quote": "Công nghệ số trong nông nghiệp"
+      },
+      {
+        "file": "chatbot/data/CTDT_Cong_nghe_nong_nghiep.md",
+        "line": 196,
+        "quote": "Phát triển ứng dụng IoT"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "medium",
+    "issues": [
+      "Không trả lời tổng số tín chỉ toàn khóa dù phần 3 ghi rõ 150.",
+      "Nêu học kỳ 8 chỉ 3 tín chỉ là sai: lấy riêng một học phần bắt buộc làm tổng; kế hoạch ghi học kỳ 8 tổng 12 tín chỉ và còn học kỳ 9 tổng 13. Phần mục tiêu và nghề nghiệp phù hợp tài liệu."
+    ],
+    "expected_correction": "Trả lời tổng bảng chương trình 150 tín chỉ. Nếu dẫn kế hoạch cuối khóa: học kỳ 6 là 18, học kỳ 7 là 18, học kỳ 8 là 12, học kỳ 9 là 13; không lấy 3 tín chỉ Đồ án năng lượng sạch và tái tạo làm tổng học kỳ 8.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_KTNL.md",
+        "line": 95,
+        "quote": "150"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTNL.md",
+        "line": 249,
+        "quote": "12"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTNL.md",
+        "line": 250,
+        "quote": "Học kỳ 9"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTNL.md",
+        "line": 253,
+        "quote": "13"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTNL.md",
+        "line": 23,
+        "quote": "kỹ sư quản lý năng lượng"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "medium",
+    "issues": [
+      "Các tên đồ án theo định hướng và khối thực tập/tốt nghiệp đúng, nhưng không trình bày được phân bổ tín chỉ/thời điểm của studio; bỏ đồ án chung bắt buộc UET.IGD3273, 3 tín chỉ, học kỳ 6.",
+      "Không phân biệt rõ các đồ án công nghiệp/đồ họa/nội thất được liệt kê là tự chọn theo định hướng, chủ yếu học kỳ 7, mỗi môn 3 tín chỉ."
+    ],
+    "expected_correction": "Bổ sung đồ án chung bắt buộc 3 tín chỉ ở học kỳ 6; đồ án theo ba định hướng là tự chọn, mỗi môn 3 tín chỉ, kế hoạch xếp ở học kỳ 7. Học kỳ 8 gồm thực tập 3 tín chỉ và khóa luận 10 hoặc dự án 4 cộng 6 tín chỉ tự chọn thay thế.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Thiet_ke_cong_nghiep_va_do_hoa.md",
+        "line": 334,
+        "quote": "Đồ án Thiết kế Công nghiệp và Đồ hoạ | 3 | Bắt buộc"
+      },
+      {
+        "file": "chatbot/data/CTDT_Thiet_ke_cong_nghiep_va_do_hoa.md",
+        "line": 354,
+        "quote": "Đồ án thiết kế công nghiệp 1 | 3 | Tự chọn"
+      },
+      {
+        "file": "chatbot/data/CTDT_Thiet_ke_cong_nghiep_va_do_hoa.md",
+        "line": 360,
+        "quote": "Đồ án thiết kế đồ hoạ 1"
+      },
+      {
+        "file": "chatbot/data/CTDT_Thiet_ke_cong_nghiep_va_do_hoa.md",
+        "line": 372,
+        "quote": "Thực tập tốt nghiệp – IGD | 3 | Bắt buộc"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Thiet_ke_cong_nghiep_va_do_hoa.md",
+        "line": 67,
+        "quote": "trình độ tối thiểu 3/6"
+      },
+      {
+        "file": "chatbot/data/CTDT_Thiet_ke_cong_nghiep_va_do_hoa.md",
+        "line": 69,
+        "quote": "làm việc hiệu quả trong nhóm"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTNL.md",
+        "line": 43,
+        "quote": "trình độ tối thiểu 3/6"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_vat_lieu_va_vi_dien_tu.md",
+        "line": 69,
+        "quote": "trình độ tối thiểu 3/6"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "medium",
+    "issues": [
+      "So sánh mục tiêu tương đối đúng nhưng bỏ nửa yêu cầu về các học phần của Khoa học máy tính, nói chỉ có mục tiêu/chuẩn đầu ra trong nguồn truy xuất; tệp đầy đủ có khung chương trình và các định hướng."
+    ],
+    "expected_correction": "Bổ sung học phần KHMT như Học máy, Khoa học dữ liệu, Các vấn đề hiện đại trong KHMT, Học sâu, Lập trình song song với GPU, Mô hình ngôn ngữ lớn và ứng dụng; so sánh với CNTT như Phân tích và thiết kế hệ thống, Phân tích và kiểm thử chương trình, API và phát triển phần mềm. Nêu phần giao nhau thay vì chỉ chia đôi định hướng.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_KHMT.md",
+        "line": 140,
+        "quote": "Học máy"
+      },
+      {
+        "file": "chatbot/data/CTDT_KHMT.md",
+        "line": 141,
+        "quote": "Khoa học dữ liệu"
+      },
+      {
+        "file": "chatbot/data/CTDT_KHMT.md",
+        "line": 146,
+        "quote": "Học sâu"
+      },
+      {
+        "file": "chatbot/data/CTDT_KHMT.md",
+        "line": 158,
+        "quote": "Mô hình ngôn ngữ lớn và ứng dụng"
+      },
+      {
+        "file": "chatbot/data/CTDT_CNTT.md",
+        "line": 145,
+        "quote": "Phân tích và thiết kế hệ thống"
+      },
+      {
+        "file": "chatbot/data/CTDT_CNTT.md",
+        "line": 157,
+        "quote": "Thiết kế và triển khai API"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "low",
+    "issues": [
+      "Bảng so sánh khối lượng tín chỉ đúng. Tuy nhiên câu trả lời chỉ so số lượng, chưa giải thích phần nội dung chuyên ngành chung và khác của KHDL với AI. Đây là thiếu chiều sâu của câu so sánh, không phải một bảng số liệu sai."
+    ],
+    "expected_correction": "Giữ bảng tín chỉ, bổ sung phần chung Học máy, Khai phá và phân tích dữ liệu, Dữ liệu lớn, Học sâu; KHDL có Kỹ thuật hệ thống dữ liệu, Tích hợp dữ liệu và các định hướng dữ liệu liên ngành/kinh doanh; AI có Kỹ nghệ hệ thống AI, Biểu diễn tri thức, xử lý ảnh/ngôn ngữ và các định hướng lý thuyết/triển khai/ứng dụng AI.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Khoa_hoc_du_lieu.md",
+        "line": 189,
+        "quote": "Kỹ thuật hệ thống dữ liệu"
+      },
+      {
+        "file": "chatbot/data/CTDT_Khoa_hoc_du_lieu.md",
+        "line": 195,
+        "quote": "Tích hợp dữ liệu"
+      },
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 198,
+        "quote": "Kỹ nghệ hệ thống Trí tuệ nhân tạo"
+      },
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 186,
+        "quote": "Biểu diễn tri thức và tìm kiếm nâng cao"
+      },
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 196,
+        "quote": "39"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_KTMT.md",
+        "line": 23,
+        "quote": "thiết kế phần cứng và phát triển phần mềm"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTMT.md",
+        "line": 51,
+        "quote": "kỹ sư hệ thống nhúng"
+      },
+      {
+        "file": "chatbot/data/CTDT_KHMT.md",
+        "line": 23,
+        "quote": "thiết kế và triển khai các hệ thống phần mềm phức tạp"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_co_dien_tu.md",
+        "line": 21,
+        "quote": "Cử nhân"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_co_dien_tu.md",
+        "line": 23,
+        "quote": "4,0 năm"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_co_dien_tu.md",
+        "line": 38,
+        "quote": "cơ khí, điện – điện tử, điều khiển – tự động hóa và tích hợp hệ thống"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTRobot.md",
+        "line": 15,
+        "quote": "Kỹ sư"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTRobot.md",
+        "line": 16,
+        "quote": "4,5 năm"
+      },
+      {
+        "file": "chatbot/data/CTDT_KTRobot.md",
+        "line": 23,
+        "quote": "các giải pháp thông minh cho hệ thống robot"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "status": "fail",
+    "category": "answer_error",
+    "severity": "high",
+    "issues": [
+      "Kết luận không có học phần cơ sở ngành bắt buộc trùng nhau là sai nghiêm trọng.",
+      "So sánh nhầm cơ sở ngành ATTT với cốt lõi ngành MMT&TTDL dù tệp MMT&TTDL có cơ sở ngành; sáu học phần bắt buộc ATTT đều có trong nhóm bắt buộc MMT&TTDL.",
+      "Suy ra ATTT thiên nền tảng lập trình còn MMT thiên mạng từ hai nhóm khác cấp tạo khác biệt giả."
+    ],
+    "expected_correction": "Hai ngành chung sáu môn bắt buộc: Lập trình nâng cao, Cơ sở dữ liệu, Mạng máy tính, Công nghệ phần mềm, Trí tuệ nhân tạo, Nguyên lý hệ điều hành. MMT&TTDL thêm Kiến trúc máy tính bắt buộc, còn ATTT xếp môn này vào tự chọn; cả hai có Học máy và Tối ưu hóa tự chọn. Cơ sở ngành ATTT 21 tín chỉ (18+3), MMT&TTDL 24 (21+3).",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_MMT&TTDL.md",
+        "line": 129,
+        "quote": "Nhóm học phần cơ sở ngành"
+      },
+      {
+        "file": "chatbot/data/CTDT_MMT&TTDL.md",
+        "line": 131,
+        "quote": "Lập trình nâng cao"
+      },
+      {
+        "file": "chatbot/data/CTDT_MMT&TTDL.md",
+        "line": 134,
+        "quote": "Kiến trúc máy tính"
+      },
+      {
+        "file": "chatbot/data/CTDT_MMT&TTDL.md",
+        "line": 137,
+        "quote": "Nguyên lý hệ điều hành"
+      },
+      {
+        "file": "chatbot/data/CTDT_An_toan_thong_tin.md",
+        "line": 182,
+        "quote": "Lập trình nâng cao"
+      },
+      {
+        "file": "chatbot/data/CTDT_An_toan_thong_tin.md",
+        "line": 189,
+        "quote": "Kiến trúc máy tính"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "status": "pass",
+    "category": "ok",
+    "severity": "low",
+    "issues": [
+      "Kết luận hai ngành cùng tổng bảng 150 phù hợp số liệu được ghi rõ trong cả hai tệp; không chấm đây là lỗi chatbot. Cần lưu ý dữ liệu có chú thích không tính Kỹ năng bổ trợ chưa thống nhất với các dòng tổng, nên chuẩn hóa nguồn trước khi dùng một con số tích lũy làm đáp án vàng; không tự thay bằng 147."
+    ],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Co_ky_thuat.md",
+        "line": 232,
+        "quote": "150"
+      },
+      {
+        "file": "chatbot/data/CTDT_Co_ky_thuat.md",
+        "line": 315,
+        "quote": "không được tính vào tổng số tín chỉ của chương trình đào tạo"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_hang_khong_vu_tru.md",
+        "line": 133,
+        "quote": "150"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_hang_khong_vu_tru.md",
+        "line": 240,
+        "quote": "không được tính vào tổng số tín chỉ của chương trình đào tạo"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_vat_lieu_va_vi_dien_tu.md",
+        "line": 21,
+        "quote": "Kỹ sư"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_vat_lieu_va_vi_dien_tu.md",
+        "line": 38,
+        "quote": "Kỹ thuật Vật liệu tiên tiến"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_vat_lieu_va_vi_dien_tu.md",
+        "line": 199,
+        "quote": "Kỹ thuật CMOS"
+      },
+      {
+        "file": "chatbot/data/CTDT_VLKT.md",
+        "line": 15,
+        "quote": "Cử nhân"
+      },
+      {
+        "file": "chatbot/data/CTDT_VLKT.md",
+        "line": 23,
+        "quote": "vật lý ứng dụng, công nghệ nano"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_HTTT.md",
+        "line": 52,
+        "quote": "khoa học dữ liệu/phân tích kinh doanh/quản lý dữ liệu lớn"
+      },
+      {
+        "file": "chatbot/data/CTDT_HTTT.md",
+        "line": 53,
+        "quote": "Giám đốc thông tin"
+      },
+      {
+        "file": "chatbot/data/CTDT_HTTT.md",
+        "line": 54,
+        "quote": "Kiến trúc sư"
+      },
+      {
+        "file": "chatbot/data/CTDT_Khoa_hoc_du_lieu.md",
+        "line": 78,
+        "quote": "thiết kế, phát triển và bảo trì các hệ thống dữ liệu và dữ liệu lớn"
+      },
+      {
+        "file": "chatbot/data/CTDT_Khoa_hoc_du_lieu.md",
+        "line": 80,
+        "quote": "giảng viên, nghiên cứu viên"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "status": "fail",
+    "category": "retrieval_gap",
+    "severity": "high",
+    "issues": [
+      "Không trả lời được tổng 135 tín chỉ dù tệp chương trình có tổng rõ ràng; thay bằng vài tổng học kỳ rời rạc.",
+      "Không truy xuất Quy chế và khẳng định thiếu quy định giới hạn tín chỉ dù Điều21.1 có công thức tối đa 3/2 khối lượng trung bình học kỳ.",
+      "Câu hỏi có thể suy ra cận dưới số học nhưng không thể bảo đảm thời gian tốt nghiệp thực tế chỉ từ phép chia tổng tín chỉ; còn tiên quyết, lịch mở môn và điều kiện tốt nghiệp."
+    ],
+    "expected_correction": "Ngành AI có tổng bảng 135 tín chỉ, kế hoạch 4 năm/8 kỳ. Điều 21.1 quy định trần 3/2 khối lượng trung bình một học kỳ theo kế hoạch chuẩn, kèm quy tắc học kỳ cuối và loại trừ GDTC, GDQP-AN, kỹ năng bổ trợ, cải thiện, tự chọn tự do. Cần truy xuất đúng quy chế và xác định khối lượng được tính trước khi ước lượng số kỳ; không tự gán trần cố định 25 tín chỉ hoặc lấy 135/8 mà bỏ các điều kiện đó. Cận dưới số học không bảo đảm lịch tốt nghiệp thực tế vì còn môn tiên quyết, lịch mở lớp và các điều kiện tốt nghiệp khác.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 142,
+        "quote": "135"
+      },
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 23,
+        "quote": "4,0 năm"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 268,
+        "quote": "khối lượng tối đa không vượt quá 3/2 khối lượng trung bình một học kỳ"
+      },
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 198,
+        "quote": "UET.AI2014, UET.CS1058"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 283,
+        "quote": "Điểm học phần cũ bị hủy bỏ"
+      },
+      {
+        "file": "chatbot/data/Quy_dinh_ve_hoc_phi.md",
+        "line": 64,
+        "quote": "Tính hoàn toàn theo"
+      },
+      {
+        "file": "chatbot/data/Quy_dinh_ve_hoc_phi.md",
+        "line": 65,
+        "quote": "Định mức học phí cho từng tín chỉ học lại/cải thiện"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "low",
+    "issues": [
+      "Trả lời đúng tiên quyết CS3138 và phương án thay thế4+6 tín chỉ, đồng thời đúng là điều kiện cụ thể do đơn vị đào tạo quy định.",
+      "Corpus không chứa đầy đủ tiêu chí riêng của UET cho việc được làm khóa luận; vì vậy câu hỏi về điều kiện thực tế chỉ được trả lời một phần. Đây là thiếu dữ liệu, không phải bằng chứng rằng chatbot phải tự bổ sung một ngưỡng GPA."
+    ],
+    "expected_correction": "Giữ điều kiện tiên quyết Thực hành nghiên cứu và phương án dự án4+6 tín chỉ; nêu rõ đây chưa phải toàn bộ điều kiện đăng ký do UET ban hành và cần văn bản/quy định cụ thể của khóa để kết luận đủ điều kiện.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_An_toan_thong_tin.md",
+        "line": 229,
+        "quote": "UET.CS3138"
+      },
+      {
+        "file": "chatbot/data/CTDT_An_toan_thong_tin.md",
+        "line": 231,
+        "quote": "Dự án tốt nghiệp"
+      },
+      {
+        "file": "chatbot/data/CTDT_An_toan_thong_tin.md",
+        "line": 232,
+        "quote": "06 tín chỉ"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 287,
+        "quote": "Điều kiện được đăng ký"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 293,
+        "quote": "sẽ đăng ký học các học phần thay thế"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_dieu_khien_va_tu_dong_hoa.md",
+        "line": 67,
+        "quote": "trình độ tối thiểu 3/6"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 144,
+        "quote": "Bản sao chứng chỉ ngoại ngữ hợp lệ"
+      },
+      {
+        "file": "chatbot/data/Cac_thu_tuc_hanh_chinh_va_mau_bieu_cho_sinh_vien.md",
+        "line": 145,
+        "quote": "Phòng 107 – G2"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "status": "partial",
+    "category": "answer_error",
+    "severity": "low",
+    "issues": [
+      "Gọi tiêu chí điểm là 'GPA tích lũy', trong khi Điều 28.1c dùng 'điểm trung bình chung các học phần tính đến thời điểm xét'; Điều 42 phân biệt hai loại điểm này. Đây là lỗi diễn đạt có thể làm thay đổi điều kiện đối với người còn điểm F.",
+      "Các điều kiện chuyển ngành còn lại bám Điều 28; không chấm mốc năm thứ nhất/năm thứ hai là chatbot bịa vì đó là chính câu chữ trong nguồn. Corpus chưa có quy trình nộp hồ sơ riêng, nên hướng tới Phòng Đào tạo là hướng dẫn liên hệ, chưa phải xác nhận địa điểm nộp đơn."
+    ],
+    "expected_correction": "Trích đúng Điều28 và tên loại điểm. Nêu corpus chưa có quy trình nộp hồ sơ chuyển ngành cụ thể; liên hệ Phòng Đào tạo, số02432026858, phòng213-G2 (hoặc bộ phận E3/107-G2 theo đợt) để hỏi hồ sơ/thời hạn; không khẳng định đây là nơi nộp đơn chuyển ngành khi chưa có quy định.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 398,
+        "quote": "hoàn thành năm học thứ nhất"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 401,
+        "quote": "Điểm trung bình chung các học phần"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 405,
+        "quote": "đã học từ năm thứ hai"
+      },
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 40,
+        "quote": "024 3202 6858"
+      },
+      {
+        "file": "chatbot/data/Thong_tin_lien_he_voi_nha_truong.md",
+        "line": 41,
+        "quote": "Phòng 213, Nhà G2"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 650,
+        "quote": "5. **Điểm trung bình chung tích lũy:** Là điểm trung bình theo trọng số tín chỉ của các học phần đã được đánh giá loại đạt mà sinh viên đã tích lũy được, tính từ đầu khóa học cho tới thời điểm xem xét."
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "high",
+    "issues": [
+      "Tính9 năm từ thời gian chuẩn4,5 và hệ số2 là đúng.",
+      "Bỏ phần cốt lõi của tình huống: nói nguồn không quy định thời gian bảo lưu có tính vào tối đa không, dù Điều36.3d ghi rõ nghỉ vì nhu cầu cá nhân được tính. Nghỉ1 năm để đi thực tập không đương nhiên cộng thêm1 năm vào trần9 năm."
+    ],
+    "expected_correction": "Nếu nghỉ đi thực tập được duyệt theo lý do cá nhân,1 năm nghỉ nằm trong tối đa9 năm; không thành10 năm, quỹ thời gian thực học còn tối đa8 năm (chưa trừ thời gian đã học). Phân biệt trường hợp a/b/c Điều36.3 được loại thời gian nghỉ khỏi trần; nêu điều kiện nghỉ cá nhân nếu cần.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_xay_dung.md",
+        "line": 23,
+        "quote": "4,5 năm"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 218,
+        "quote": "không vượt quá 2 lần"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 546,
+        "quote": "Thời gian nghỉ học tạm thời vì nhu cầu cá nhân được tính vào thời gian tối đa được phép học"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 548,
+        "quote": "không tính vào thời gian tối đa được phép học"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "status": "partial",
+    "category": "data_gap",
+    "severity": "medium",
+    "issues": [
+      "Không bịa mức học phí hoặc khẳng định KHDL thu khác là đúng cách xử lý.",
+      "Chưa giải đáp được so sánh theo ngành do corpus thiếu bảng mức thu và ánh xạ KHDL vào hệ thu học phí. Câu trả lời cũng chỉ nêu cơ chế tín chỉ, chưa tận dụng văn bản học phí phân biệt hệ chuẩn, CLC TT23 và ĐMKTKT."
+    ],
+    "expected_correction": "Nêu hệ chuẩn thu theo số tín chỉ thực đăng ký, CLC TT23 và ĐMKTKT có cơ chế theo kỳ trong văn bản học phí. Chưa thể kết luận KHDL khác các ngành chuẩn hay không khi không có thông báo mức thu và loại chương trình/khóa; yêu cầu đối chiếu thông báo phù hợp, không tự tạo số tiền.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/Quy_dinh_ve_hoc_phi.md",
+        "line": 59,
+        "quote": "Hệ chuẩn"
+      },
+      {
+        "file": "chatbot/data/Quy_dinh_ve_hoc_phi.md",
+        "line": 60,
+        "quote": "Thu học phí theo niên chế"
+      },
+      {
+        "file": "chatbot/data/Quy_che_dao_tao.md",
+        "line": 110,
+        "quote": "theo hình thức đào tạo và chương trình đào tạo"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "status": "partial",
+    "category": "retrieval_gap",
+    "severity": "medium",
+    "issues": [
+      "Tên môn và phân loại bắt buộc/tự chọn ở các kỳ6-8 đã nêu đều đúng.",
+      "Lộ trình bị cắt ở kỳ8 dù ngành4,5 năm có kỳ9 đồ án tốt nghiệp10 tín chỉ hoặc dự án4 cộng6 tín chỉ thay thế; cũng thiếu phần chuyên ngành kỳ5 và một số lựa chọn kỳ8."
+    ],
+    "expected_correction": "Bổ sung kỳ5 Nhập môn tự động hóa, Nhập môn điều khiển thông minh, Kiến trúc máy tính và Mạng truyền thông công nghiệp; kỳ8 có lựa chọn AI cho kỹ thuật/Hệ thống sản xuất thông minh/Ứng dụng máy tính trong đo lường và điều khiển; kỳ9 làm đồ án10 hoặc dự án4+6 tín chỉ. Nêu đây là kế hoạch9 kỳ của chương trình4,5 năm.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_dieu_khien_va_tu_dong_hoa.md",
+        "line": 23,
+        "quote": "4,5 năm"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_dieu_khien_va_tu_dong_hoa.md",
+        "line": 150,
+        "quote": "Nhập môn tự động hóa"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_dieu_khien_va_tu_dong_hoa.md",
+        "line": 178,
+        "quote": "Trí tuệ nhân tạo cho kỹ thuật"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_dieu_khien_va_tu_dong_hoa.md",
+        "line": 182,
+        "quote": "Học kỳ 9"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_dieu_khien_va_tu_dong_hoa.md",
+        "line": 184,
+        "quote": "Đồ án tốt nghiệp – CEA | 10"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "status": "fail",
+    "category": "retrieval_gap",
+    "severity": "high",
+    "issues": [
+      "Không nêu được135 tín chỉ toàn khóa dù phần tóm tắt và khung chương trình có tổng rõ ràng.",
+      "Vị trí việc làm chỉ trả một mục 'nhà thiết kế quy trình sản xuất', bỏ gần toàn bộ nhóm nghề đồ họa đúng trọng tâm câu hỏi như thiết kế đồ họa,3D/đồ họa động,UI/UX,truyền thông số/thương hiệu.",
+      "Hai yêu cầu chính đều không được đáp ứng hữu ích dù dữ liệu có đủ."
+    ],
+    "expected_correction": "Ngành chính thức là Thiết kế công nghiệp và đồ họa, tổng bảng135 tín chỉ. Các nghề đồ họa trong nguồn gồm chuyên gia thiết kế đồ họa/mô phỏng,3D và đồ họa động,UI/UX,bao bì,truyền thông số/đa phương tiện/thương hiệu; có thể nghiên cứu/giảng dạy hoặc quản lý dự án thiết kế.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Thiet_ke_cong_nghiep_va_do_hoa.md",
+        "line": 166,
+        "quote": "135"
+      },
+      {
+        "file": "chatbot/data/CTDT_Thiet_ke_cong_nghiep_va_do_hoa.md",
+        "line": 86,
+        "quote": "Chuyên gia thiết kế đồ họa"
+      },
+      {
+        "file": "chatbot/data/CTDT_Thiet_ke_cong_nghiep_va_do_hoa.md",
+        "line": 90,
+        "quote": "thiết kế 3D, thiết kế đồ họa động"
+      },
+      {
+        "file": "chatbot/data/CTDT_Thiet_ke_cong_nghiep_va_do_hoa.md",
+        "line": 92,
+        "quote": "giao diện và trải nghiệm người dùng"
+      },
+      {
+        "file": "chatbot/data/CTDT_Thiet_ke_cong_nghiep_va_do_hoa.md",
+        "line": 94,
+        "quote": "truyền thông số, đa phương tiện, thương hiệu"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "status": "pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_hang_khong_vu_tru.md",
+        "line": 303,
+        "quote": "Khí động lực học | 3 | Bắt buộc"
+      },
+      {
+        "file": "chatbot/data/CTDT_Ky_thuat_hang_khong_vu_tru.md",
+        "line": 312,
+        "quote": "Kỹ thuật vệ tinh | 3 | Tự chọn"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "status": "out_of_scope_pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không cung cấp tín chỉ lâm sàng hoặc tự tạo chương trình Y đa khoa từ corpus UET; câu trả lời đã từ chối đúng.",
+    "source_evidence": []
+  },
+  {
+    "id": 95,
+    "status": "out_of_scope_pass",
+    "category": "ok",
+    "severity": "none",
+    "issues": [],
+    "expected_correction": "Không tự tạo điểm chuẩn năm2026; corpus chỉ có CTĐT và thông tin tuyển sinh dẫn về đề án hằng năm. Câu trả lời đã từ chối đúng.",
+    "source_evidence": [
+      {
+        "file": "chatbot/data/CTDT_Tri_tue_nhan_tao.md",
+        "line": 48,
+        "quote": "Thực hiện theo đề án tuyển sinh hàng năm của Nhà trường."
+      }
+    ]
+  }
+]
